@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlanetPVP - Offizielle Website</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #121212; color: white; }
+        header { background: #1e1e1e; padding: 15px; text-align: center; font-size: 24px; }
+        nav { background: #333; padding: 10px; text-align: center; }
+        nav a { color: white; text-decoration: none; padding: 10px 20px; display: inline-block; }
+        .container { padding: 20px; max-width: 1000px; margin: auto; }
+        .countdown { font-size: 24px; text-align: center; margin-top: 20px; }
+        .server-status { text-align: center; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <header>PlanetPVP - Offizielle Website</header>
+    
+    <nav>
+        <a href="PlanetPVP.html">Über Uns</a>
+        <a href="#news">Neuigkeiten</a>
+        <a href="#events">Events</a>
+        <a href="PlanetPVP Regeln.html">Regeln</a>
+        <a href="#infos">Server-Infos</a>
+        <a href="https://hostunlimited.statuspage.io/">Serverstatus</a>
+        <a href="#map">Server-Map</a>
+        <a href="https://discord.gg/rt5Cna8bUe">Discord</a>
+        <a href="https://paypal.me/Fridoxo">Spenden</a>
+    </nav>
+
+    <div class="container">
+        <section id="about">
+            <h2>Über PlanetPVP</h2>
+            <p>PlanetPVP ist ein einzigartiger Minecraft-Server mit einem starken Fokus auf kompetitives PvP, strategische Events und eine engagierte Community.</p>
+            <p>Server-Version: <b>1.21.4</b></p>
+        </section>
+        
+        <section id="news">
+            <h2>Neuigkeiten & Ankündigungen</h2>
+            <p>Unser nächstes großes Event startet bald! Sei bereit für actiongeladene Kämpfe und exklusive Belohnungen.</p>
+        </section>
+        
+        <section id="events">
+            <h2>Kommende Events</h2>
+            <p>PlanetPVP startet in:</p>
+            <div class="countdown" id="countdown"></div>
+        </section>
+        
+        <section id="rules">
+            <h2>Regeln & Konzept</h2>
+            <h3>Allgemeine Verhaltensregeln</h3>
+            <ul>
+                <li>Respektiere alle Mitspieler, Beleidigungen oder toxisches Verhalten sind verboten.</li>
+                <li>Provokationen oder absichtliches Stören anderer Spieler sind untersagt.</li>
+                <li>Private Nachrichten dürfen nicht ohne Einwilligung veröffentlicht werden.</li>
+                <li>Streamen ist erlaubt, der Discord-Link sollte in der Beschreibung stehen.</li>
+            </ul>
+        </section>
+        
+        <section id="ranks">
+            <h2>Ränge</h2>
+            <ul>
+                <li><b>Noob:</b> Darf nicht angegriffen werden.</li>
+                <li><b>Admin:</b> Administrator</li>
+            </ul>
+        </section>
+        
+        <section id="server">
+            <h2>Serverstatus</h2>
+            <p>Der Server läuft auf der Minecraft-Version <b>1.21.4</b>. Aktueller Status: <span style="color: green;">Online</span></p>
+        </section>
+        
+        <section id="map">
+            <h2>Server-Map</h2>
+            <p>Besuche unsere interaktive Karte, um Basen, Shops und Events zu finden.</p>
+            <p><a href="#">Hier klicken, um die Map zu öffnen</a></p>
+        </section>
+        
+        <section id="donate">
+            <h2>Spenden</h2>
+            <p>Unterstütze den Server mit einer Spende! <a href="https://paypal.me/Fridoxo">Jetzt spenden</a></p>
+        </section>
+    </div>
+
+<style>
+    body {
+        background: linear-gradient(45deg, black, #003300, #000033);
+        background-size: 600% 600%;
+        animation: gradientMovement 60s ease infinite;
+        height: 100%;
+    }
+
+    @keyframes gradientMovement {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+</style>
+
+    <script>
+        function startCountdown(eventDate) {
+            const countDownDate = new Date(eventDate).getTime();
+            setInterval(() => {
+                let now = new Date().getTime();
+                let distance = countDownDate - now;
+                let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                document.getElementById("countdown").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+            }, 1000);
+        }
+        startCountdown("2025-03-28T19:30:00");
+    </script>
+</body>
+</html>
