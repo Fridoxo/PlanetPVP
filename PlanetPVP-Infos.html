@@ -84,5 +84,27 @@
             </ul>
         </div>
     </div>
+	
+	<style>
+    body {
+        background: linear-gradient(45deg, black, #003300, #000033);
+        background-size: 600% 600%;
+        animation: gradientMovement 60s ease infinite;
+        height: 100%;
+    }
+
+    @keyframes gradientMovement {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+</style>
+
 </body>
 </html>
