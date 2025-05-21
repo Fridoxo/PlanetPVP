@@ -57,25 +57,6 @@
             z-index: -1;
         }
         
-        .countdown {
-            font-size: 3rem;
-            font-weight: bold;
-            margin: 1.5rem 0;
-            padding: 1.5rem;
-            background-color: rgba(0, 0, 0, 0.3);
-            border-radius: 15px;
-            display: inline-block;
-            box-shadow: 0 0 25px rgba(123, 255, 132, 0.3);
-            text-shadow: 0 0 10px var(--glow-color);
-            border: 2px solid rgba(123, 255, 132, 0.2);
-            transition: all 0.3s ease;
-        }
-        
-        .countdown:hover {
-            transform: scale(1.03);
-            box-shadow: 0 0 35px rgba(123, 255, 132, 0.5);
-        }
-        
         nav {
             background-color: rgba(38, 38, 38, 0.9);
             display: flex;
@@ -139,7 +120,7 @@
             margin-bottom: 4rem;
             padding: 2rem;
             background-color: rgba(38, 48, 38, 0.8);
-            border-radius: 12px;
+            border-radius: 3px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             transform: translateY(50px);
             opacity: 0;
@@ -175,7 +156,7 @@
         h2 {
             color: var(--accent-color);
             font-size: 2.2rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 0.7rem;
             text-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
             position: relative;
             display: inline-block;
@@ -250,27 +231,6 @@
         
         .offline {
             background-color: #f44336;
-        }
-        
-        .server-map {
-            width: 100%;
-            height: 500px;
-            background-color: rgba(20, 20, 20, 0.7);
-            border-radius: 12px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            position: relative;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-            border: 2px solid rgba(123, 255, 132, 0.2);
-            transition: all 0.3s ease;
-        }
-        
-        .server-map:hover {
-            transform: scale(1.02);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-            border-color: rgba(123, 255, 132, 0.5);
         }
         
         .contact-form {
@@ -415,6 +375,19 @@
             border-color: rgba(123, 255, 132, 0.3);
         }
         
+        .info-news {
+            background-color: rgba(20, 20, 20, 0.8);
+            padding: 1.4rem;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border: 2px solid rgba(123, 255, 132, 0.1);
+            max-width: 100%;
+  				word-wrap: break-word;
+  				overflow-wrap: break-word;
+  				box-sizing: border-box;
+        }
+        
         .info-icon {
             font-size: 2.5rem;
             color: var(--accent-color);
@@ -520,7 +493,7 @@
     width: 250px;
     background-color: rgba(38, 48, 38, 0.95);
     padding: 1rem;
-    border-radius: 12px;
+    border-radius: 5px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
     z-index: 2;
 
@@ -539,6 +512,15 @@
 
 #server-status {
     background-image: url('https://cdn.discordapp.com/attachments/1374519377906630786/1374520233716617286/mind-craft-3114368_1920.jpg?ex=682e5939&is=682d07b9&hm=274ce12054de23e4236391eecb2fcf5c66cda603960090a35dbd4107469ecfc8&'); /* Bild-URL ersetzen */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: overlay; /* Optional: um das Bild mit der Farbe zu überblenden */
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+#news {
+    background-image: url('https://cdn.discordapp.com/attachments/1374519377906630786/1374710386728763443/minecraft-2155470.jpg?ex=682f0a51&is=682db8d1&hm=d99111afc4a5a9ecd5f4ba800515d4dbbaa255d62976d1328c44347d4da984fb&'); /* Bild-URL ersetzen */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -587,6 +569,11 @@
   font-weight: normal;
   font-size: 12px;
 }
+
+.main-content {
+    flex: 1;
+    min-width: 0;
+}
         
     </style>
 </head>
@@ -595,7 +582,7 @@
         <img src="https://cdn.discordapp.com/attachments/1232358691383021568/1374458694770753648/server-icon.png?ex=682e1fe9&is=682cce69&hm=c174ddb2381d0cff5c343d6099f897d664a43668d05cc186c764b4d74e8bce21&" alt="Server Logo" style="height: 100px; margin: 5px;">
         <h1>PlanetPVP - Offizielle Website</h1>
         
-                      <a class="info discord header-discord" href="https://discord.gg/rt5Cna8bUe" target="_blank">
+      <a class="info discord header-discord" href="https://discord.gg/rt5Cna8bUe" target="_blank">
         <img
           class="image"
           src="https://webstore-template-assets.tebex.io/images/discord.svg"
@@ -613,38 +600,55 @@
     </nav>
     
     
-    <main>
-    <img src="https://cdn.discordapp.com/attachments/1374519377906630786/1374523247181172788/minecraft-1469255_1280.png?ex=682e5c07&is=682d0a87&hm=676998e86603c6d8ced2c9c97b25bcd7111dac1f396ea3e41c9ccd8869eed737&" class="frei-bild">
-     <div class="page-layout">
+ <main>
+  <img src="https://cdn.discordapp.com/attachments/1374519377906630786/1374523247181172788/minecraft-1469255_1280.png?ex=682e5c07&is=682d0a87&hm=676998e86603c6d8ced2c9c97b25bcd7111dac1f396ea3e41c9ccd8869eed737&" class="frei-bild">
+   <div class="page-layout">
     <aside id="server-infos" class="sticky-sidebar">
         <h2>ServerInfos</h2>
         <div id="api-info">
             <div class="loading"></div> Lade Server-Informationen...
         </div>
-     </aside>
-     <div class="main-content">
+    </aside>
+    <div class="main-content">
         <section id="ueber-uns" class="fade-section">
          <h2>Über uns</h2>
          <p>PlanetPVP ist ein einzigartiger Minecraft-Server mit einem starken Fokus auf kompetitives PvP, strategische Events und eine engagierte Community.</p>
-         <div class="info-grid">
-          <div class="info-card">
-            <div class="info-icon"><i class="fas fa-users"></i></div>
-            <h3>Unsere Community</h3>
-            <p>Wir haben einen aktiven Discord-Server, über den das Projekt organisiert wird. </p>
-        </div>
-        <div class="info-card">
+          <div class="info-grid">
+           <div class="info-card">
+             <div class="info-icon"><i class="fas fa-users"></i></div>
+              <h3>Unsere Community</h3>
+              <p>Wir haben einen aktiven Discord-Server, über den das Projekt organisiert wird. </p>
+           </div>
+           <div class="info-card">
             <div class="info-icon"><i class="fas fa-trophy"></i></div>
-            <h3>Anticheat</h3>
-            	<p>Mit einem angepassen Anticheat, wird Cheatern fast keine Chance gelassen. Falls doch, werden sie manuell zur Rechenschaft gezogen!</p>
-        </div>
-        <div class="info-card">
+             <h3>Anticheat</h3>
+             <p>Mit einem angepassen Anticheat, wird Cheatern fast keine Chance gelassen. Falls doch, werden sie manuell zur Rechenschaft gezogen!</p>
+           </div>
+           <div class="info-card">
             <div class="info-icon"><i class="fas fa-server"></i></div>
-            <h3>Zuverlässigkeit</h3>
-            <p>Wir versuchen, auf jeden Spieler einzugehen und alle Probleme bestmöglich zu lösen.</p>
-        </div>
-    </div>
-</section>
+             <h3>Zuverlässigkeit</h3>
+             <p>Wir versuchen, auf jeden Spieler einzugehen und alle Probleme bestmöglich zu lösen.</p>
+           </div>
+          </div>
+        </section>
+        <section id="news" class="fade-section">
+         <h2>📰News</h2>
+          <h3>Aktuelle News des Servers</h3>
+           <div class="info-news">
+             <h3>🔧 Serverstatus: Im Aufbau</h3>
+             <p>
+              Unser <strong>PlanetPVP-Server</strong> befindet sich derzeit noch in der Aufbauphase.
+              Ein genaues Release-Datum steht <strong>noch nicht fest</strong>, aber wir halten euch natürlich auf dem Laufenden!
+             </p>
+   			 <p>
+              👷‍♂️ <strong>Wir suchen aktuell engagierte Builder</strong>, die Lust haben, bei der Gestaltung
+      		  unserer Maps zu helfen! Wenn du kreativ bist und gerne baust – melde dich auf unserem <a href="https://discord.gg/rt5Cna8bUe" target="_blank" class="LinkWeis">Discord</a>!
+    			 </p>
+           </div>
+
         
+        </section>
+
         <section id="server-status" class="fade-section">
             <h2>Serverstatus</h2>
             <p><a href="https://www.netcup-status.de/category/root-server/" target="_blank">Serverstatus des Host-Anbieters.</a></p>
@@ -653,17 +657,17 @@
                 <div class="loading"></div> Lade Serverstatus...
             </div>
         </section>
-        
-    </main>
-    
-    <footer>
-        <p>&copy; 2025 Planet-Connection. Alle Rechte vorbehalten.
-        <br><br>
-        Diese Website ist ausschließlich für einen geschlossenen Nutzerkreis bestimmt und dient nicht der geschäftsmäßigen Nutzung.
-        <br> Da sie weder dauerhaft der Öffentlichkeit zugänglich ist noch wirtschaftliche Interessen verfolgt, unterliegt sie gemäß § 5 TMG nicht der Impressumspflicht.
-        <br><br> Eine Weiterverbreitung oder öffentliche Zugänglichmachung dieser Website ist nicht gestattet.
-        </p>
-    </footer>
+      </div>
+		
+ </main>
+ <footer>
+  <p>&copy; 2025 Planet-Connection. Alle Rechte vorbehalten.
+   <br><br>
+   Diese Website ist ausschließlich für einen geschlossenen Nutzerkreis bestimmt und dient nicht der geschäftsmäßigen Nutzung.
+   <br> Da sie weder dauerhaft der Öffentlichkeit zugänglich ist noch wirtschaftliche Interessen verfolgt, unterliegt sie gemäß § 5 TMG nicht der Impressumspflicht.
+   <br><br> Eine Weiterverbreitung oder öffentliche Zugänglichmachung dieser Website ist nicht gestattet.
+  </p>
+ </footer>
     <script>
 
 // Neue Funktionen für Spielerliste
