@@ -930,8 +930,8 @@ document.head.insertAdjacentHTML('beforeend', playerStyles);
         checkScroll();
         
         // API-Verbindung für Minecraft Server-Informationen
-const SERVER_IP = "PlanetPVP.exaroton.me";
-const SERVER_PORT = "21352";
+const SERVER_IP = "PlanetPVP.de";
+const SERVER_PORT = "25565";
 
 async function fetchServerInfo() {
     try {
@@ -955,7 +955,7 @@ async function fetchServerInfo() {
             <div class="info-card fade-in-up">
                 <div class="info-icon"><i class="fas fa-network-wired"></i></div>
                 <h3>Server-IP</h3>
-                <p>${SERVER_IP}:${SERVER_PORT}</p>
+                <p>${SERVER_IP}</p>
             </div>
             <div class="info-card fade-in-up" style="animation-delay: 0.2s">
                 <div class="info-icon"><i class="fas fa-code-branch"></i></div>
