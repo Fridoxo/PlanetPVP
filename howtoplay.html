@@ -57,7 +57,6 @@
             z-index: -1;
         }
         
-        
         nav {
             background-color: rgba(38, 38, 38, 0.9);
             display: flex;
@@ -174,73 +173,6 @@
             transition: width 0.5s ease;
         }
         
-        section:hover h2::after {
-            width: 100%;
-        }
-        
-        .server-status {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-        }
-        
-        .status-card {
-            flex: 1;
-            min-width: 280px;
-            padding: 1.5rem;
-            background-color: rgba(20, 40, 20, 0.8);
-            border-radius: 12px;
-            text-align: center;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(123, 255, 132, 0.1);
-        }
-        
-        .status-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-            border-color: rgba(123, 255, 132, 0.3);
-        }
-        
-        .status-indicator {
-            height: 20px;
-            width: 20px;
-            border-radius: 50%;
-            display: inline-block;
-            margin-left: 10px;
-            position: relative;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-        }
-        
-        .online {
-            background-color: #2ab811;
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0% {
-                box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7);
-            }
-            70% {
-                box-shadow: 0 0 0 10px rgba(76, 175, 80, 0);
-            }
-            100% {
-                box-shadow: 0 0 0 0 rgba(76, 175, 80, 0);
-            }
-        }
-        
-        .offline {
-            background-color: #f44336;
-        }
-        
-        
-        .server-map:hover {
-            transform: scale(1.02);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-            border-color: rgba(123, 255, 132, 0.5);
-        }
-        
         .contact-form {
             display: grid;
             gap: 1.2rem;
@@ -315,62 +247,6 @@
             background: linear-gradient(90deg, transparent, var(--glow-color), transparent);
         }
         
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin: 1.5rem 0;
-        }
-        
-        .social-icons a {
-            color: var(--text-color);
-            font-size: 1.5rem;
-            transition: all 0.3s ease;
-        }
-        
-        .social-icons a:hover {
-            color: var(--glow-color);
-            transform: translateY(-5px);
-        }
-        
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 2.5rem;
-            margin-top: 2rem;
-        }
-        
-        .info-card {
-            background-color: rgba(20, 20, 20, 0.8);
-            padding: 1.4rem;
-            border-radius: 10px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            border: 2px solid rgba(123, 255, 132, 0.1);
-        }
-        
-        .info-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-            border-color: rgba(123, 255, 132, 0.3);
-        }
-        
-        .info-icon {
-            font-size: 2.5rem;
-            color: var(--accent-color);
-            margin-bottom: 1rem;
-        }
-        
-        .loading {
-            display: inline-block;
-            width: 30px;
-            height: 30px;
-            border: 3px solid rgba(123, 255, 132, 0.3);
-            border-radius: 50%;
-            border-top-color: var(--accent-color);
-            animation: spin 1s ease-in-out infinite;
-        }
-        
         @keyframes spin {
             to { transform: rotate(360deg); }
         }
@@ -421,22 +297,6 @@
             }
         }
 
-
-        .LinkWeis {
-            text-decoration: none;
-            color: white;
-        }
-        
-
-.fixed-info-box .info-card {
-    padding: 1rem;
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
-}
-.fixed-info-box .info-icon {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-}
 .fixed-info-box h3 {
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
@@ -474,15 +334,6 @@
     right: 1500px;
 }
 
-.frei-bild1 {
-    position: absolute;
-    top: 355px;
-    right: 275px;
-    width: 300px;
-    height: auto;
-    z-index: 50;
-}
-
 .header-discord {
   position: absolute;
   top: 62px;
@@ -518,6 +369,42 @@
 }
 
 
+
+.command { background: #333; padding: 5px; border-radius: 5px; display: inline-block; }
+
+
+            .sidebar-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-top: 1.2rem;
+            }
+            .sidebar-btn {
+            display: block;
+            padding: 0.65rem 0.9rem;
+            background: rgba(20,40,20,0.85);
+            color: #e0e0e0;
+            border: 2px solid #4CAF50;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.98rem;
+            text-align: left;
+            transition: 
+                background 0.2s,
+                color 0.2s,
+                border-color 0.2s,
+                transform 0.15s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            }
+            .sidebar-btn:hover,
+            .sidebar-btn:focus {
+            background: #4CAF50;
+            color: #fff;
+            border-color: #7bff84;
+            transform: translateY(-2px) scale(1.04);
+            outline: none;
+            }
         
     </style>
 </head>
@@ -525,8 +412,8 @@
     <header>
         <img src="minecraft-logo.png" alt="Server Logo" style="height: 100px; margin: 5px;">
         <h1>PlanetPVP - Offizielle Website</h1>
-        
-                      <a class="info discord header-discord" href="https://discord.gg/rt5Cna8bUe" target="_blank">
+                
+              <a class="info discord header-discord" href="https://discord.gg/rt5Cna8bUe" target="_blank">
         <img
           class="image"
           src="https://webstore-template-assets.tebex.io/images/discord.svg"
@@ -534,93 +421,121 @@
         />
         <strong class="title">Join our Discord<br>Click to Join</strong>
       </a>
+      
     </header>
     
     <nav id="main-nav">
         <a href="index.html">Startseite</a>
-		<a href="howtoplay.html">PlanetPVP Guide</a>
-        <a href="#Rules and regulations-Englisch">English-Rules and regulations</a>
+        <a href="Regelwerk.html">Regeln</a>
         <a href="https://planetpvp.tebex.io/">Shop</a>
     </nav>
     
     
     <main>
-       <img src="minecraft-player.png" class="frei-bild">
-       <img src="https://cdn-icons-png.flaticon.com/512/1190/1190639.png" class="frei-bild1 fade-in-up" >
-        <section id="Regeln-Deutsch" class="fade-section">
-         <h2>Regelwerk-Deutsch</h2>
-          <h3>1. Geltungsbereich</h3>
-           <ul>
-            <li>1.1 Dieses Regelwerk gilt für den gesamten Minecraft-Server inklusive aller Spielmodi und zugehörigen Dienste (z. B. Discord, Events, Turniere).</li>
-            <li>1.2 Mit dem Betreten des Servers erkennen alle Spieler diese Regeln als verbindlich an.</li>
-           </ul>
-          <h3>2. Verhalten im Spiel</h3>
-          <h4>2.1 Unerwünschtes Verhalten, das den Spielverlauf oder andere Spieler negativ beeinflusst, ist untersagt. Dazu gehören u.a.:</h4>
-           <ul>
-              <li>Stören von Mitspielern, z. B. durch gezieltes Blockieren, Festbauen oder Item-Entnahme im Team</li>
-              <li>Unerlaubte Absprachen oder Teaming in Modi, die als „Solo“ gekennzeichnet sind</li>
-              <li>Ausnutzen von Respawn-Situationen, etwa durch wiederholtes sofortiges Töten (Spawncamping)</li>
-              <li>Verzögerung des Spielverlaufs, z. B. durch dauerhaftes Verstecken oder absichtliches Inaktivbleiben</li>
-              <li>Willkürliches Angreifen in Rollenmodi, bei denen gezieltes Vorgehen erwartet wird</li>
-              <li>Unangemessene Bauwerke, die beleidigend, provokant oder unangemessen gestaltet sind</li>
-           </ul>
-          <h3>3. Modifikationen & Hilfsmittel</h3>
-          <h4>3.1 Der Einsatz von Software oder Hardware, die einen spielerischen Vorteil verschafft, ist grundsätzlich verboten. Auch wenn sie nur passiv aktiv ist. Verboten sind z.B.:</h4>
-           <ul>
-           <li>Combat-Mods wie Killaura, Aimbot, AutoClicker</li>
-           <li>Bewegungshilfen wie Fly, Speed, Glide, Fast-Fall</li>
-           <li>Mods zur Informationsanzeige, etwa Damage-Indicators, Herz-Anzeigen, Spieler-Radar</li>
-           <li>Automatisierte Inventar- oder Rüstungsverwaltung</li>
-           <li>Manipulation der Spielphysik, z. B. verändertes Knockback oder NoSlow</li>
-           <li>Visuelle Hilfsmittel, z. B. X-Ray (auch per Resource Pack), transparente Blöcke oder Nametag-Anzeigen</li>
-           <li>Softwaresteuerung, bei der der Client automatisch Aktionen wie Bauen oder Kämpfen ausführt</li>
-           <li>Makros, Tastenbelegungstricks oder Hardwaremanipulation zur Klickratensteigerung</li>
-           </ul>
-          <h4>3.2 Der Einsatz von VR, Spezialhardware oder Modifikationen geschieht auf eigene Verantwortung und darf nicht zu Vorteilen führen.</h4>
-          <h3>4. Weitere Bestimmungen</h3>
-          <ul>
-           <li>Die <a href="https://www.minecraft.net/de-de/eula">Minecraft EULA</a> ist Bestandteil der Serverregeln und muss eingehalten werden.</li>
-           <li>Das Verwenden fremder, öffentlicher oder kompromittierter Accounts (z. B. Alt-Accounts) ist untersagt.</li>
-          </ul>
-        </section>
-        
-        <section id="Rules and regulations-Englisch" class="fade-section">
-          
-         <h2>Regelwerk-English</h2>
-          <h3>1. Scope of Application</h3>
-           <ul>
-            <li>1.1 These rules apply to the entire Minecraft server, including all game modes and related services (e.g. Discord, events, tournaments).</li>
-            <li>1.2 By joining the server, all players accept these rules as binding and agree to follow them.</li>
-           </ul>
-          <h3>2. In-Game Conduct</h3>
-          <h4>2.1 Any behavior that negatively impacts gameplay or other players is prohibited. This includes, but is not limited to:</h4>
-           <ul>
-              <li>Disrupting teammates by blocking, trapping, or stealing shared items</li>
-              <li>Unauthorized teaming or collusion in solo-based game modes</li>
-              <li>Exploiting respawn situations (e.g. spawn camping)</li>
-              <li>Intentionally delaying gameplay by hiding or going AFK</li>
-              <li>Random or unjustified attacking in role-based modes</li>
-              <li>Inappropriate or offensive builds and symbols</li>
-           </ul>
-          <h3>3. Modifications & Tools</h3>
-          <h4>3.1 The use of software or hardware that provides gameplay advantages is strictly forbidden, even if only passively active. Examples include:</h4>
-           <ul>
-           <li>Combat mods like KillAura, Aimbot, AutoClicker</li>
-           <li>Movement aids such as Fly, Speed, Glide, or Fast-Fall</li>
-           <li>Informational mods like Damage Indicators, heart displays, player radar</li>
-           <li>Automated inventory or armor management</li>
-           <li>Manipulating game physics (e.g. custom knockback, NoSlow)</li>
-           <li>Visual aids like X-Ray (including resource packs), transparent blocks, or visible nametags</li>
-           <li>Clients that perform automatic actions (fighting, placing/breaking blocks, movement)</li>
-           <li>Macros, multi-keybindings, or hardware tweaks to boost click rates</li>
-           </ul>
-          <h4>Use of VR, specialized hardware, or mods is at your own risk and must not offer any gameplay advantage.</h4>
-          <h3>4. Additional Provisions</h3>
-          <ul>
-           <li>The <a href="https://www.minecraft.net/de-de/eula">Minecraft EULA</a> is part of these server rules and must be followed.</li>
-           <li>Using stolen, public, or compromised Minecraft accounts (e.g. alt accounts) is not allowed.</li>
-          </ul>
-       </section>
+      <img src="minecraft-player.png" class="frei-bild">
+       <div class="page-layout">
+        <!-- Sidebar Navigator -->
+        <aside class="sticky-sidebar">
+            <h3 style="text-align: center; font-size: 1.3rem; letter-spacing: 1px; color: #7bff84; margin-bottom: 1.2rem; font-weight: 800; text-shadow: 0 2px 8px #0008;">
+                <span style="display: inline-block; vertical-align: middle;">
+                    <i class="fas fa-compass" style="color: #4CAF50; margin-right: 8px;"></i>
+                    Bereiche
+                </span>
+            </h3>
+            <nav class="sidebar-nav">
+            <a href="#Start" class="sidebar-btn">🔰 Start</a>
+            <a href="#Lobby" class="sidebar-btn">🏠 Lobby</a>
+            <a href="#Premium" class="sidebar-btn">💎 Rang Premium</a>
+            <a href="#Elite" class="sidebar-btn">👑 Rang Elite</a>
+            <a href="#1vs1" class="sidebar-btn">⚔️ 1vs1</a>
+            <a href="#Skywars" class="sidebar-btn">🪂 Skywars</a>
+            <a href="#Practice" class="sidebar-btn">🏹 Practice</a>
+            <a href="#Classic" class="sidebar-btn">🧱 Classic</a>
+            <a href="#UHC" class="sidebar-btn">🔥 UHC</a>
+            <a href="#HG" class="sidebar-btn">🥚 HG</a>
+            <a href="#FFA" class="sidebar-btn">👥 FFA</a>
+            <a href="#Bedwars" class="sidebar-btn">🛏️ Bedwars</a>
+            </nav>
+        </aside>
+
+    <!-- Content Sections -->
+        <div style="flex: 1">
+            <!-- Sektionen hier -->
+            <section id="Start" class="fade-section" style="scroll-margin-top: 120px;">
+             <h2>🔰 Start</h2>
+             <p>Willkommen auf dem PlanetPVP Server! Hier lernst du, wie du jeden Spielmodus meisterst und welche Ränge es gibt.</p>
+             <iframe width="100%" height="315" src="https://www.youtube.com/embed/DEIN_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+            </section>
+
+            <section id="Lobby" class="fade-section" style="scroll-margin-top: 120px;">
+                <h2>🏠 Lobby</h2>
+                <p>Die Lobby ist dein Startpunkt auf PlanetPVP. Hier kannst du dich mit anderen Spielern treffen, dich umsehen und die verschiedenen Spielmodi auswählen. Nutze die Portale oder das Kompass-Menü, um direkt zu deinem Lieblingsmodus zu gelangen!</p>
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/DEIN_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+            </section>
+
+             <section id="1vs1" class="fade-section" style="scroll-margin-top: 120px;">
+              <h2>⚔️ 1vs1</h2>
+              <p>In 1vs1 kannst du deine PvP-Skills direkt gegen andere Spieler testen. Wähle aus verschiedenen Kits und Arenen.</p>
+             <iframe width="100%" height="315" src="https://www.youtube.com/embed/DEIN_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+             </section>
+
+             <section id="Skywars" class="fade-section" style="scroll-margin-top: 120px;">
+             <h2>🪂 Skywars</h2>
+             <p>Springe von Insel zu Insel, loote Kisten und sei der letzte Überlebende!</p>
+             <iframe width="100%" height="315" src="https://www.youtube.com/embed/DEIN_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+             </section>
+
+             <section id="Practice" class="fade-section" style="scroll-margin-top: 120px;">
+             <h2>🏹 Practice</h2>
+             <p>Trainiere verschiedene PvP-Modi, verbessere deine Fähigkeiten und fordere andere Spieler heraus.</p>
+             <iframe width="100%" height="315" src="https://www.youtube.com/embed/DEIN_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+             </section>
+
+             <section id="Classic" class="fade-section" style="scroll-margin-top: 120px;">
+             <h2>🧱 Classic</h2>
+             <p>Spiele klassische PvP-Modi mit Standard-Kits und zeige dein Können ohne Extras.</p>
+             <iframe width="100%" height="315" src="https://www.youtube.com/embed/DEIN_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+             </section>
+
+             <section id="UHC" class="fade-section" style="scroll-margin-top: 120px;">
+             <h2>🔥 UHC</h2>
+             <p>Ultra Hardcore: Keine automatische Heilung, spannende Kämpfe und nur die besten überleben!</p>
+             <iframe width="100%" height="315" src="https://www.youtube.com/embed/DEIN_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+             </section>
+
+             <section id="HG" class="fade-section" style="scroll-margin-top: 120px;">
+             <h2>🥚 HG</h2>
+             <p>Hunger Games: Suche Kisten, kämpfe ums Überleben und werde der letzte Spieler!</p>
+             <iframe width="100%" height="315" src="https://www.youtube.com/embed/DEIN_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+             </section>
+
+             <section id="FFA" class="fade-section" style="scroll-margin-top: 120px;">
+             <h2>👥 FFA</h2>
+             <p>Free For All: Jeder gegen jeden – zeige, dass du der Beste bist!</p>
+             <iframe width="100%" height="315" src="https://www.youtube.com/embed/DEIN_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+             </section>
+
+             <section id="Bedwars" class="fade-section" style="scroll-margin-top: 120px;">
+             <h2>🛏️ Bedwars</h2>
+             <p>Beschütze dein Bett, zerstöre die Betten der Gegner und dominiere das Spielfeld!</p>
+             <iframe width="100%" height="315" src="https://www.youtube.com/embed/DEIN_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+             </section>
+
+            <section id="Premium" class="fade-section" style="scroll-margin-top: 120px;">
+             <h2>💎 Rang Premium</h2>
+             <p>Der Premium Rang bietet dir kosmetische Vorteile, Zugang zu exklusiven Maps und Warteschlangen-Priorität.</p>
+             <iframe width="100%" height="315" src="https://www.youtube.com/embed/DEIN_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+             </section>
+
+            <section id="Elite" class="fade-section" style="scroll-margin-top: 120px;">
+             <h2>👑 Rang Elite</h2>
+             <p>Der höchste Rang – mit allen Vorteilen von Premium + noch mehr. VIP-Status pur!</p>
+             <iframe width="100%" height="315" src="https://www.youtube.com/embed/DEIN_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+         </section>
+         </div>
+</div>
+
+
           
      </main>
           
@@ -635,10 +550,10 @@
     </footer>
     <script>
 
-// Append styles to the document
-document.head.insertAdjacentHTML('beforeend', playerStyles);
-    </script>
+    
+</script>
     <script>
+        
         // Scroll-Animation für Sektionen
         const sections = document.querySelectorAll('.fade-section');
         
@@ -670,8 +585,6 @@ document.head.insertAdjacentHTML('beforeend', playerStyles);
         
         // Initial check
         checkScroll();
-        
-    </script>
     </script>
 </body>
 </html>
