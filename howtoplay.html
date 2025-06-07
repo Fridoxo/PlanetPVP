@@ -111,7 +111,7 @@
         }
         
         main {
-            max-width: 1500px;
+            max-width: 1600px;
             margin: 0 auto;
             padding: 2rem;
         }
@@ -155,23 +155,28 @@
         
         h2 {
             color: var(--accent-color);
-            font-size: 2.2rem;
-            margin-bottom: 1.5rem;
-            text-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+            font-size: 2.3rem;
+            margin-bottom: 1.7rem;
+            text-shadow: 0 4px 12px rgba(76, 175, 80, 0.18), 0 1px 2px #000a;
             position: relative;
-            display: inline-block;
+            display: flex;
+            align-items: center;
+            font-weight: 800;
+            letter-spacing: 1px;
+            background: none;
+            -webkit-background-clip: initial;
+            -webkit-text-fill-color: initial;
         }
-        
-        h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background-color: var(--accent-color);
-            transition: width 0.5s ease;
+
+        h2 > .icon, h2 > svg, h2 > i {
+            margin-right: 0.6em;
+            font-size: 1.2em;
+            background: none !important;
+            -webkit-background-clip: initial !important;
+            -webkit-text-fill-color: initial !important;
+            color: inherit;
         }
+
         
         .contact-form {
             display: grid;
@@ -405,6 +410,19 @@
             transform: translateY(-2px) scale(1.04);
             outline: none;
             }
+            .sticky-sidebar {
+            position: sticky;
+            top: 80px;
+            width: 250px;
+             max-height: calc(100vh - 100px); /* passt sich an die Bildschirmhöhe an */
+            overflow-y: auto; /* Scrollbar erscheint, wenn nötig */
+            background-color: rgba(38, 48, 38, 0.95);
+            padding: 1rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            z-index: 2;
+            }
+
         
     </style>
 </head>
@@ -443,10 +461,10 @@
                 </span>
             </h3>
             <nav class="sidebar-nav">
-            <a href="#Start" class="sidebar-btn">🔰 Start</a>
+            <a href="#Star</nav>t" class="sidebar-btn">🔰 Start</a>
             <a href="#Lobby" class="sidebar-btn">🏠 Lobby</a>
-            <a href="#Premium" class="sidebar-btn">💎 Rang Premium</a>
-            <a href="#Elite" class="sidebar-btn">👑 Rang Elite</a>
+            <a href="#Premium" class="sidebar-btn">🪙 Rang Premium</a>
+            <a href="#Elite" class="sidebar-btn">💎 Rang Elite</a>
             <a href="#1vs1" class="sidebar-btn">⚔️ 1vs1</a>
             <a href="#Skywars" class="sidebar-btn">🪂 Skywars</a>
             <a href="#Practice" class="sidebar-btn">🏹 Practice</a>
@@ -473,65 +491,65 @@
                 <iframe width="100%" height="315" src="https://www.youtube.com/embed/DEIN_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
             </section>
 
-             <section id="1vs1" class="fade-section" style="scroll-margin-top: 120px;">
+            <section id="Premium" class="fade-section" style="scroll-margin-top: 120px;">
+             <h2>🪙 Rang Premium</h2>
+             <p>Der Premium Rang bietet dir kosmetische Vorteile, Zugang zu exklusiven Maps und Warteschlangen-Priorität.</p>
+             <iframe width="100%" height="315" src="https://www.youtube.com/embed/DEIN_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+            </section>
+
+            <section id="Elite" class="fade-section" style="scroll-margin-top: 120px;">
+             <h2>💎 Rang Elite</h2>
+             <p>Der höchste Rang – mit allen Vorteilen von Premium + noch mehr. VIP-Status pur!</p>
+             <iframe width="100%" height="315" src="https://www.youtube.com/embed/DEIN_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+            </section>
+
+            <section id="1vs1" class="fade-section" style="scroll-margin-top: 120px;">
               <h2>⚔️ 1vs1</h2>
               <p>In 1vs1 kannst du deine PvP-Skills direkt gegen andere Spieler testen. Wähle aus verschiedenen Kits und Arenen.</p>
              <iframe width="100%" height="315" src="https://www.youtube.com/embed/DEIN_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
-             </section>
+            </section>
 
-             <section id="Skywars" class="fade-section" style="scroll-margin-top: 120px;">
+            <section id="Skywars" class="fade-section" style="scroll-margin-top: 120px;">
              <h2>🪂 Skywars</h2>
              <p>Springe von Insel zu Insel, loote Kisten und sei der letzte Überlebende!</p>
              <iframe width="100%" height="315" src="https://www.youtube.com/embed/DEIN_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
-             </section>
+            </section>
 
-             <section id="Practice" class="fade-section" style="scroll-margin-top: 120px;">
+            <section id="Practice" class="fade-section" style="scroll-margin-top: 120px;">
              <h2>🏹 Practice</h2>
              <p>Trainiere verschiedene PvP-Modi, verbessere deine Fähigkeiten und fordere andere Spieler heraus.</p>
              <iframe width="100%" height="315" src="https://www.youtube.com/embed/DEIN_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
-             </section>
+            </section>
 
-             <section id="Classic" class="fade-section" style="scroll-margin-top: 120px;">
+            <section id="Classic" class="fade-section" style="scroll-margin-top: 120px;">
              <h2>🧱 Classic</h2>
              <p>Spiele klassische PvP-Modi mit Standard-Kits und zeige dein Können ohne Extras.</p>
              <iframe width="100%" height="315" src="https://www.youtube.com/embed/DEIN_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
-             </section>
+            </section>
 
-             <section id="UHC" class="fade-section" style="scroll-margin-top: 120px;">
+            <section id="UHC" class="fade-section" style="scroll-margin-top: 120px;">
              <h2>🔥 UHC</h2>
              <p>Ultra Hardcore: Keine automatische Heilung, spannende Kämpfe und nur die besten überleben!</p>
              <iframe width="100%" height="315" src="https://www.youtube.com/embed/DEIN_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
-             </section>
+            </section>
 
-             <section id="HG" class="fade-section" style="scroll-margin-top: 120px;">
+            <section id="HG" class="fade-section" style="scroll-margin-top: 120px;">
              <h2>🥚 HG</h2>
              <p>Hunger Games: Suche Kisten, kämpfe ums Überleben und werde der letzte Spieler!</p>
              <iframe width="100%" height="315" src="https://www.youtube.com/embed/DEIN_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
-             </section>
+            </section>
 
-             <section id="FFA" class="fade-section" style="scroll-margin-top: 120px;">
+            <section id="FFA" class="fade-section" style="scroll-margin-top: 120px;">
              <h2>👥 FFA</h2>
              <p>Free For All: Jeder gegen jeden – zeige, dass du der Beste bist!</p>
              <iframe width="100%" height="315" src="https://www.youtube.com/embed/DEIN_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
-             </section>
+            </section>
 
-             <section id="Bedwars" class="fade-section" style="scroll-margin-top: 120px;">
+            <section id="Bedwars" class="fade-section" style="scroll-margin-top: 120px;">
              <h2>🛏️ Bedwars</h2>
              <p>Beschütze dein Bett, zerstöre die Betten der Gegner und dominiere das Spielfeld!</p>
              <iframe width="100%" height="315" src="https://www.youtube.com/embed/DEIN_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
-             </section>
-
-            <section id="Premium" class="fade-section" style="scroll-margin-top: 120px;">
-             <h2>💎 Rang Premium</h2>
-             <p>Der Premium Rang bietet dir kosmetische Vorteile, Zugang zu exklusiven Maps und Warteschlangen-Priorität.</p>
-             <iframe width="100%" height="315" src="https://www.youtube.com/embed/DEIN_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
-             </section>
-
-            <section id="Elite" class="fade-section" style="scroll-margin-top: 120px;">
-             <h2>👑 Rang Elite</h2>
-             <p>Der höchste Rang – mit allen Vorteilen von Premium + noch mehr. VIP-Status pur!</p>
-             <iframe width="100%" height="315" src="https://www.youtube.com/embed/DEIN_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
-         </section>
+            </section>
          </div>
 </div>
 
