@@ -481,7 +481,6 @@
             <!-- Sektionen hier -->
             <section id="Start" class="fade-section" style="scroll-margin-top: 120px;">
              <h2>🔰 Start</h2>
-             <p>Willkommen auf dem PlanetPVP Server! Hier lernst du, wie du jeden Spielmodus meisterst und welche Ränge es gibt.</p>
              <iframe width="100%" height="315" src="https://www.youtube.com/embed/DEIN_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
             </section>
 
@@ -504,10 +503,152 @@
             </section>
 
             <section id="1vs1" class="fade-section" style="scroll-margin-top: 120px;">
-              <h2>⚔️ 1vs1</h2>
-              <p>In 1vs1 kannst du deine PvP-Skills direkt gegen andere Spieler testen. Wähle aus verschiedenen Kits und Arenen.</p>
-             <iframe width="100%" height="315" src="https://www.youtube.com/embed/DEIN_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+                <h2>⚔️ 1vs1</h2>
+                <p>In 1vs1 kannst du deine PvP-Skills direkt gegen andere Spieler testen. Wähle aus verschiedenen Kits und Arenen.</p>
+                <!-- Hotbar-UI für 1vs1 mit eigenem Style-Namespace -->
+                <div class="onevsone-hotbar-container">
+                    <img src="Bilderhowtoplay/hotbar.png" alt="Hotbar Screenshot" class="onevsone-hotbar-image">
+
+                    <!-- Klickbare Items (Slot 4 und 6 sind leer und nicht klickbar) -->
+                    <div class="onevsone-hotbar-click" style="left: 0%;" data-index="0"></div>   <!-- 1. Schwert -->
+                    <div class="onevsone-hotbar-click" style="left: 11.1%;" data-index="1"></div> <!-- 2. Ghastträne -->
+                    <div class="onevsone-hotbar-click" style="left: 22.2%;" data-index="2"></div> <!-- 3. Buch -->
+                    <!-- Slot 4 (index 3) ist leer, kein Div -->
+                    <div class="onevsone-hotbar-click" style="left: 44.4%;" data-index="4"></div> <!-- 5. Nether Star -->
+                    <!-- Slot 6 (index 5) ist leer, kein Div -->
+                    <div class="onevsone-hotbar-click" style="left: 66.6%;" data-index="6"></div> <!-- 7. BetonBlock -->
+                    <div class="onevsone-hotbar-click" style="left: 77.7%;" data-index="7"></div> <!-- 8. Redstone-Comperator -->
+                    <div class="onevsone-hotbar-click" style="left: 88.8%;" data-index="8"></div> <!-- 9. Uhr -->
+                </div>
+
+                <!-- Ausklappinfos -->
+                <div id="onevsone-info0" class="onevsone-info-box">🗡️ <b>Schwert:</b> Spieler schlagen, um ein Duell zu starten oder anzunehmen.</div>
+                <div id="onevsone-info1" class="onevsone-info-box">👁️‍🗨️ <b>Ghastträne:</b> Beobachte aktuelle Kämpfe live.</div>
+                <div id="onevsone-info2" class="onevsone-info-box">📕 <b>Buch:</b> Kompakter PvP-Guide für Einsteiger.</div>
+                <div id="onevsone-info4" class="onevsone-info-box">⭐ <b>Nether Star:</b> Öffnet das Kit-Auswahlmenü.</div>
+                <div id="onevsone-info6" class="onevsone-info-box">🟩 <b>Betonblock:</b> Wähle die Arena aus.</div>
+                <div id="onevsone-info7" class="onevsone-info-box">🕹️ <b>Redstone-Komparator:</b> Einstellungen und Optionen.</div>
+                <div id="onevsone-info8" class="onevsone-info-box">⏰ <b>Uhr:</b> Zeigt die verbleibende Zeit oder Match-Infos an.</div>
+
+                <!-- Kits nebeneinander -->
+                <div class="onevsone-kit-row">
+                    <div class="onevsone-kit-box">
+                        <img src="bilder/villager.png" alt="Villager Icon">
+                        <h3>Kit Konfiguration</h3>
+                        <p>Stelle alle 1vs1 Kit-Einstellungen mit dem Villager ein.</p>
+                    </div>
+                    <div class="onevsone-kit-box">
+                        <img src="bilder/skeleton.png" alt="Skelett Icon">
+                        <h3>Items bearbeiten</h3>
+                        <p>Wandle Golden Apples in Golden Heads um oder passe Tool-Haltbarkeit an.</p>
+                    </div>
+                </div>
+
+                <script>
+                    // Animation und Info-Handling
+                    document.querySelectorAll('.onevsone-hotbar-click').forEach(function(el) {
+                        el.addEventListener('click', function() {
+                            const idx = parseInt(el.getAttribute('data-index'));
+                            document.querySelectorAll('.onevsone-info-box').forEach((box) => {
+                                if (box.id === 'onevsone-info' + idx && box.style.display !== 'block') {
+                                    box.style.display = 'block';
+                                } else {
+                                    box.style.display = 'none';
+                                }
+                            });
+                        });
+                    });
+                </script>
+
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/DEIN_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
             </section>
+            <style>
+            /* 1vs1 Namespace Styles */
+            .onevsone-hotbar-container {
+                position: relative;
+                max-width: 900px;
+                margin: 30px auto 20px;
+            }
+
+            .onevsone-hotbar-image {
+                width: 100%;
+                border-radius: 8px;
+                border: 3px solid #4caf50;
+                box-shadow: 0 6px 32px #000c;
+                transition: box-shadow 0.3s;
+            }
+
+            .onevsone-hotbar-click {
+                position: absolute;
+                top: 0;
+                height: 100%;
+                width: calc(100% / 9);
+                cursor: pointer;
+                /* Animation für Hover */
+                transition: box-shadow 0.2s, background 0.2s, transform 0.2s;
+            }
+
+            .onevsone-hotbar-click:hover {
+                background: rgba(76, 175, 80, 0.18);
+                box-shadow: 0 0 0 6px #4caf50cc;
+                z-index: 2;
+                animation: onevsone-hotbar-bounce 0.25s;
+                transform: scale(1.08);
+            }
+
+            @keyframes onevsone-hotbar-bounce {
+                0% { transform: scale(1);}
+                40% { transform: scale(1.13);}
+                100% { transform: scale(1);}
+            }
+
+            .onevsone-info-box {
+                display: none;
+                background: #232b23;
+                padding: 17px 24px;
+                border-left: 5px solid #4caf50;
+                margin: 12px auto;
+                max-width: 900px;
+                text-align: left;
+                border-radius: 8px;
+                font-size: 1.05rem;
+                box-shadow: 0 2px 12px #0007;
+            }
+
+            .onevsone-kit-row {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 28px;
+                margin-top: 34px;
+            }
+
+            .onevsone-kit-box {
+                background-color: #232b23;
+                border: 1.5px solid #4caf50;
+                padding: 22px;
+                border-radius: 12px;
+                max-width: 250px;
+                text-align: center;
+                flex: 1 1 200px;
+                box-shadow: 0 2px 10px #0005;
+            }
+
+            .onevsone-kit-box img {
+                width: 90px;
+                margin-bottom: 12px;
+            }
+
+            .onevsone-kit-box h3 {
+                font-size: 1.13rem;
+                margin-bottom: 9px;
+            }
+
+            .onevsone-kit-box p {
+                font-size: 1rem;
+                color: #e0ffe0;
+            }
+            </style>
 
             <section id="Skywars" class="fade-section" style="scroll-margin-top: 120px;">
              <h2>🪂 Skywars</h2>
