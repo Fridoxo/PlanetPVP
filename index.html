@@ -9,12 +9,18 @@
     <style>
 
         :root {
-            --main-bg-color: #081803;
-            --second-bg-color: #264d26;
-            --text-color: #e0e0e0;
-            --accent-color: #4CAF50;
-            --hover-color: #5cb85c;
-            --glow-color: #7bff84;
+            --main-bg-color: #10181f;
+            --second-bg-color: #232b33;
+            --text-color: #e3e6eb;
+            --accent-color: #3a7c5c;
+            --hover-color: #4e8c6d;
+            --glow-color: #b2e5c7;
+            --card-bg: #1a232b;
+            --shadow: 0 2px 8px rgba(20,32,40,0.08);
+            --shadow-hover: 0 4px 16px rgba(20,32,40,0.13);
+        }
+        html, body {
+            font-family: 'Inter', 'Roboto', Arial, sans-serif;
         }
         
         body {
@@ -38,6 +44,14 @@
             box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
             position: relative;
             overflow: hidden;
+            /* Schräg gestreiftes Muster: dünne, hellgraue Streifen von rechts oben nach links unten */
+            background-image: repeating-linear-gradient(
+            -45deg,
+            rgba(70,70,70,0.19) 1.2px,
+            rgba(70,70,70,0.19) 2px,
+            transparent 1px,
+            transparent 16px
+            );
         }
         
         header::before {
@@ -116,7 +130,7 @@
             margin-bottom: 4rem;
             padding: 2rem;
             background-color: rgba(38, 48, 38, 0.8);
-            border-radius: 3px;
+            border-radius: 2px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             transform: translateY(50px);
             opacity: 0;
@@ -185,7 +199,7 @@
             min-width: 280px;
             padding: 1.5rem;
             background-color: rgba(20, 40, 20, 0.8);
-            border-radius: 12px;
+            border-radius: 3px;
             text-align: center;
             transition: all 0.3s ease;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -236,7 +250,7 @@
         
         input, textarea, button {
             padding: 1rem;
-            border-radius: 8px;
+            border-radius: 4px;
             border: 2px solid transparent;
             background-color: rgba(230, 230, 230, 0.9);
             transition: all 0.3s ease;
@@ -311,18 +325,60 @@
         }
         
         .info-card {
+            background: linear-gradient(135deg, rgba(34, 49, 34, 0.95) 70%, rgba(76, 175, 80, 0.08) 100%);
+            padding: 1.2rem 1rem 1rem 1rem;
+            border-radius: 3px;
+            transition: transform 0.22s, box-shadow 0.22s;
+            box-shadow: 0 4px 14px rgba(76, 175, 80, 0.11), 0 1px 3px rgba(0,0,0,0.10);
+            border: 1.5px solid rgba(123, 255, 132, 0.13);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 0;
+            max-width: 290px;
+            width: 100%;
+            gap: 0.5rem;
+            position: relative;
+        }
+        .info-card:hover {
+            transform: translateY(-7px) scale(1.025);
+            box-shadow: 0 10px 28px rgba(76, 175, 80, 0.16), 0 2px 8px rgba(0,0,0,0.15);
+            border-color: var(--hover-color);
+        }
+        .info-card h3 {
+            margin: 0.5rem 0 0.25rem 0;
+            font-size: 1.18rem;
+            color: var(--glow-color);
+            letter-spacing: 0.4px;
+            text-align: center;
+        }
+        .info-card p {
+            margin: 0;
+            font-size: 1.01rem;
+            color: #d8ffd8;
+            text-align: center;
+            line-height: 1.5;
+        }
+        .info-card .info-icon {
+            margin-bottom: 0.18rem;
+            font-size: 2.1rem;
+            color: var(--accent-color);
+            filter: drop-shadow(0 2px 7px rgba(76,175,80,0.12));
+        }
+        
+        .info-card1 {
             background-color: rgba(20, 20, 20, 0.8);
             padding: 1.4rem;
-            border-radius: 10px;
+            border-radius: 4px;
             transition: all 0.3s ease;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             border: 2px solid rgba(123, 255, 132, 0.1);
         }
-        
+
         .info-news {
             background-color: rgba(20, 20, 20, 0.8);
-            padding: 1.2rem;
-            border-radius: 10px;
+            padding: 1.0rem;
+            border-radius: 5px;
             transition: all 0.3s ease;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             border: 2px solid rgba(123, 255, 132, 0.1);
@@ -414,7 +470,7 @@
     width: 250px;
     background-color: rgba(38, 48, 38, 0.95);
     padding: 1rem;
-    border-radius: 5px;
+    border-radius: 3px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
     z-index: 2;
 
@@ -466,7 +522,7 @@
   gap: 10px;
   padding: 10px 12px;
   background-color: rgba(0, 0, 0, 0);
-  border-radius: 12px;
+  border-radius: 7px;
   z-index: 10;
   text-decoration: none;
   color: white;
@@ -562,6 +618,7 @@
               Ein genaues Release-Datum steht <strong>noch nicht fest</strong>, aber wir halten euch natürlich auf dem Laufenden!
              </p>
            </div>
+           <br>
            <div class="info-news">
 					<h3>Aktuell offene Positionen im Team</h3>
 					<p>🔨 Gesucht werden <strong>Builder</strong>, die beim Bau von Maps wie 1vs1, Bedwars, Skywars, BuildBattle, practice, UHC, HG, FFA und anderen mithelfen möchten.</p>
@@ -653,24 +710,24 @@ async function fetchServerInfo() {
             // Server-Informationen anzeigen
             serverInfoElement.innerHTML = `
                         <div class="info-grid">
-            <div class="info-card fade-in-up">
+            <div class="info-card1 fade-in-up">
                 <div class="info-icon"><i class="fas fa-network-wired"></i></div>
                 <h3>Server-IP</h3>
                 <p>${SERVER_IP}</p>
             </div>
-            <div class="info-card fade-in-up" style="animation-delay: 0.2s">
+            <div class="info-card1 fade-in-up" style="animation-delay: 0.2s">
                 <div class="info-icon"><i class="fas fa-code-branch"></i></div>
                 <h3>Version</h3>
                 <p>${data.version || 'Nicht verfügbar'}</p>
             </div>
-            <div class="info-card fade-in-up" style="animation-delay: 0.6s">
+            <div class="info-card1 fade-in-up" style="animation-delay: 0.6s">
                 <div class="info-icon"><i class="fas fa-clock"></i></div>
                     <h3>MOTD</h3>
                     <p>${data.motd ? data.motd.clean.join('<br>') : 'Keine Nachricht'}</p>
                 </div>
             </div>
             `;
-            
+
             // Server-Status aktualisieren
             serverStatusContainer.innerHTML = `
                 <div class="status-card fade-in-left">

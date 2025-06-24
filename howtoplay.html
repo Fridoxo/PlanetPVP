@@ -13,12 +13,18 @@
          }
 
         :root {
-            --main-bg-color: #081803;
-            --second-bg-color: #264d26;
-            --text-color: #e0e0e0;
-            --accent-color: #4CAF50;
-            --hover-color: #5cb85c;
-            --glow-color: #7bff84;
+            --main-bg-color: #10181f;
+            --second-bg-color: #232b33;
+            --text-color: #e3e6eb;
+            --accent-color: #3a7c5c;
+            --hover-color: #4e8c6d;
+            --glow-color: #b2e5c7;
+            --card-bg: #1a232b;
+            --shadow: 0 2px 8px rgba(20,32,40,0.08);
+            --shadow-hover: 0 4px 16px rgba(20,32,40,0.13);
+        }
+        html, body {
+            font-family: 'Inter', 'Roboto', Arial, sans-serif;
         }
         
         body {
@@ -306,80 +312,80 @@
             }
         }
 
-.fixed-info-box h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-}
+        .fixed-info-box h3 {
+          font-size: 1.2rem;
+          margin-bottom: 0.5rem;
+        }
 
-.page-layout {
-    display: flex;
-    align-items: stretch;
-    gap: 2rem;
-    padding: 0 2rem;
-    align-self: stretch;
-    height: auto;
-}
+        .page-layout {
+           display: flex;
+            align-items: stretch;
+            gap: 2rem;
+            padding: 0 2rem;
+            align-self: stretch;
+            height: auto;
+        }
 
-.sticky-sidebar {
-    position: sticky;
-    top: 80px;
-    align-self: flex-start;
-    width: 250px;
-    background-color: rgba(38, 48, 38, 0.95);
-    padding: 1rem;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-    z-index: 2;
+        .sticky-sidebar {
+            position: sticky;
+            top: 80px;
+            align-self: flex-start;
+            width: 250px;
+            background-color: rgba(38, 48, 38, 0.95);
+            padding: 1rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            z-index: 2;
 
-    height: 800px;
-    overflow: hidden;
-}
+            height: 800px;
+            overflow: hidden;
+        }
 
-.frei-bild {
-    position: absolute;
-    width: 400px;
-    height: auto;
-    top: 10px;
-    right: 1500px;
-}
+        .frei-bild {
+            position: absolute;
+            width: 400px;
+            height: auto;
+            top: 10px;
+            right: 1500px;
+        }
 
-.header-discord {
-  position: absolute;
-  top: 62px;
-  right: 80px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 12px;
-  background-color: rgba(0, 0, 0, 0);
-  border-radius: 12px;
-  z-index: 10;
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 1.2;
-  transition: background-color 0.3s ease;
-}
+        .header-discord {
+          position: absolute;
+          top: 62px;
+          right: 80px;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          padding: 10px 12px;
+          background-color: rgba(0, 0, 0, 0);
+          border-radius: 12px;
+          z-index: 10;
+          text-decoration: none;
+          color: white;
+          font-weight: bold;
+          font-size: 14px;
+          line-height: 1.2;
+          transition: background-color 0.3s ease;
+        }
 
-.header-discord:hover {
-  background-color: rgba(0, 0, 0, 0.7);
-}
+        .header-discord:hover {
+          background-color: rgba(0, 0, 0, 0.7);
+        }
 
-.header-discord .discord-icon {
-  width: 32px;
-  height: 32px;
-}
+        .header-discord .discord-icon {
+          width: 32px;
+          height: 32px;
+        }
 
-.header-discord .action {
-  color: #00aaff;
-  font-weight: normal;
-  font-size: 12px;
-}
+        .header-discord .action {
+          color: #00aaff;
+          font-weight: normal;
+          font-size: 12px;
+        }
 
 
 
-.command { background: #333; padding: 5px; border-radius: 5px; display: inline-block; }
+        .command { background: #333; padding: 5px; border-radius: 5px; display: inline-block; }
 
 
             .sidebar-nav {
@@ -482,7 +488,6 @@
 
     <!-- Content Sections -->
         <div style="flex: 1">
-            <!-- Sektionen hier -->
             <section id="Start" class="fade-section" style="scroll-margin-top: 120px;">
              <h2>🔰 Start</h2>
              <iframe width="100%" height="315" src="https://www.youtube.com/embed/DEIN_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
@@ -490,26 +495,7 @@
 
             <section id="Lobby" class="fade-section" style="scroll-margin-top: 120px;">
                 <h2>🏠 Lobby</h2>
-                <p>Die Lobby ist dein Startpunkt auf PlanetPVP. Hier kannst du dich mit anderen Spielern treffen, dich umsehen und die verschiedenen Spielmodi auswählen. Nutze die Portale oder das Kompass-Menü, um direkt zu deinem Lieblingsmodus zu gelangen!</p>
-                <iframe width="100%" height="315" src="https://www.youtube.com/embed/DEIN_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
-            </section>
-
-            <section id="Premium" class="fade-section" style="scroll-margin-top: 120px;">
-             <h2>🪙 Rang Premium</h2>
-             <p>Der Premium Rang bietet dir kosmetische Vorteile, Zugang zu exklusiven Maps und Warteschlangen-Priorität.</p>
-             <iframe width="100%" height="315" src="https://www.youtube.com/embed/DEIN_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
-            </section>
-
-            <section id="Elite" class="fade-section" style="scroll-margin-top: 120px;">
-             <h2>💎 Rang Elite</h2>
-             <p>Der höchste Rang – mit allen Vorteilen von Premium + noch mehr. VIP-Status pur!</p>
-             <iframe width="100%" height="315" src="https://www.youtube.com/embed/DEIN_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
-            </section>
-
-            <section id="1vs1" class="fade-section" style="scroll-margin-top: 120px;">
-                <h2>⚔️ 1vs1</h2>
-                <!-- Hotbar-UI für 1vs1 mit eigenem Style-Namespace -->
-                <div class="onevsone-hotbar-container">
+                                <div class="onevsone-hotbar-container">
                     <img src="Bilderhowtoplay/hotbar.png" alt="Hotbar Screenshot" class="onevsone-hotbar-image">
 
                     <!-- Klickbare Items (Slot 4 und 6 sind leer und nicht klickbar) -->
@@ -537,36 +523,22 @@
                         <div class="onevsone-tooltip">⏰ <b>Uhr</b><br><span>Zurück zur Lobby.</span></div>
                     </div>
                 </div>
-                <h2>Cusom Kit Einstellungen</h2>
-                <!-- Kits nebeneinander -->
-                <div class="onevsone-kit-row">
-                    <div class="onevsone-kit-box">
-                        <img src="Bilderhowtoplay/villager.png" alt="Villager Icon">
-                        <h3>Kit Konfiguration</h3>
-                        <p>Stelle alle 1vs1 Kit-Einstellungen mit dem Villager ein.</p>
-                    </div>
-                    <div class="onevsone-kit-box">
-                        <img src="Bilderhowtoplay/skeleton.png" alt="Skelett Icon">
-                        <h3>Items bearbeiten</h3>
-                        <p>Wandle Golden Apples in Golden Heads um oder passe Tools und ander Items an.</p>
-                    </div>
-                </div>
                 <br>
                 <br>
                 <iframe width="100%" height="315" src="https://www.youtube.com/embed/DEIN_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
-            </section>
-            <style>
+                    </section>
+                    <style>
             /* 1vs1 Namespace Styles */
-            .onevsone-hotbar-container {
+              .onevsone-hotbar-container {
                 position: relative;
                 max-width: 900px;
-                margin: 30px auto 20px;
-            }
+               margin: 30px auto 20px;
+              }
 
-            .onevsone-hotbar-image {
-                width: 100%;
-                border-radius: 8px;
-                border: 3px solid #4caf50;
+             .onevsone-hotbar-image {
+                  width: 100%;
+                 border-radius: 8px;
+                 border: 3px solid #4caf50;
                 box-shadow: 0 6px 32px #000c;
                 transition: box-shadow 0.3s;
             }
@@ -651,6 +623,72 @@
                 color: #bfbf7a;
                 font-size: 0.97em;
             }
+            </style>
+
+            </section>
+
+            <section id="Premium" class="fade-section" style="scroll-margin-top: 120px;">
+             <h2>🪙 Rang Premium</h2>
+             <p>Der Premium Rang bietet dir kosmetische Vorteile, Zugang zu exklusiven Maps und Warteschlangen-Priorität.</p>
+             <iframe width="100%" height="315" src="https://www.youtube.com/embed/DEIN_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+            </section>
+
+            <section id="Elite" class="fade-section" style="scroll-margin-top: 120px;">
+             <h2>💎 Rang Elite</h2>
+             <p>Der höchste Rang – mit allen Vorteilen von Premium + noch mehr. VIP-Status pur!</p>
+             <iframe width="100%" height="315" src="https://www.youtube.com/embed/DEIN_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+            </section>
+
+            <section id="1vs1" class="fade-section" style="scroll-margin-top: 120px;">
+                <h2>⚔️ 1vs1</h2>
+                <!-- Hotbar-UI für 1vs1 mit eigenem Style-Namespace -->
+                <div class="onevsone-hotbar-container">
+                    <img src="Bilderhowtoplay/hotbar.png" alt="Hotbar Screenshot" class="onevsone-hotbar-image">
+
+                    <!-- Klickbare Items (Slot 4 und 6 sind leer und nicht klickbar) -->
+                    <div class="onevsone-hotbar-click" style="left: 0%;" data-index="0">
+                        <div class="onevsone-tooltip">🗡️ <b>Challenge</b><br><span>Spieler schlagen, um ein Duell zu starten oder anzunehmen.</span></div>
+                    </div>
+                    <div class="onevsone-hotbar-click" style="left: 11.1%;" data-index="1">
+                        <div class="onevsone-tooltip">👁️‍🗨️ <b>Spectate</b><br><span>Beobachte aktuelle Kämpfe live.</span></div>
+                    </div>
+                    <div class="onevsone-hotbar-click" style="left: 22.2%;" data-index="2">
+                        <div class="onevsone-tooltip">📕 <b>1vs1</b><br><span>Kompakter PvP-Guide für Einsteiger.</span></div>
+                    </div>
+                    <!-- Slot 4 (index 3) ist leer, kein Div -->
+                    <div class="onevsone-hotbar-click" style="left: 44.4%;" data-index="4">
+                        <div class="onevsone-tooltip">⭐ <b>Tournaments</b><br><span>Turnierbeitritt via Papierplatte. Erstelle eigene Turniere mit dem Rang <b>Elite</b> (/shop)</span></div>
+                    </div>
+                    <!-- Slot 6 (index 5) ist leer, kein Div -->
+                    <div class="onevsone-hotbar-click" style="left: 66.6%;" data-index="6">
+                        <div class="onevsone-tooltip">🟩 <b>Dein Rang</b><br><span>Dein aktueller 1vs1-Rang wird angezeigt.</span></div>
+                    </div>
+                    <div class="onevsone-hotbar-click" style="left: 77.7%;" data-index="7">
+                        <div class="onevsone-tooltip">🕹️ <b>Settings</b><br><span>Konfiguriere dein 1vs1:<br>🛡️ Kit-Auswahl<br>🗺️ Aktivierte Maps<br>💎 Warteschlangen<br></span></div>
+                    </div>
+                    <div class="onevsone-hotbar-click" style="left: 88.8%;" data-index="8">
+                        <div class="onevsone-tooltip">⏰ <b>Uhr</b><br><span>Zurück zur Lobby.</span></div>
+                    </div>
+                </div>
+                <h2>Cusom Kit Einstellungen</h2>
+                <!-- Kits nebeneinander -->
+                <div class="onevsone-kit-row">
+                    <div class="onevsone-kit-box">
+                        <img src="Bilderhowtoplay/villager.png" alt="Villager Icon">
+                        <h3>Kit Konfiguration</h3>
+                        <p>Stelle alle 1vs1 Kit-Einstellungen mit dem Villager ein.</p>
+                    </div>
+                    <div class="onevsone-kit-box">
+                        <img src="Bilderhowtoplay/skeleton.png" alt="Skelett Icon">
+                        <h3>Items bearbeiten</h3>
+                        <p>Wandle Golden Apples in Golden Heads um oder passe Tools und ander Items an.</p>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/DEIN_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+            </section>
+            <style>
 
             .onevsone-kit-row {
                 display: flex;
@@ -689,20 +727,206 @@
 
             <section id="Skywars" class="fade-section" style="scroll-margin-top: 120px;">
              <h2>🪂 Skywars</h2>
-             <p>Springe von Insel zu Insel, loote Kisten und sei der letzte Überlebende!</p>
-             <iframe width="100%" height="315" src="https://www.youtube.com/embed/DEIN_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+                <div class="onevsone-hotbar-container">
+                    <img src="Bilderhowtoplay/hotbar.png" alt="Hotbar Screenshot" class="onevsone-hotbar-image">
+
+                    <!-- Klickbare Items (Slot 4 und 6 sind leer und nicht klickbar) -->
+                    <div class="onevsone-hotbar-click" style="left: 0%;" data-index="0">
+                        <div class="onevsone-tooltip">🗡️ <b>Challenge</b><br><span>Spieler schlagen, um ein Duell zu starten oder anzunehmen.</span></div>
+                    </div>
+                    <div class="onevsone-hotbar-click" style="left: 11.1%;" data-index="1">
+                        <div class="onevsone-tooltip">👁️‍🗨️ <b>Spectate</b><br><span>Beobachte aktuelle Kämpfe live.</span></div>
+                    </div>
+                    <div class="onevsone-hotbar-click" style="left: 22.2%;" data-index="2">
+                        <div class="onevsone-tooltip">📕 <b>1vs1</b><br><span>Kompakter PvP-Guide für Einsteiger.</span></div>
+                    </div>
+                    <!-- Slot 4 (index 3) ist leer, kein Div -->
+                    <div class="onevsone-hotbar-click" style="left: 44.4%;" data-index="4">
+                        <div class="onevsone-tooltip">⭐ <b>Tournaments</b><br><span>Turnierbeitritt via Papierplatte. Erstelle eigene Turniere mit dem Rang <b>Elite</b> (/shop)</span></div>
+                    </div>
+                    <!-- Slot 6 (index 5) ist leer, kein Div -->
+                    <div class="onevsone-hotbar-click" style="left: 66.6%;" data-index="6">
+                        <div class="onevsone-tooltip">🟩 <b>Dein Rang</b><br><span>Dein aktueller 1vs1-Rang wird angezeigt.</span></div>
+                    </div>
+                    <div class="onevsone-hotbar-click" style="left: 77.7%;" data-index="7">
+                        <div class="onevsone-tooltip">🕹️ <b>Settings</b><br><span>Konfiguriere dein 1vs1:<br>🛡️ Kit-Auswahl<br>🗺️ Aktivierte Maps<br>💎 Warteschlangen<br></span></div>
+                    </div>
+                    <div class="onevsone-hotbar-click" style="left: 88.8%;" data-index="8">
+                        <div class="onevsone-tooltip">⏰ <b>Uhr</b><br><span>Zurück zur Lobby.</span></div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/DEIN_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+                    <style>
+            /* 1vs1 Namespace Styles */
+              .onevsone-hotbar-container {
+                position: relative;
+                max-width: 900px;
+               margin: 30px auto 20px;
+              }
+
+             .onevsone-hotbar-image {
+                  width: 100%;
+                 border-radius: 8px;
+                 border: 3px solid #4caf50;
+                box-shadow: 0 6px 32px #000c;
+                transition: box-shadow 0.3s;
+            }
+
+            .onevsone-hotbar-click {
+                position: absolute;
+                top: 0;
+                height: 100%;
+                width: calc(100% / 9);
+                cursor: pointer;
+                transition: box-shadow 0.2s, background 0.2s, transform 0.2s;
+                border-radius: 12px; /* Immer runde Kanten */
+            }
+
+            .onevsone-hotbar-click:hover {
+                background: rgba(76, 175, 80, 0.18);
+                box-shadow: 0 0 0 6px #4caf50cc;
+                z-index: 2;
+                animation: onevsone-hotbar-bounce 0.25s;
+                transform: scale(0.95);
+                border-radius: 12px; /* Runde Kanten beim Hover */
+                top: -3px; /* 2mm nach oben beim Hover */
+            }
+
+            @keyframes onevsone-hotbar-bounce {
+                0% { 
+                    transform: scale(1);
+                    box-shadow: 0 0 0 0px #4caf50cc;
+                    border-radius: 12px;
+                }
+                40% { 
+                    transform: scale(1.13);
+                    box-shadow: 0 0 0 10px #4caf5099;
+                    border-radius: 12px;
+                }
+                100% { 
+                    transform: scale(1);
+                    box-shadow: 0 0 0 6px #4caf50cc;
+                    border-radius: 12px;
+                }
+            }
+
+            /* Minecraft-Style Tooltip: jetzt UNTER dem Item, mit runden Ecken und 2mm nach oben */
+            .onevsone-tooltip {
+                display: none;
+                position: absolute;
+                left: 50%;
+                top: calc(110% - 7px); /* 2mm ≈ 7px nach oben */
+                transform: translateX(-50%);
+                min-width: 220px;
+                max-width: 320px;
+                background: linear-gradient(180deg, #181818 90%, #222 100%);
+                color: #fff;
+                border: 2.5px solid #bfbf7a;
+                border-radius: 12px;
+                box-shadow: 0 4px 24px #000b;
+                padding: 12px 18px 10px 18px;
+                font-family: 'Minecraftia', 'Consolas', 'monospace';
+                font-size: 1.05rem;
+                z-index: 10;
+                pointer-events: none;
+                white-space: pre-line;
+                line-height: 1.35;
+                text-shadow: 1px 1px 0 #000, 0 0 2px #000a;
+                opacity: 0;
+                transition: opacity 0.13s;
+            }
+
+            .onevsone-hotbar-click:hover .onevsone-tooltip {
+                display: block;
+                opacity: 1;
+            }
+
+            .onevsone-tooltip b {
+                color: #ffe44c;
+                font-weight: bold;
+                font-size: 1.08em;
+                text-shadow: 1px 1px 0 #000, 0 0 2px #000a;
+            }
+
+            .onevsone-tooltip span {
+                color: #bfbf7a;
+                font-size: 0.97em;
+            }
+            </style>
             </section>
 
             <section id="Practice" class="fade-section" style="scroll-margin-top: 120px;">
              <h2>🏹 Practice</h2>
              <p>Trainiere verschiedene PvP-Modi, verbessere deine Fähigkeiten und fordere andere Spieler heraus.</p>
-             <iframe width="100%" height="315" src="https://www.youtube.com/embed/DEIN_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+                <div class="onevsone-hotbar-container">
+                    <img src="Bilderhowtoplay/hotbar.png" alt="Hotbar Screenshot" class="onevsone-hotbar-image">
+
+                    <!-- Klickbare Items (Slot 4 und 6 sind leer und nicht klickbar) -->
+                    <div class="onevsone-hotbar-click" style="left: 0%;" data-index="0">
+                        <div class="onevsone-tooltip">🗡️ <b>Challenge</b><br><span>Spieler schlagen, um ein Duell zu starten oder anzunehmen.</span></div>
+                    </div>
+                    <div class="onevsone-hotbar-click" style="left: 11.1%;" data-index="1">
+                        <div class="onevsone-tooltip">👁️‍🗨️ <b>Spectate</b><br><span>Beobachte aktuelle Kämpfe live.</span></div>
+                    </div>
+                    <div class="onevsone-hotbar-click" style="left: 22.2%;" data-index="2">
+                        <div class="onevsone-tooltip">📕 <b>1vs1</b><br><span>Kompakter PvP-Guide für Einsteiger.</span></div>
+                    </div>
+                    <!-- Slot 4 (index 3) ist leer, kein Div -->
+                    <div class="onevsone-hotbar-click" style="left: 44.4%;" data-index="4">
+                        <div class="onevsone-tooltip">⭐ <b>Tournaments</b><br><span>Turnierbeitritt via Papierplatte. Erstelle eigene Turniere mit dem Rang <b>Elite</b> (/shop)</span></div>
+                    </div>
+                    <!-- Slot 6 (index 5) ist leer, kein Div -->
+                    <div class="onevsone-hotbar-click" style="left: 66.6%;" data-index="6">
+                        <div class="onevsone-tooltip">🟩 <b>Dein Rang</b><br><span>Dein aktueller 1vs1-Rang wird angezeigt.</span></div>
+                    </div>
+                    <div class="onevsone-hotbar-click" style="left: 77.7%;" data-index="7">
+                        <div class="onevsone-tooltip">🕹️ <b>Settings</b><br><span>Konfiguriere dein 1vs1:<br>🛡️ Kit-Auswahl<br>🗺️ Aktivierte Maps<br>💎 Warteschlangen<br></span></div>
+                    </div>
+                    <div class="onevsone-hotbar-click" style="left: 88.8%;" data-index="8">
+                        <div class="onevsone-tooltip">⏰ <b>Uhr</b><br><span>Zurück zur Lobby.</span></div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/DEIN_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
             </section>
 
             <section id="Classic" class="fade-section" style="scroll-margin-top: 120px;">
              <h2>🧱 Classic</h2>
              <p>Spiele klassische PvP-Modi mit Standard-Kits und zeige dein Können ohne Extras.</p>
-             <iframe width="100%" height="315" src="https://www.youtube.com/embed/DEIN_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+                <div class="onevsone-hotbar-container">
+                    <img src="Bilderhowtoplay/hotbar.png" alt="Hotbar Screenshot" class="onevsone-hotbar-image">
+
+                    <!-- Klickbare Items (Slot 4 und 6 sind leer und nicht klickbar) -->
+                    <div class="onevsone-hotbar-click" style="left: 0%;" data-index="0">
+                        <div class="onevsone-tooltip">🗡️ <b>Challenge</b><br><span>Spieler schlagen, um ein Duell zu starten oder anzunehmen.</span></div>
+                    </div>
+                    <div class="onevsone-hotbar-click" style="left: 11.1%;" data-index="1">
+                        <div class="onevsone-tooltip">👁️‍🗨️ <b>Spectate</b><br><span>Beobachte aktuelle Kämpfe live.</span></div>
+                    </div>
+                    <div class="onevsone-hotbar-click" style="left: 22.2%;" data-index="2">
+                        <div class="onevsone-tooltip">📕 <b>1vs1</b><br><span>Kompakter PvP-Guide für Einsteiger.</span></div>
+                    </div>
+                    <!-- Slot 4 (index 3) ist leer, kein Div -->
+                    <div class="onevsone-hotbar-click" style="left: 44.4%;" data-index="4">
+                        <div class="onevsone-tooltip">⭐ <b>Tournaments</b><br><span>Turnierbeitritt via Papierplatte. Erstelle eigene Turniere mit dem Rang <b>Elite</b> (/shop)</span></div>
+                    </div>
+                    <!-- Slot 6 (index 5) ist leer, kein Div -->
+                    <div class="onevsone-hotbar-click" style="left: 66.6%;" data-index="6">
+                        <div class="onevsone-tooltip">🟩 <b>Dein Rang</b><br><span>Dein aktueller 1vs1-Rang wird angezeigt.</span></div>
+                    </div>
+                    <div class="onevsone-hotbar-click" style="left: 77.7%;" data-index="7">
+                        <div class="onevsone-tooltip">🕹️ <b>Settings</b><br><span>Konfiguriere dein 1vs1:<br>🛡️ Kit-Auswahl<br>🗺️ Aktivierte Maps<br>💎 Warteschlangen<br></span></div>
+                    </div>
+                    <div class="onevsone-hotbar-click" style="left: 88.8%;" data-index="8">
+                        <div class="onevsone-tooltip">⏰ <b>Uhr</b><br><span>Zurück zur Lobby.</span></div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/DEIN_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
             </section>
 
             <section id="UHC" class="fade-section" style="scroll-margin-top: 120px;">
@@ -714,7 +938,37 @@
             <section id="HG" class="fade-section" style="scroll-margin-top: 120px;">
              <h2>🥚 HG</h2>
              <p>Hunger Games: Suche Kisten, kämpfe ums Überleben und werde der letzte Spieler!</p>
-             <iframe width="100%" height="315" src="https://www.youtube.com/embed/DEIN_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+                <div class="onevsone-hotbar-container">
+                    <img src="Bilderhowtoplay/hotbar.png" alt="Hotbar Screenshot" class="onevsone-hotbar-image">
+
+                    <!-- Klickbare Items (Slot 4 und 6 sind leer und nicht klickbar) -->
+                    <div class="onevsone-hotbar-click" style="left: 0%;" data-index="0">
+                        <div class="onevsone-tooltip">🗡️ <b>Challenge</b><br><span>Spieler schlagen, um ein Duell zu starten oder anzunehmen.</span></div>
+                    </div>
+                    <div class="onevsone-hotbar-click" style="left: 11.1%;" data-index="1">
+                        <div class="onevsone-tooltip">👁️‍🗨️ <b>Spectate</b><br><span>Beobachte aktuelle Kämpfe live.</span></div>
+                    </div>
+                    <div class="onevsone-hotbar-click" style="left: 22.2%;" data-index="2">
+                        <div class="onevsone-tooltip">📕 <b>1vs1</b><br><span>Kompakter PvP-Guide für Einsteiger.</span></div>
+                    </div>
+                    <!-- Slot 4 (index 3) ist leer, kein Div -->
+                    <div class="onevsone-hotbar-click" style="left: 44.4%;" data-index="4">
+                        <div class="onevsone-tooltip">⭐ <b>Tournaments</b><br><span>Turnierbeitritt via Papierplatte. Erstelle eigene Turniere mit dem Rang <b>Elite</b> (/shop)</span></div>
+                    </div>
+                    <!-- Slot 6 (index 5) ist leer, kein Div -->
+                    <div class="onevsone-hotbar-click" style="left: 66.6%;" data-index="6">
+                        <div class="onevsone-tooltip">🟩 <b>Dein Rang</b><br><span>Dein aktueller 1vs1-Rang wird angezeigt.</span></div>
+                    </div>
+                    <div class="onevsone-hotbar-click" style="left: 77.7%;" data-index="7">
+                        <div class="onevsone-tooltip">🕹️ <b>Settings</b><br><span>Konfiguriere dein 1vs1:<br>🛡️ Kit-Auswahl<br>🗺️ Aktivierte Maps<br>💎 Warteschlangen<br></span></div>
+                    </div>
+                    <div class="onevsone-hotbar-click" style="left: 88.8%;" data-index="8">
+                        <div class="onevsone-tooltip">⏰ <b>Uhr</b><br><span>Zurück zur Lobby.</span></div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/DEIN_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
             </section>
 
             <section id="FFA" class="fade-section" style="scroll-margin-top: 120px;">
@@ -726,7 +980,37 @@
             <section id="Bedwars" class="fade-section" style="scroll-margin-top: 120px;">
              <h2>🛏️ Bedwars</h2>
              <p>Beschütze dein Bett, zerstöre die Betten der Gegner und dominiere das Spielfeld!</p>
-             <iframe width="100%" height="315" src="https://www.youtube.com/embed/DEIN_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+                <div class="onevsone-hotbar-container">
+                    <img src="Bilderhowtoplay/hotbar.png" alt="Hotbar Screenshot" class="onevsone-hotbar-image">
+
+                    <!-- Klickbare Items (Slot 4 und 6 sind leer und nicht klickbar) -->
+                    <div class="onevsone-hotbar-click" style="left: 0%;" data-index="0">
+                        <div class="onevsone-tooltip">🗡️ <b>Challenge</b><br><span>Spieler schlagen, um ein Duell zu starten oder anzunehmen.</span></div>
+                    </div>
+                    <div class="onevsone-hotbar-click" style="left: 11.1%;" data-index="1">
+                        <div class="onevsone-tooltip">👁️‍🗨️ <b>Spectate</b><br><span>Beobachte aktuelle Kämpfe live.</span></div>
+                    </div>
+                    <div class="onevsone-hotbar-click" style="left: 22.2%;" data-index="2">
+                        <div class="onevsone-tooltip">📕 <b>1vs1</b><br><span>Kompakter PvP-Guide für Einsteiger.</span></div>
+                    </div>
+                    <!-- Slot 4 (index 3) ist leer, kein Div -->
+                    <div class="onevsone-hotbar-click" style="left: 44.4%;" data-index="4">
+                        <div class="onevsone-tooltip">⭐ <b>Tournaments</b><br><span>Turnierbeitritt via Papierplatte. Erstelle eigene Turniere mit dem Rang <b>Elite</b> (/shop)</span></div>
+                    </div>
+                    <!-- Slot 6 (index 5) ist leer, kein Div -->
+                    <div class="onevsone-hotbar-click" style="left: 66.6%;" data-index="6">
+                        <div class="onevsone-tooltip">🟩 <b>Dein Rang</b><br><span>Dein aktueller 1vs1-Rang wird angezeigt.</span></div>
+                    </div>
+                    <div class="onevsone-hotbar-click" style="left: 77.7%;" data-index="7">
+                        <div class="onevsone-tooltip">🕹️ <b>Settings</b><br><span>Konfiguriere dein 1vs1:<br>🛡️ Kit-Auswahl<br>🗺️ Aktivierte Maps<br>💎 Warteschlangen<br></span></div>
+                    </div>
+                    <div class="onevsone-hotbar-click" style="left: 88.8%;" data-index="8">
+                        <div class="onevsone-tooltip">⏰ <b>Uhr</b><br><span>Zurück zur Lobby.</span></div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/DEIN_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
             </section>
          </div>
 </div>
