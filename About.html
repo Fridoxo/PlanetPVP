@@ -415,15 +415,6 @@
     right: 1500px;
 }
 
-.frei-bild1 {
-    position: absolute;
-    top: 355px;
-    right: 275px;
-    width: 300px;
-    height: auto;
-    z-index: 50;
-}
-
 .header-discord {
   position: absolute;
   top: 62px;
@@ -458,7 +449,6 @@
   font-size: 12px;
 }
 
-
         
     </style>
 </head>
@@ -480,89 +470,176 @@
     <nav id="main-nav">
         <a href="index.html">Startseite</a>
         <a href="howtoplay.html">PlanetPVP Guide</a>
-        <a href="#Rules and regulations-Englisch">English-Rules and regulations</a>
+        <a href="Regelwerk.html">Regelwerk</a>
+        <a href="#server-status">Serverstatus</a>
         <a href="https://planetpvp.tebex.io/">Shop</a>
-        <a href="About.html">About</a>
     </nav>
     
     
     <main>
        <img src="minecraft-player.png" class="frei-bild">
-       <img src="https://cdn-icons-png.flaticon.com/512/1190/1190639.png" class="frei-bild1 fade-in-up" >
         <section id="Regeln-Deutsch" class="fade-section">
-         <h2>Regelwerk-Deutsch</h2>
-          <h3>1. Geltungsbereich</h3>
-           <ul>
-            <li>1.1 Dieses Regelwerk gilt für den gesamten Minecraft-Server inklusive aller Spielmodi und zugehörigen Dienste (z. B. Discord, Events, Turniere).</li>
-            <li>1.2 Mit dem Betreten des Servers erkennen alle Spieler diese Regeln als verbindlich an.</li>
-           </ul>
-          <h3>2. Verhalten im Spiel</h3>
-          <h4>2.1 Unerwünschtes Verhalten, das den Spielverlauf oder andere Spieler negativ beeinflusst, ist untersagt. Dazu gehören u.a.:</h4>
-           <ul>
-              <li>Stören von Mitspielern, z. B. durch gezieltes Blockieren, Festbauen oder Item-Entnahme im Team</li>
-              <li>Unerlaubte Absprachen oder Teaming in Modi, die als „Solo“ gekennzeichnet sind</li>
-              <li>Ausnutzen von Respawn-Situationen, etwa durch wiederholtes sofortiges Töten (Spawncamping)</li>
-              <li>Verzögerung des Spielverlaufs, z. B. durch dauerhaftes Verstecken oder absichtliches Inaktivbleiben</li>
-              <li>Willkürliches Angreifen in Rollenmodi, bei denen gezieltes Vorgehen erwartet wird</li>
-              <li>Unangemessene Bauwerke, die beleidigend, provokant oder unangemessen gestaltet sind</li>
-           </ul>
-          <h3>3. Modifikationen & Hilfsmittel</h3>
-          <h4>3.1 Der Einsatz von Software oder Hardware, die einen spielerischen Vorteil verschafft, ist grundsätzlich verboten. Auch wenn sie nur passiv aktiv ist. Verboten sind z.B.:</h4>
-           <ul>
-           <li>Combat-Mods wie Killaura, Aimbot, AutoClicker</li>
-           <li>Bewegungshilfen wie Fly, Speed, Glide, Fast-Fall</li>
-           <li>Mods zur Informationsanzeige, etwa Damage-Indicators, Herz-Anzeigen, Spieler-Radar</li>
-           <li>Automatisierte Inventar- oder Rüstungsverwaltung</li>
-           <li>Manipulation der Spielphysik, z. B. verändertes Knockback oder NoSlow</li>
-           <li>Visuelle Hilfsmittel, z. B. X-Ray (auch per Resource Pack), transparente Blöcke oder Nametag-Anzeigen</li>
-           <li>Softwaresteuerung, bei der der Client automatisch Aktionen wie Bauen oder Kämpfen ausführt</li>
-           <li>Makros, Tastenbelegungstricks oder Hardwaremanipulation zur Klickratensteigerung</li>
-           </ul>
-          <h4>3.2 Der Einsatz von VR, Spezialhardware oder Modifikationen geschieht auf eigene Verantwortung und darf nicht zu Vorteilen führen.</h4>
-          <h3>4. Weitere Bestimmungen</h3>
-          <ul>
-           <li>Die <a href="https://www.minecraft.net/de-de/eula">Minecraft EULA</a> ist Bestandteil der Serverregeln und muss eingehalten werden.</li>
-           <li>Das Verwenden fremder, öffentlicher oder kompromittierter Accounts (z. B. Alt-Accounts) ist untersagt.</li>
-          </ul>
+            <h2 class="fade-in-up"><i class="fas fa-info-circle"></i> Über PlanetPVP</h2>
+
+            <div class="info-grid fade-in-up" style="margin-bottom:2rem;">
+                <!-- Server Info -->
+                <div class="status-card" style="min-width:220px;">
+                    <h3><i class="fas fa-server"></i> Server-IP</h3>
+                    <div style="display:flex;align-items:center;justify-content:center;gap:10px;">
+                        <span id="server-ip" style="font-size:1.2rem;font-weight:bold;letter-spacing:1px;background:rgba(0,0,0,0.08);padding:6px 14px;border-radius:6px;">planetpvp.de</span>
+                        <button id="copy-ip-btn" title="IP kopieren" style="padding:7px 13px;font-size:1rem;display:flex;align-items:center;gap:6px;">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                    <div id="copy-feedback" style="font-size:0.95rem;color:var(--accent-color);margin-top:8px;min-height:20px;transition:opacity 0.3s;opacity:0;"></div>
+                </div>
+                <div class="status-card" style="min-width:220px;">
+                    <h3><i class="fas fa-shopping-cart"></i> Shop</h3>
+                    <p style="margin:0 0 10px 0;">Unterstütze unseren Server und sichere dir exklusive Vorteile!</p>
+                    <br>
+                    <a href="https://planetpvp.tebex.io/" target="_blank" class="discord-btn" style="display:inline-flex;align-items:center;gap:10px;padding:10px 18px;background:linear-gradient(90deg,#3a7c5c,#5865F2);color:#fff;border-radius:8px;font-weight:bold;font-size:1.1rem;text-decoration:none;box-shadow:0 2px 8px rgba(88,101,242,0.15);transition:background 0.3s,transform 0.2s;">
+                        <i class="fas fa-shopping-cart" style="font-size:1.5em;"></i> Zum Shop
+                    </a>
+                </div>
+                <!-- Discord Join -->
+                <div class="status-card" style="min-width:220px;">
+                    <h3><i class="fab fa-discord"></i> Discord</h3>
+                    <p style="margin:0 0 10px 0;">Tritt unserer Community bei!</p>
+                    <br> <br>
+                    <a href="https://discord.gg/rt5Cna8bUe" target="_blank" class="discord-btn" style="display:inline-flex;align-items:center;gap:10px;padding:10px 18px;background:linear-gradient(90deg,#5865F2,#3a7c5c);color:#fff;border-radius:8px;font-weight:bold;font-size:1.1rem;text-decoration:none;box-shadow:0 2px 8px rgba(88,101,242,0.15);transition:background 0.3s,transform 0.2s;">
+                        <i class="fab fa-discord" style="font-size:1.5em;"></i> Discord beitreten
+                    </a>
+                </div>
+            </div>
+
+            <!-- Kontakt -->
+            <section class="fade-in-left" style="background:rgba(38,48,38,0.92);margin-bottom:2rem;">
+                <h3><i class="fas fa-envelope"></i> Kontakt</h3>
+                <ul class="contact-list" style="list-style:none;padding:0;">
+                    <li style="margin-bottom:14px;">
+                        <i class="fas fa-at"></i> <strong>Email:</strong>
+                        <a href="mailto:PlanetPVP@gmx.net" class="LinkWeis"></a>PlanetPVP@gmx.net</a>
+                        <a href="mailto:PlanetPVP@gmx.net"
+                           style="display:inline-flex;align-items:center;gap:8px;margin-left:12px;padding:8px 16px;background:linear-gradient(90deg,#3a7c5c,#2ab811);color:#fff;border-radius:6px;font-weight:bold;font-size:1rem;text-decoration:none;box-shadow:0 2px 8px rgba(58,124,92,0.15);transition:background 0.3s,transform 0.2s;"
+                           class="discord-btn"
+                        >
+                            <i class="fas fa-paper-plane"></i> E-Mail senden
+                        </a>
+                    </li>
+                        <i class="fas fa-ticket-alt"></i> <strong>Support-Tickets:</strong> Im Discord unter 
+                        <span style="
+                            display: inline-flex;
+                            align-items: center;
+                            background: #23272a;
+                            color: #fff;
+                            border-radius: 6px;
+                            padding: 4px 12px 4px 8px;
+                            font-family: 'Segoe UI', 'Arial', sans-serif;
+                            font-size: 1rem;
+                            box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+                            gap: 6px;
+                            margin-left: 4px;
+                        ">
+                            <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f527.png" alt="🔧" style="width:18px;height:18px;vertical-align:middle;">
+                            <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f6a8.png" alt="🚨" style="width:18px;height:18px;vertical-align:middle;">
+                            <span style="font-weight:500;letter-spacing:0.5px;">support</span>
+                        </span>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Impressum -->
+            <section class="fade-in-right" style="background:rgba(38,48,38,0.92);">
+                <h3><i class="fas fa-id-card"></i> Impressum</h3>
+                <p><strong>Beispielcreator:</strong> Max Mustermann</p>
+                <p>
+                  c/o Online-Impressum.de #12345<br>
+                  Europaring 90<br>
+                  53757 Sankt Augustin
+                </p>
+                <p>
+                  <strong>Email:</strong> <a href="mailto:hello@online-impressum.de" class="LinkWeis">hello@online-impressum.de</a><br>
+                  <strong>Telefon:</strong> +49 12345 67 89 0<br>
+                  <strong>USt-IdNr:</strong> 123/456/7890
+                </p>
+                <p>
+                  <strong>Zuständige Aufsichtsbehörde:</strong><br>
+                  Landesanstalt für Medien Nordrhein-Westfalen<br>
+                  Sitz: Deutschland
+                </p>
+            </section>
+
+            <style>
+            /* Responsive Anpassungen */
+            @media (max-width: 900px) {
+                .info-grid {
+                    grid-template-columns: 1fr;
+                    gap: 1.2rem;
+                }
+                .sticky-sidebar {
+                    display: none;
+                }
+                .frei-bild {
+                    display: none;
+                }
+            }
+            @media (max-width: 600px) {
+                main {
+                    padding: 1rem;
+                }
+                section {
+                    padding: 1rem;
+                }
+                .status-card {
+                    padding: 1rem;
+                }
+                .header-discord {
+                    right: 10px;
+                    top: 60px;
+                    font-size: 12px;
+                }
+            }
+            .discord-btn:hover, .discord-btn:focus {
+                background:linear-gradient(90deg,#3a7c5c,#5865F2);
+                transform: translateY(-2px) scale(1.04);
+                box-shadow:0 6px 18px rgba(88,101,242,0.18);
+                text-decoration:none;
+            }
+            #copy-ip-btn {
+                background: var(--accent-color);
+                color: #fff;
+                border: none;
+                cursor: pointer;
+                border-radius: 6px;
+                transition: background 0.2s, transform 0.2s;
+            }
+            #copy-ip-btn:hover, #copy-ip-btn:focus {
+                background: var(--hover-color);
+                transform: scale(1.08);
+            }
+            </style>
+            <script>
+            // IP-Kopieren Button
+            const copyBtn = document.getElementById('copy-ip-btn');
+            const ipSpan = document.getElementById('server-ip');
+            const feedback = document.getElementById('copy-feedback');
+            if(copyBtn && ipSpan && feedback) {
+                copyBtn.addEventListener('click', async () => {
+                    try {
+                        await navigator.clipboard.writeText(ipSpan.textContent.trim());
+                        feedback.textContent = "Server-IP kopiert!";
+                        feedback.style.opacity = 1;
+                        setTimeout(() => { feedback.style.opacity = 0; }, 1800);
+                    } catch {
+                        feedback.textContent = "Kopieren nicht möglich.";
+                        feedback.style.opacity = 1;
+                        setTimeout(() => { feedback.style.opacity = 0; }, 1800);
+                    }
+                });
+            }
+            </script>
         </section>
         
-        <section id="Rules and regulations-Englisch" class="fade-section">
-          
-         <h2>Rules and regulations-English</h2>
-          <h3>1. Scope of Application</h3>
-           <ul>
-            <li>1.1 These rules apply to the entire Minecraft server, including all game modes and related services (e.g. Discord, events, tournaments).</li>
-            <li>1.2 By joining the server, all players accept these rules as binding and agree to follow them.</li>
-           </ul>
-          <h3>2. In-Game Conduct</h3>
-          <h4>2.1 Any behavior that negatively impacts gameplay or other players is prohibited. This includes, but is not limited to:</h4>
-           <ul>
-              <li>Disrupting teammates by blocking, trapping, or stealing shared items</li>
-              <li>Unauthorized teaming or collusion in solo-based game modes</li>
-              <li>Exploiting respawn situations (e.g. spawn camping)</li>
-              <li>Intentionally delaying gameplay by hiding or going AFK</li>
-              <li>Random or unjustified attacking in role-based modes</li>
-              <li>Inappropriate or offensive builds and symbols</li>
-           </ul>
-          <h3>3. Modifications & Tools</h3>
-          <h4>3.1 The use of software or hardware that provides gameplay advantages is strictly forbidden, even if only passively active. Examples include:</h4>
-           <ul>
-           <li>Combat mods like KillAura, Aimbot, AutoClicker</li>
-           <li>Movement aids such as Fly, Speed, Glide, or Fast-Fall</li>
-           <li>Informational mods like Damage Indicators, heart displays, player radar</li>
-           <li>Automated inventory or armor management</li>
-           <li>Manipulating game physics (e.g. custom knockback, NoSlow)</li>
-           <li>Visual aids like X-Ray (including resource packs), transparent blocks, or visible nametags</li>
-           <li>Clients that perform automatic actions (fighting, placing/breaking blocks, movement)</li>
-           <li>Macros, multi-keybindings, or hardware tweaks to boost click rates</li>
-           </ul>
-          <h4>Use of VR, specialized hardware, or mods is at your own risk and must not offer any gameplay advantage.</h4>
-          <h3>4. Additional Provisions</h3>
-          <ul>
-           <li>The <a href="https://www.minecraft.net/de-de/eula">Minecraft EULA</a> is part of these server rules and must be followed.</li>
-           <li>Using stolen, public, or compromised Minecraft accounts (e.g. alt accounts) is not allowed.</li>
-          </ul>
-       </section>
           
      </main>
           
