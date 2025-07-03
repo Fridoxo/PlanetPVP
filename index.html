@@ -861,11 +861,13 @@ const subservers = [
     { ip: "PlanetPVP.de", port: "25576", name: "Meetup" }
 ];
 
+// Speichert die letzte echte Prüfung (nicht beim ersten Laden)
+let lastSubserverCheckTime = null;
+
 // Holt Status aller Subserver und zeigt sie gesammelt an
 async function fetchAllSubserverStatus() {
     const container = document.getElementById('subservers-status');
     container.innerHTML = '';
-    const now = new Date();
     let cards = '';
 
     // Alle Status abfragen (parallel)
@@ -891,13 +893,21 @@ async function fetchAllSubserverStatus() {
 
     const results = await Promise.all(statusPromises);
     cards = results.join('');
-    container.innerHTML = cards + `<div class="subserver-last-check">Letzte Prüfung: ${now.toLocaleTimeString()}</div>`;
+    // Nur die Zeit anzeigen, wenn es NICHT der initiale Aufruf ist
+    if (lastSubserverCheckTime) {
+        container.innerHTML = cards + `<div class="subserver-last-check">Letzte Prüfung: ${lastSubserverCheckTime}</div>`;
+    } else {
+        container.innerHTML = cards;
+    }
 }
 
-// Beim Laden und dann jede Minute abfragen
+// Initiales Laden: KEINE Zeit anzeigen, erst ab dem ersten Intervall
 document.addEventListener('DOMContentLoaded', () => {
     fetchAllSubserverStatus();
-    setInterval(fetchAllSubserverStatus, 60 * 1000);
+    setInterval(() => {
+        lastSubserverCheckTime = new Date().toLocaleTimeString();
+        fetchAllSubserverStatus();
+    }, 60 * 1000);
 });
 
 </script>
