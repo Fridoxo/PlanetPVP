@@ -642,6 +642,8 @@
             <div class="server-status" id="server-status-container">
                 <div class="loading"></div> Lade Serverstatus...
             </div>
+            <div id="subservers-status" class="subserver-container"></div>
+
         </section>
       </div>
 		
@@ -696,8 +698,8 @@ document.head.insertAdjacentHTML('beforeend', playerStyles);
         checkScroll();
         
         // API-Verbindung für Minecraft Server-Informationen
-const SERVER_IP = "PlanetPVP.de";
-const SERVER_PORT = "25565";
+        const SERVER_IP = "PlanetPVP.de";
+        const SERVER_PORT = "25565";
 
 async function fetchServerInfo() {
     try {
@@ -791,6 +793,113 @@ document.addEventListener('DOMContentLoaded', () => {
     // Aktualisiere die Informationen alle 5 Minuten
     setInterval(fetchServerInfo, 5 * 60 * 1000);
 });
-    </script>
+
+/* Subserver Status Styles */
+const subserverStyles = `
+.subserver-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    margin-top: 1.2rem;
+}
+.subserver-status-card {
+    flex: 0 1 210px;
+    min-width: 170px;
+    max-width: 220px;
+    background: rgba(30,40,30,0.85);
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.13);
+    border: 1px solid #3a7c5c;
+    padding: 1rem 0.7rem 0.8rem 0.7rem;
+    text-align: center;
+    font-size: 0.98rem;
+    margin-bottom: 0.5rem;
+    transition: box-shadow 0.2s,transform 0.2s;
+    position: relative;
+}
+.subserver-status-card h3 {
+    font-size: 1.07rem;
+    margin: 0 0 0.4rem 0;
+    color: #b2e5c7;
+    font-weight: bold;
+    letter-spacing: 0.2px;
+}
+.subserver-status-card .status-indicator {
+    margin-left: 7px;
+    width: 15px;
+    height: 15px;
+}
+.subserver-status-card p {
+    margin: 0.2rem 0;
+    color: #e3e6eb;
+    font-size: 0.93rem;
+}
+.subserver-last-check {
+    margin-top: 0.7rem;
+    color: #b2e5c7;
+    font-size: 0.97rem;
+    text-align: left;
+    font-style: italic;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+`;
+
+document.head.insertAdjacentHTML('beforeend', `<style>${subserverStyles}</style>`);
+
+const subservers = [
+    { ip: "PlanetPVP.de", port: "25566", name: "Lobby" },
+    { ip: "PlanetPVP.de", port: "25568", name: "1vs1" },
+    { ip: "PlanetPVP.de", port: "25569", name: "Skywars" },
+    { ip: "PlanetPVP.de", port: "25570", name: "Practice" },
+    { ip: "PlanetPVP.de", port: "25571", name: "Classic" },
+    { ip: "PlanetPVP.de", port: "25572", name: "UHC" },
+    { ip: "PlanetPVP.de", port: "25573", name: "HG" },
+    { ip: "PlanetPVP.de", port: "25574", name: "FFA" },
+    { ip: "PlanetPVP.de", port: "25567", name: "Bedwars" },
+    { ip: "PlanetPVP.de", port: "25576", name: "Meetup" }
+];
+
+// Holt Status aller Subserver und zeigt sie gesammelt an
+async function fetchAllSubserverStatus() {
+    const container = document.getElementById('subservers-status');
+    container.innerHTML = '';
+    const now = new Date();
+    let cards = '';
+
+    // Alle Status abfragen (parallel)
+    const statusPromises = subservers.map(async (srv) => {
+        try {
+            const response = await fetch(`https://api.mcsrvstat.us/2/${srv.ip}:${srv.port}`);
+            const data = await response.json();
+            return `
+                <div class="subserver-status-card fade-in-left">
+                    <h3>${srv.name} <span class="status-indicator ${data.online ? 'online' : 'offline'}"></span></h3>
+                    <p>Status: ${data.online ? 'Online' : 'Offline'}</p>
+                </div>
+            `;
+        } catch (err) {
+            return `
+                <div class="subserver-status-card fade-in-left">
+                    <h3>${srv.name} <span class="status-indicator offline"></span></h3>
+                    <p>Fehler beim Abrufen der Daten</p>
+                </div>
+            `;
+        }
+    });
+
+    const results = await Promise.all(statusPromises);
+    cards = results.join('');
+    container.innerHTML = cards + `<div class="subserver-last-check">Letzte Prüfung: ${now.toLocaleTimeString()}</div>`;
+}
+
+// Beim Laden und dann jede Minute abfragen
+document.addEventListener('DOMContentLoaded', () => {
+    fetchAllSubserverStatus();
+    setInterval(fetchAllSubserverStatus, 60 * 1000);
+});
+
+</script>
 </body>
 </html>
