@@ -81,7 +81,7 @@
         }
         
         nav.scrolled {
-            padding: 0.7rem;
+            padding: 1rem;
             background-color: rgba(10, 18, 38, 0.97);
         }
         
@@ -507,10 +507,10 @@
 
 .frei-bild {
     position: absolute;
-    width: 400px;
+    width: 225px;
     height: auto;
-    top: 10px;
-    right: 1500px;
+    top: 12px;
+    right: 10px;
 }
 
 .header-discord {
@@ -556,106 +556,219 @@
 </head>
 <body>
     <header>
-        <img src="minecraft-logo.png" alt="Server Logo" style="height: 100px; margin: 5px;">
         <h1>PlanetPVP - Offizielle Website</h1>
-        
-      <a class="info discord header-discord" href="https:\\discord.planetpvp.de" target="_blank">
-        <img
-          class="image"
-          src="https://webstore-template-assets.tebex.io/images/discord.svg"
-          alt="Discord"
-        />
-        <strong class="title">Join our Discord<br>Click to Join</strong>
-      </a>
     </header>
     
-    <nav id="main-nav">
+    <nav id="main-nav" >
+        <img src="minecraft-logo.png" alt="Server Logo" style="height: 60px; margin: 0px; position: absolute; top: 5px; left: 30px;">
         <a href="index.html">Startseite</a>
         <a href="howtoplay.html">PlanetPVP Guide</a>
         <a href="Regelwerk.html">Regelwerk</a>
         <a href="https://planetpvp.tebex.io/">Shop</a>
         <a href="About.html">About</a>
+        <a href="https://discord.planetpvp.de" target="_blank" style="display: flex; align-items: center; gap: 6px; background: #5865F2; color: white; padding: 6px 10px; border-radius: 4px; text-decoration: none; position: absolute; top: 20px; right: 30px;">
+         <img src="https://webstore-template-assets.tebex.io/images/discord.svg" alt="Discord" style="height: 20px;">
+          <span style="font-size: 14px; line-height: 1.2;">Join our Discord</span>
+          </a>
     </nav>
-    
-    
- <main>
-  <img src="minecraft-player.png" class="frei-bild">
-   <div class="page-layout">
-    <aside id="server-infos" class="sticky-sidebar">
-        <h2>ServerInfos</h2>
-        <div id="api-info">
-            <div class="loading"></div> Lade Server-Informationen...
-        </div>
-    </aside>
-    <div class="main-content">
-        <section id="ueber-uns" class="fade-section">
-         <h2>Über uns</h2>
-          <div class="info-grid">
-           <div class="info-card">
-             <div class="info-icon"><i class="fas fa-users"></i></div>
-              <h3>Unsere Community</h3>
-              <p>Wir haben einen aktiven Discord-Server, über den das Projekt organisiert wird. </p>
-           </div>
-           <div class="info-card">
-            <div class="info-icon"><i class="fas fa-trophy"></i></div>
-             <h3>Anticheat</h3>
-             <p>Mit einem angepassen Anticheat, wird Cheatern fast keine Chance gelassen. Falls doch, werden sie manuell zur Rechenschaft gezogen!</p>
-           </div>
-           <div class="info-card">
-            <div class="info-icon"><i class="fas fa-server"></i></div>
-             <h3>Zuverlässigkeit</h3>
-             <p>Wir versuchen, auf jeden Spieler einzugehen und alle Probleme bestmöglich zu lösen.</p>
-           </div>
-          </div>
-        </section>
-        
-        <section id="news" class="fade-section">
-         <h2>📰News</h2>
-          <h3>Aktuelle News des Servers</h3>
-           <div class="info-news">
-             <h3>🔧 Serverstatus: Im Aufbau</h3>
-             <p>
-              Unser <strong>PlanetPVP-Server</strong> befindet sich derzeit noch in der Aufbauphase.
-              Ein genaues Release-Datum steht <strong>noch nicht fest</strong>, aber wir halten euch natürlich auf dem Laufenden!
-             </p>
-           </div>
-           <br>
-           <div class="info-news">
-					<h3>Aktuell offene Positionen im Team</h3>
-					<p>🔨 Gesucht werden <strong>Builder</strong>, die beim Bau von Maps wie 1vs1, Bedwars, Skywars, BuildBattle, practice, UHC, HG, FFA und anderen mithelfen möchten.</p>
-					<p>🛡️ Zusätzlich suchen wir bis zur Servereröffnung noch <strong>Moderatoren</strong>, die das Team im Spiel, im Chat sowie bei der Bearbeitung von Tickets und Reports unterstützen.</p>
-					<p>📬 Bewerbungen sind per Ticket im <a href="https:\\discord.planetpvp.de" target="_blank" class="LinkWeis">Discord</a> unter | #🔧🚨support | möglich.<br>
-           </div>
-        </section>
 
-        <section id="server-status" class="fade-section">
-            <h2>Serverstatus</h2>
-            <br><br>
-            <div class="host-status-preview" onclick="window.open('https://www.netcup-status.de/category/root-server/', '_blank')" style="cursor:pointer; display:flex; align-items:center; gap:16px; background:rgba(30,40,30,0.85); border-radius:7px; box-shadow:0 2px 10px rgba(0,0,0,0.18); padding:1.2rem 1.5rem; margin-bottom:1.5rem; transition:box-shadow 0.2s,transform 0.2s; border:0.1px solid #3a7c5c;">
-                <img src="netcuplogo.png" alt="Netcup Logo" style="width:48px;height:48px;border-radius:6px;box-shadow:0 1px 4px rgba(0,0,0,0.12);background:#fff;object-fit:contain;padding:4px;">
-                <div>
-                    <div style="font-size:1.15rem;font-weight:bold;color:#b2e5c7;letter-spacing:0.5px;">Host-Anbieter Status</div>
-                    <div style="color:#e3e6eb;font-size:0.98rem;">Hier siehst du den aktuellen Serverstatus unseres Hosters (netcup).<br><span style="color:#3a7c5c;">Klicke für Details &rarr;</span></div>
+<section class="fullwidth-image-section"></section>
+    <img src="minecraft-bild1-1.png" alt="Minecraft Bild" class="fullwidth-image">
+                    <div class="ueber-uns-info-box">
+                        <div class="ueber-uns-info-item">
+                            <div class="ueber-uns-info-icon"><i class="fas fa-users"></i></div>
+                            <div>
+                                <h3>Unsere Community</h3>
+                                <p>Wir haben einen aktiven Discord-Server, über den das Projekt organisiert wird.</p>
+                            </div>
+                        </div>
+                        <div class="ueber-uns-info-item">
+                            <div class="ueber-uns-info-icon"><i class="fas fa-trophy"></i></div>
+                            <div>
+                                <h3>Anticheat</h3>
+                                <p>Mit einem angepassten Anticheat wird Cheatern fast keine Chance gelassen. Falls doch, werden sie manuell zur Rechenschaft gezogen!</p>
+                            </div>
+                        </div>
+                        <div class="ueber-uns-info-item">
+                            <div class="ueber-uns-info-icon"><i class="fas fa-server"></i></div>
+                            <div>
+                                <h3>Zuverlässigkeit</h3>
+                                <p>Wir versuchen, auf jeden Spieler einzugehen und alle Probleme bestmöglich zu lösen.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <style>
+                    .ueber-uns-info-box {
+                        position: absolute;
+                        left: 18%;
+                        top: 46%;
+                        transform: translateY(-50%);
+                        background: rgba(0, 0, 0, 0.521);
+                        border-radius: 4px;
+                        box-shadow: 0 8px 32px rgba(0,0,0,0.18), 0 1.5px 8px rgba(0, 0, 0, 0.212);
+                        padding: 2.2rem 2.5rem 2.2rem 2.5rem;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 1.4rem;
+                        min-width: 330px;
+                        max-width: 520px;
+                        z-index: 3;
+                        border: 2.5px solid rgba(0, 0, 0, 0.322);
+                        backdrop-filter: blur(13px);
+                        transition: box-shadow 0.22s, border-color 0.22s;
+                        color: #111 !important;
+                    }
+                    .ueber-uns-info-item {
+                        display: flex;
+                        align-items: flex-start;
+                        gap: 1.1rem;
+                        border-bottom: 1.5px solid rgba(0, 0, 0, 0.418);
+                        padding-bottom: 1.1rem;
+                        margin-bottom: 0.2rem;
+                    }
+                    .ueber-uns-info-item:last-child {
+                        border-bottom: none;
+                        padding-bottom: 0;
+                    }
+                    .ueber-uns-info-icon {
+                        font-size: 2.5rem;
+                        color: #ffffff !important;
+                        background: rgba(255,255,255,0.13);
+                        border-radius: 10px;
+                        padding: 0.6rem 0.7rem;
+                        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                        min-width: 48px;
+                        text-align: center;
+                        margin-top: 2px;
+                    }
+                    .ueber-uns-info-item h3 {
+                        margin: 0 0 0.2rem 0;
+                        font-size: 1.18rem;
+                        color: #ffffff !important;
+                        letter-spacing: 0.4px;
+                        text-shadow: 0 2px 7px rgb(0, 0, 0);
+                    }
+                    .ueber-uns-info-item p {
+                        margin: 0;
+                        font-size: 1.01rem;
+                        color: #fffdfd !important;
+                        line-height: 1.5;
+                        text-shadow: 0 1px 3px rgba(0,0,0,0.10);
+                    }
+                    @media (max-width: 900px) {
+                        .ueber-uns-info-box {
+                            position: static;
+                            transform: none;
+                            min-width: 0;
+                            max-width: 100%;
+                            padding: 1.2rem 0.7rem;
+                            margin: 1.2rem auto 0 auto;
+                            left: 0;
+                            top: 0;
+                        }
+                    }
+                    </style>
+</section>
+
+
+<main>
+     <div class="page-layout">
+        <aside id="server-infos" class="sticky-sidebar">
+                <h2>ServerInfos</h2>
+                <div id="api-info">
+                        <div class="loading"></div> Lade Server-Informationen...
                 </div>
-            </div>
-            <p>lokaler Server:</p>
-            <div class="server-status" id="server-status-container">
-                <div class="loading"></div> Lade Serverstatus...
-            </div>
-            <div id="subservers-status" class="subserver-container"></div>
+        </aside>
+        <div class="main-content">
+                <section id="news" class="fade-section">
+                 <h2>📰News</h2>
+                    <h3>Aktuelle News des Servers</h3>
+                     <div class="info-news">
+                         <h3>🔧 Serverstatus: Im Aufbau</h3>
+                         <p>
+                            Unser <strong>PlanetPVP-Server</strong> befindet sich derzeit noch in der Aufbauphase.
+                            Ein genaues Release-Datum steht <strong>noch nicht fest</strong>, aber wir halten euch natürlich auf dem Laufenden!
+                         </p>
+                     </div>
+                     <br>
+                     <div class="info-news">
+                    <h3>Aktuell offene Positionen im Team</h3>
+                    <p>🔨 Gesucht werden <strong>Builder</strong>, die beim Bau von Maps wie 1vs1, Bedwars, Skywars, BuildBattle, practice, UHC, HG, FFA und anderen mithelfen möchten.</p>
+                    <p>🛡️ Zusätzlich suchen wir bis zur Servereröffnung noch <strong>Moderatoren</strong>, die das Team im Spiel, im Chat sowie bei der Bearbeitung von Tickets und Reports unterstützen.</p>
+                    <p>📬 Bewerbungen sind per Ticket im <a href="https:\\discord.planetpvp.de" target="_blank" class="LinkWeis">Discord</a> unter | #🔧🚨support | möglich.<br>
+                     </div>
+                </section>
 
-        </section>
-      </div>
-		
+                <section id="server-status" class="fade-section">
+                    <img src="minecraft-player.png" class="frei-bild">
+                        <h2>Serverstatus</h2>
+                        <br><br>
+                        <div class="host-status-preview" onclick="window.open('https://www.netcup-status.de/category/root-server/', '_blank')" style="cursor:pointer; display:flex; align-items:center; gap:16px; background:rgba(30,40,30,0.85); border-radius:7px; box-shadow:0 2px 10px rgba(0,0,0,0.18); padding:1.2rem 1.5rem; margin-bottom:1.5rem; transition:box-shadow 0.2s,transform 0.2s; border:0.1px solid #3a7c5c;">
+                                <img src="netcuplogo.png" alt="Netcup Logo" style="width:48px;height:48px;border-radius:6px;box-shadow:0 1px 4px rgba(0,0,0,0.12);background:#fff;object-fit:contain;padding:4px;">
+                                <div>
+                                        <div style="font-size:1.15rem;font-weight:bold;color:#b2e5c7;letter-spacing:0.5px;">Host-Anbieter Status</div>
+                                        <div style="color:#e3e6eb;font-size:0.98rem;">Hier siehst du den aktuellen Serverstatus unseres Hosters (netcup).<br><span style="color:#3a7c5c;">Klicke für Details &rarr;</span></div>
+                                </div>
+                        </div>
+                        <p>lokaler Server:</p>
+                        <div class="server-status" id="server-status-container">
+                                <div class="loading"></div> Lade Serverstatus...
+                        </div>
+                        <div id="subservers-status" class="subserver-container"></div>
+
+                </section>
+            </div>
+        
  </main>
  <footer>
-  <p>&copy; 2025 Planet-Connection. Alle Rechte vorbehalten.
-   <br><br>
-   Diese Website ist ausschließlich für einen geschlossenen Nutzerkreis bestimmt und dient nicht der geschäftsmäßigen Nutzung.
-   <br> Da sie weder dauerhaft der Öffentlichkeit zugänglich ist noch wirtschaftliche Interessen verfolgt, unterliegt sie gemäß § 5 TMG nicht der Impressumspflicht.
-   <br><br> Eine Weiterverbreitung oder öffentliche Zugänglichmachung dieser Website ist nicht gestattet.
-  </p>
+    <p>&copy; 2025 Planet-Connection. Alle Rechte vorbehalten.
+     <br><br>
+     Diese Website ist ausschließlich für einen geschlossenen Nutzerkreis bestimmt und dient nicht der geschäftsmäßigen Nutzung.
+     <br> Da sie weder dauerhaft der Öffentlichkeit zugänglich ist noch wirtschaftliche Interessen verfolgt, unterliegt sie gemäß § 5 TMG nicht der Impressumspflicht.
+     <br><br> Eine Weiterverbreitung oder öffentliche Zugänglichmachung dieser Website ist nicht gestattet.
+    </p>
  </footer>
+
+<style>
+.fullwidth-image-section {
+    width: 100%;
+    max-width: 100vw;
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    box-sizing: border-box;
+}
+.fullwidth-image-section .fullwidth-image,
+.fullwidth-image {
+    width: 100%;
+    max-width: 100vw;
+    display: block;
+    height: 600px;
+    object-fit: cover;
+    object-position: center;
+    margin: 0 auto;
+    padding: 0;
+    border: none;
+    user-select: none;
+    pointer-events: none;
+    box-sizing: border-box;
+    /* Dreieckige Maske am unteren Rand */
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+}
+@media (max-width: 900px) {
+    .fullwidth-image-section .fullwidth-image,
+    .fullwidth-image {
+        height: 120px;
+        min-height: 70px;
+        object-fit: cover;
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
+        clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
+    }
+}
+</style>
 
 <script>
 
