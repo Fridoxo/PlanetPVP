@@ -49,6 +49,14 @@
             box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
             position: relative;
             overflow: hidden;
+            /* Schräg gestreiftes Muster: dünne, hellgraue Streifen von rechts oben nach links unten */
+            background-image: repeating-linear-gradient(
+            -45deg,
+            rgba(70,70,70,0.19) 1.2px,
+            rgba(70,70,70,0.19) 2px,
+            transparent 1px,
+            transparent 16px
+            );
         }
         
         header::before {
@@ -78,7 +86,7 @@
         }
         
         nav.scrolled {
-            padding: 0.7rem;
+            padding: 1rem;
             background-color: rgba(10, 18, 38, 0.97);
         }
         
@@ -350,39 +358,39 @@
             right: 1500px;
         }
 
-        .header-discord {
-          position: absolute;
-          top: 62px;
-          right: 80px;
-          display: flex;
-          align-items: center;
-          gap: 10px;
-          padding: 10px 12px;
-          background-color: rgba(0, 0, 0, 0);
-          border-radius: 12px;
-          z-index: 10;
-          text-decoration: none;
-          color: white;
-          font-weight: bold;
-          font-size: 14px;
-          line-height: 1.2;
-          transition: background-color 0.3s ease;
-        }
+.header-discord {
+  position: absolute;
+  top: 62px;
+  right: 80px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 7px;
+  z-index: 10;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.2;
+  transition: background-color 0.3s ease;
+}
 
-        .header-discord:hover {
-          background-color: rgba(0, 0, 0, 0.7);
-        }
+.header-discord:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
 
-        .header-discord .discord-icon {
-          width: 32px;
-          height: 32px;
-        }
+.header-discord .discord-icon {
+  width: 32px;
+  height: 32px;
+}
 
-        .header-discord .action {
-          color: #00aaff;
-          font-weight: normal;
-          font-size: 12px;
-        }
+.header-discord .action {
+  color: #00aaff;
+  font-weight: normal;
+  font-size: 12px;
+}
 
         .command { background: #333; padding: 5px; border-radius: 5px; display: inline-block; }
 
@@ -532,31 +540,24 @@
 </head>
 <body>
     <header>
-        <img src="minecraft-logo.png" alt="Server Logo" style="height: 100px; margin: 5px;">
-        <h1>PlanetPVP - Offizielle Website</h1>
-                
-        <a class="info discord header-discord" href="https:\\discord.planetpvp.de" target="_blank">
-        <img
-          class="image"
-          src="https://webstore-template-assets.tebex.io/images/discord.svg"
-          alt="Discord"
-        />
-        <strong class="title">Join our Discord<br>Click to Join</strong>
-      </a>
-      
+        <h1>PlanetPVP-Network</h1>
     </header>
     
-    <nav id="main-nav">
+    <nav id="main-nav" >
+        <img src="minecraft-logo.png" alt="Server Logo" style="height: 60px; margin: 0px; position: absolute; top: 5px; left: 30px;">
         <a href="index.html">Startseite</a>
         <a href="howtoplay.html">PlanetPVP Guide</a>
         <a href="Regelwerk.html">Regelwerk</a>
         <a href="https://planetpvp.tebex.io/">Shop</a>
         <a href="About.html">About</a>
+        <a href="https://discord.planetpvp.de" target="_blank" style="display: flex; align-items: center; gap: 6px; background: #5865F2; color: white; padding: 6px 10px; border-radius: 4px; text-decoration: none; position: absolute; top: 20px; right: 30px;">
+         <img src="https://webstore-template-assets.tebex.io/images/discord.svg" alt="Discord" style="height: 20px;">
+          <span style="font-size: 14px; line-height: 1.2;">Join our Discord</span>
+          </a>
     </nav>
     
     
     <main>
-      <img src="minecraft-player.png" class="frei-bild">
        <div class="page-layout">
         <!-- Sidebar Navigator -->
         <aside class="sticky-sidebar">

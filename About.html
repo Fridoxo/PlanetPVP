@@ -45,6 +45,14 @@
             box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
             position: relative;
             overflow: hidden;
+            /* Schräg gestreiftes Muster: dünne, hellgraue Streifen von rechts oben nach links unten */
+            background-image: repeating-linear-gradient(
+            -45deg,
+            rgba(70,70,70,0.19) 1.2px,
+            rgba(70,70,70,0.19) 2px,
+            transparent 1px,
+            transparent 16px
+            );
         }
         
         header::before {
@@ -75,7 +83,7 @@
         }
         
         nav.scrolled {
-            padding: 0.7rem;
+            padding: 1rem;
             background-color: rgba(10, 18, 38, 0.97);
         }
         
@@ -425,7 +433,7 @@
   gap: 10px;
   padding: 10px 12px;
   background-color: rgba(0, 0, 0, 0);
-  border-radius: 12px;
+  border-radius: 7px;
   z-index: 10;
   text-decoration: none;
   color: white;
@@ -455,30 +463,24 @@
 </head>
 <body>
     <header>
-        <img src="minecraft-logo.png" alt="Server Logo" style="height: 100px; margin: 5px;">
-        <h1>PlanetPVP - Offizielle Website</h1>
-        
-                      <a class="info discord header-discord" href="https:\\discord.planetpvp.de" target="_blank">
-        <img
-          class="image"
-          src="https://webstore-template-assets.tebex.io/images/discord.svg"
-          alt="Discord"
-        />
-        <strong class="title">Join our Discord<br>Click to Join</strong>
-      </a>
+        <h1>PlanetPVP-Network</h1>
     </header>
     
-    <nav id="main-nav">
+    <nav id="main-nav" >
+        <img src="minecraft-logo.png" alt="Server Logo" style="height: 60px; margin: 0px; position: absolute; top: 5px; left: 30px;">
         <a href="index.html">Startseite</a>
         <a href="howtoplay.html">PlanetPVP Guide</a>
         <a href="Regelwerk.html">Regelwerk</a>
         <a href="https://planetpvp.tebex.io/">Shop</a>
         <a href="About.html">About</a>
+        <a href="https://discord.planetpvp.de" target="_blank" style="display: flex; align-items: center; gap: 6px; background: #5865F2; color: white; padding: 6px 10px; border-radius: 4px; text-decoration: none; position: absolute; top: 20px; right: 30px;">
+         <img src="https://webstore-template-assets.tebex.io/images/discord.svg" alt="Discord" style="height: 20px;">
+          <span style="font-size: 14px; line-height: 1.2;">Join our Discord</span>
+          </a>
     </nav>
     
     
     <main>
-       <img src="minecraft-player.png" class="frei-bild">
         <section id="Regeln-Deutsch" class="fade-section">
             <h2 class="fade-in-up"><i class="fas fa-info-circle"></i> Über PlanetPVP</h2>
 
@@ -554,41 +556,37 @@
                 <h3><i class="fas fa-id-card"></i> Impressum</h3>
                 <p><strong>Beispielcreator:</strong> Max Mustermann</p>
                 <p>
-                  c/o Online-Impressum.de #12345<br>
-                  Europaring 90<br>
-                  53757 Sankt Augustin
+                  Impressum123<br>
+                  Straße 123<br>
+                  Straße123
                 </p>
                 <p>
-                  <strong>Email:</strong> <a href="mailto:hello@online-impressum.de" class="LinkWeis">hello@online-impressum.de</a><br>
+                  <strong>Email:</strong> <a href="123" class="LinkWeis">Email@email</a><br>
                   <strong>Telefon:</strong> +49 12345 67 89 0<br>
                   <strong>USt-IdNr:</strong> 123/456/7890
                 </p>
                 <p>
                   <strong>Zuständige Aufsichtsbehörde:</strong><br>
-                  Landesanstalt für Medien Nordrhein-Westfalen<br>
-                  Sitz: Deutschland
                 </p>
             </section>
             <!-- Datenschutzerklärung -->
             <h3 style="margin-top:2.5rem;color:var(--accent-color);"><i class="fas fa-globe"></i> Datenschutzerklärung</h3>
             <section class="fade-in-right" style="background:rgba(38,48,38,0.92);">
+                <h4>Der Schutz Ihrer persönlichen Daten ist uns sehr wichtig. Nachfolgend informieren wir Sie darüber, welche Daten auf dieser Website und unserem Minecraft Server erhoben und wie sie verwendet werden.</h4>
+                <hr style="border:0;border-top:1px solid #3a7c5c;margin:2rem 0;">
                 <h3><i class="fas fa-user-shield"></i> Datenschutzerklärung für die Website</h3>
                 <ul style="margin-bottom:1.5rem;">
                     <li>
-                        <strong>Datenschutz auf einen Blick:</strong><br>
-                        Der Schutz Ihrer persönlichen Daten ist uns sehr wichtig. Nachfolgend informieren wir Sie darüber, welche Daten auf dieser Website erhoben und wie sie verwendet werden.
+                        <strong>Allgemeine Hinweise:</strong><br>
+                        Diese Website dient ausschließlich Informationszwecken. Es werden <b>keine</b> personenbezogenen Daten automatisiert gespeichert oder verarbeitet.
                     </li>
                     <li>
-                        <strong>Allgemeine Hinweise:</strong><br>
-                        Diese Website dient ausschließlich Informationszwecken für einen geschlossenen Nutzerkreis. Es werden keine personenbezogenen Daten automatisiert gespeichert oder verarbeitet.
+                        <strong>Cookies:</strong><br>
+                        Diese Website verwendet keine Cookies, die personenbezogene Daten speichern. Es werden lediglich technische Cookies für die Funktionalität der Seite verwendet.
                     </li>
                     <li>
                         <strong>Kontaktaufnahme:</strong><br>
                         Wenn Sie uns per E-Mail kontaktieren, werden Ihre Angaben ausschließlich zur Bearbeitung der Anfrage verwendet und nicht an Dritte weitergegeben.
-                    </li>
-                    <li>
-                        <strong>Server-Logfiles:</strong><br>
-                        Beim Besuch dieser Website werden keine personenbezogenen Daten wie IP-Adressen dauerhaft gespeichert. Es findet keine Auswertung zu Marketingzwecken statt.
                     </li>
                     <li>
                         <strong>Externe Links:</strong><br>
@@ -603,8 +601,16 @@
                         IP-Adressen werden ausschließlich für serverbezogene Zwecke gespeichert.
                     </li>
                     <li>
+                        <strong>Chatprotokolle:</strong><br>
+                        Chatnachrichten können zur Moderation protokolliert werden, sind aber nicht öffentlich einsehbar.
+                    </li>
+                    <li>
                         <strong>Zugriffsrechte:</strong><br>
                         Zugriff auf gespeicherte IP-Adressen haben nur Administratoren.
+                    </li>
+                     <li>
+                        <strong>Zugriff auf Daten:</strong><br>
+                        Zugriff auf gespeicherte Daten erfolgt nur bei konkretem Moderationsbedarf.
                     </li>
                     <li>
                         <strong>Haftung bei Datenlecks:</strong><br>
@@ -615,29 +621,16 @@
                         Personenbezogene Daten werden nicht an Dritte weitergegeben, insbesondere nicht für Werbezwecke.
                     </li>
                     <li>
-                        <strong>Speicherung weiterer Daten:</strong><br>
-                        Es werden keine Standortdaten, Browserinformationen oder ähnliche Daten dauerhaft gespeichert.
-                    </li>
-                    <li>
-                        <strong>Chatprotokolle:</strong><br>
-                        Chatnachrichten können zur Moderation protokolliert werden, sind aber nicht öffentlich einsehbar.
+                        <strong>Profiling:</strong><br>
+                        Es findet kein automatisiertes Profiling in jeglicher Weise statt.
                     </li>
                     <li>
                         <strong>Löschung von Daten:</strong><br>
                         Auf Anfrage können gespeicherte Daten (z. B. IP oder Chatverläufe) gelöscht werden.
                     </li>
                     <li>
-                        <strong>Profiling:</strong><br>
-                        Es findet kein automatisiertes Profiling auf Basis der Spielweise statt.
-                    </li>
-                    <li>
-                        <strong>Zugriff auf Daten:</strong><br>
-                        Zugriff auf gespeicherte Daten erfolgt nur bei konkretem Moderationsbedarf.
-                    </li>
-                    <li>
-                        <strong>Cookies und Tracking:</strong><br>
-                        Unser Server verwendet keine Cookies oder Tracking-Tools wie z. B. Google Analytics.
-                    </li>
+                        <strong>Datensicherheit:</strong><br>
+                        Wir setzen technische und organisatorische Maßnahmen ein, um die Sicherheit der Daten zu gewährleisten.
                     <li>
                         <strong>Informationspflicht bei Datenleck:</strong><br>
                         Bei einem Datenleck informieren wir betroffene Nutzer schnellstmöglich.
