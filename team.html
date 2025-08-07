@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlanetPVP Team</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        :root {
+            --main-bg-color: #10181f;
+            --second-bg-color: #232b33;
+            --text-color: #e3e6eb;
+            --accent-color: #3a7c5c;
+            --hover-color: #4e8c6d;
+            --glow-color: #b2e5c7;
+            --card-bg: #1a232b;
+            --shadow: 0 2px 8px rgba(20,32,40,0.08);
+            --shadow-hover: 0 4px 16px rgba(20,32,40,0.13);
+        }
+        html, body {
+            font-family: 'Inter', 'Roboto', Arial, sans-serif;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--main-bg-color);
+            color: var(--text-color);
+            overflow-x: hidden;
+            background-image: url('/api/placeholder/400/320');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            background-blend-mode: overlay;
+        }
+        
+        header {
+            background-color: rgba(26, 26, 26, 0.9);
+            padding: 0.001rem;
+            text-align: center;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+            /* Schräg gestreiftes Muster: dünne, hellgraue Streifen von rechts oben nach links unten */
+            background-image: repeating-linear-gradient(
+            -45deg,
+            rgba(70,70,70,0.19) 1.2px,
+            rgba(70,70,70,0.19) 2px,
+            transparent 1px,
+            transparent 16px
+            );
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 49%, var(--accent-color) 49%, var(--accent-color) 51%, transparent 51%);
+            background-size: 20px 20px;
+            opacity: 0.1;
+            z-index: -1;
+        }
+        
+        nav {
+            background-color: rgba(38, 38, 38, 0.9);
+            display: flex;
+            justify-content: center;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        
+        nav.scrolled {
+            padding: 1rem;
+            background-color: rgba(10, 18, 38, 0.97);
+        }
+        
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            padding: 0.7rem 1.2rem;
+            margin: 0 0.5rem;
+            border-radius: 8px;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            font-weight: bold;
+        }
+        
+        nav a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(123, 255, 132, 0.2), transparent);
+            transition: all 0.5s;
+            z-index: -1;
+        }
+        
+        nav a:hover::before {
+            left: 100%;
+        }
+        
+        nav a:hover {
+            background-color: var(--hover-color);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        main {
+            max-width: 1500px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        section {
+            margin-bottom: 4rem;
+            padding: 2rem;
+            background-color: rgba(38, 48, 38, 0.8);
+            border-radius: 3px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transform: translateY(50px);
+            opacity: 0;
+            transition: all 0.8s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--glow-color), var(--accent-color));
+            opacity: 0.7;
+        }
+        
+        section.visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        h1 {
+            color: var(--accent-color);
+            font-size: 3rem;
+            margin-bottom: 0.4rem;
+            text-shadow: 0 5px 4px rgba(0, 0, 0, 0.3);
+            letter-spacing: 2px;
+        }
+        
+        h2 {
+            color: var(--accent-color);
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+            position: relative;
+            display: inline-block;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--accent-color);
+            transition: width 0.5s ease;
+        }
+        
+        section:hover h2::after {
+            width: 100%;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: rgba(20, 20, 20, 0.9);
+            margin-top: 2rem;
+            position: relative;
+            box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--glow-color), transparent);
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .LinkWeis {
+            text-decoration: none;
+            color: white;
+        }
+
+        .frei-bild {
+            position: absolute;
+            width: 400px;
+            height: auto;
+            top: 10px;
+            right: 1500px;
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+.header-discord {
+  position: absolute;
+  top: 62px;
+  right: 80px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 7px;
+  z-index: 10;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.2;
+  transition: background-color 0.3s ease;
+}
+
+.header-discord:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.header-discord .discord-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.header-discord .action {
+  color: #00aaff;
+  font-weight: normal;
+  font-size: 12px;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>PlanetPVP-Network</h1>
+    </header>
+    
+    <nav id="main-nav" >
+        <img src="minecraft-logo.png" alt="Server Logo" style="height: 60px; margin: 0px; position: absolute; top: 5px; left: 30px;">
+        <a href="index.html">Startseite</a>
+        <a href="howtoplay.html">PlanetPVP Guide</a>
+        <a href="Regelwerk.html">Regelwerk</a>
+        <a href="https://planetpvp.tebex.io/">Shop</a>
+        <a href="team.html">Team</a>
+        <a href="About.html">About</a>
+        <a href="https://discord.planetpvp.de" target="_blank" style="display: flex; align-items: center; gap: 6px; background: #5865F2; color: white; padding: 6px 10px; border-radius: 4px; text-decoration: none; position: absolute; top: 20px; right: 30px;">
+         <img src="https://webstore-template-assets.tebex.io/images/discord.svg" alt="Discord" style="height: 20px;">
+          <span style="font-size: 14px; line-height: 1.2;">Join our Discord</span>
+          </a>
+    </nav>
+
+<main>
+<!-- Moderatoren Sektion -->
+<section id="moderatoren" class="fade-section">
+    <h2>Moderationsteam</h2>
+    <div class="team-grid">
+        <!-- Minecraft Name reicht, Skin wird automatisch geladen -->
+        <div class="team-member">
+            <div class="minecraft-avatar">
+                <img src="https://mc-heads.net/avatar/FriediTV" alt="FriediTV" class="avatar-img">
+                <img src="https://mc-heads.net/body/FriediTV/100" class="hover-skin" alt="FriediTV Skin">
+            </div>
+            <h4>FriediTV</h4>
+            <p class="role" style="color: #741818;">Administrator</p>
+        </div>
+        <div class="team-member">
+            <div class="minecraft-avatar">
+                <img src="https://mc-heads.net/avatar/LucxTV" alt="LucxTV" class="avatar-img">
+                <img src="https://mc-heads.net/body/LucxTV/100" class="hover-skin" alt="LucxTV Skin">
+            </div>
+            <h4>LucxTV</h4>
+            <p class="role" style="color: #741818;">Administrator</p>
+        </div>
+        <div class="team-member">
+            <div class="minecraft-avatar">
+                <img src="https://mc-heads.net/avatar/rossonerifinn" alt="rossonerifinn" class="avatar-img">
+                <img src="https://mc-heads.net/body/rossonerifinn/100" class="hover-skin" alt="rossonerifinn Skin">
+            </div>
+            <h4>rossonerifinn</h4>
+            <p class="role" style="color: #eb3f3f;">Moderator</p>
+        </div>
+        <div class="team-member">
+            <div class="minecraft-avatar">
+                <img src="https://mc-heads.net/avatar/imaxo8i" alt="imaxo8i" class="avatar-img">
+                <img src="https://mc-heads.net/body/imaxo8i/100" class="hover-skin" alt="imaxo8i Skin">
+            </div>
+            <h4>imaxo8i</h4>
+            <p class="role" style="color: #ee7f7f;">Junior Moderator</p>
+        </div>
+        <div class="team-member">
+            <div class="minecraft-avatar">
+                <img src="https://mc-heads.net/avatar/blindfoldet" alt="blindfoldet" class="avatar-img">
+                <img src="https://mc-heads.net/body/blindfoldet/100" class="hover-skin" alt="blindfoldet Skin">
+            </div>
+            <h4>blindfoldet</h4>
+            <p class="role" style="color: #ee7f7f;">Junior Moderator</p>
+        </div>
+        <!-- Weitere Moderatoren hier hinzufügen -->
+    </div>
+</section>
+
+<!-- Builder Sektion -->
+<section id="builder" class="fade-section">
+    <h2>Builder</h2>
+    <div class="team-grid">
+        <div class="team-member">
+            <div class="minecraft-avatar">
+                <img src="https://mc-heads.net/avatar/luca33133" alt="luca33133" class="avatar-img">
+                <img src="https://mc-heads.net/body/luca33133/100" class="hover-skin" alt="luca33133 Skin">
+            </div>
+            <h4 style="color: #41a208;">luca33133</h4>
+        </div>
+        <!-- Weitere Builder hier hinzufügen -->
+    </div>
+</section>
+
+<!-- Media Sektion -->
+<section id="media" class="fade-section">
+    <h2>Media</h2>
+    <div class="team-grid">
+        <div class="team-member1">
+            <div class="media-avatar">
+                <img src="https://static-cdn.jtvnw.net/jtv_user_pictures/a4f1ee29-8fc8-496e-a5f3-31a1d9a27a95-profile_image-70x70.png" alt="Media 1">
+            </div>
+            <h4>fibsitv</h4>
+            <p class="role">Content Creator</p>
+        </div>
+        <div class="team-member1">
+            <div class="media-avatar">
+                <img src="https://static-cdn.jtvnw.net/jtv_user_pictures/e4ca2b60-63a8-4a09-81e7-f7054d9e9c78-profile_image-70x70.png" alt="Media 1">
+            </div>
+            <h4>linastunna</h4>
+            <p class="role">Content Creator</p>
+        </div>
+        <div class="team-member1">
+            <div class="media-avatar">
+                <img src="https://static-cdn.jtvnw.net/jtv_user_pictures/18b776a2-bf39-4ecf-94c6-541a25455629-profile_image-70x70.png" alt="Media 1">
+            </div>
+            <h4>Quertixxttv</h4>
+            <p class="role">Content Creator</p>
+        </div>
+        <!-- Weitere Media Mitglieder hier hinzufügen -->
+    </div>
+</section>
+
+<!-- Bewerbung Sektion -->
+<section id="bewerbung" class="fade-section">
+    <h2>Bewirb dich bei uns</h2>
+    <p>
+        Wenn du dich als <strong>Moderator/Builder/Media</strong> bewerben möchtest, erstelle bitte ein Ticket auf unserem Discord-Server.
+    </p>
+    <h3>Voraussetzungen für Media</h3>
+    <ul>
+        <li>Eigener YouTube- oder Twitch-Kanal mit aktiver Community</li>
+        <li>Mindestens 1 Video/Stream auf PlanetPVP pro Monat</li>
+        <li>Mindestens 2000 Abonnenten/Follower (Ausnahmen möglich)</li>
+    </ul>
+
+    <div id="bewerbung-buttons" style="display: flex; flex-direction: row; gap: 18px; margin-top: 24px; justify-content: flex-start; flex-wrap: wrap;"></div>
+        <button id="bewerbung-moderator-toggle" style="background:#5865F2;color:white;padding:10px 22px;border:none;border-radius:6px;font-size:1.1rem;cursor:pointer;display:flex;align-items:center;gap:8px;">
+            <i class="fa-brands fa-discord"></i> Moderator Bewerbungsformular anzeigen
+        </button>
+        <button id="bewerbung-builder-toggle" style="background:#41a208;color:white;padding:10px 22px;border:none;border-radius:6px;font-size:1.1rem;cursor:pointer;display:flex;align-items:center;gap:8px;">
+            <i class="fa-solid fa-cube"></i> Builder Bewerbungsformular anzeigen
+        </button>
+    </div>
+    <div id="bewerbung-moderator-formular" class="bewerbung-formular" style="display:none;">
+        <div style="background:#23272A;border-radius:8px;padding:24px;max-width:650px;color:#e3e6eb;font-family:'Segoe UI', 'Inter', Arial, sans-serif;box-shadow:0 2px 12px rgba(0,0,0,0.18);">
+            <h3 style="margin-top:0;">JrModerator Bewerbung PlanetPVP</h3>
+            <p>Bitte beantworte folgende Fragen bzw. gib die gefragten Informationen an:</p>
+            <ol style="margin-left: 1.2em;">
+                <li><strong>Warum möchtest du bei PlanetPVP Moderator werden?</strong></li>
+                <li><strong>Allgemeine Informationen:</strong>
+                    <ul>
+                        <li>Dein Alter</li>
+                        <li>Sprachen, die du sprichst</li>
+                        <li>Schüler / Azubi / Student / Berufstätig?</li>
+                        <li>Hobbys oder Interessen außerhalb von Minecraft (optional)</li>
+                    </ul>
+                </li>
+                <li><strong>Wie lange spielst du schon auf unserem Server?</strong>
+                    <br>Gib <span style="font-family:monospace;">/playtime</span> ingame ein, um dir deine Spielzeit anzeigen zu lassen.
+                </li>
+                <li><strong>Hast du schon Erfahrungen mit der Moderation im Allgemeinen gesammelt und wenn ja, welche?</strong>
+                    <br>Alle Arten von Moderations-, Leitungs- oder Organisationserfahrungen zählen, egal ob digital oder real.<br>
+                    z. B.: Discord-/Gameserver-Moderation (beliebiges Spiel), Forum-Moderation (z. B. Reddit), AG-Leitung (z. B. Schach, Technik), Klassen-/Schulsprecher, Leitung einer Jugend- oder Konfi-Gruppe, Eventorganisation im Verein (z. B. Turniere, Feste), Team- oder Schichtleitung, Verantwortung für IT-Systeme oder Softwareprojekte im Beruf...
+                </li>
+                <li><strong>Wie lange pro Tag kannst du durchschnittlich Zeit für die Moderation aufbringen?</strong>
+                    <br>Urlaub, Krankheit usw. ausgenommen
+                </li>
+                <li><strong>Wie würdest du in einer typischen Konfliktsituation zwischen zwei Spielern reagieren?</strong>
+                    <br>Beschreibe kurz, wie du deeskalierend und regelbezogen vorgehen würdest.
+                </li>
+                <li><strong>Welche Regeln sind dir besonders wichtig und warum?</strong></li>
+                <li><strong>Was unterscheidet dich von anderen Bewerbern?</strong>
+                    <br>Was sind deine besonderen Stärken oder deine Motivation?
+                </li>
+                <li><strong>Bist du aktuell auf anderen Servern als Teammitglied aktiv?</strong>
+                    <br>Wenn ja, wo und in welcher Rolle?
+                </li>
+            </ol>
+        </div>
+        <div id="bewerbung-builder-button-wrapper" style="margin-top:18px; display: flex; flex-direction: row; gap: 18px; justify-content: flex-start;"></div>
+            <button id="bewerbung-builder-toggle-clone" style="background:#41a208;color:white;padding:10px 22px;border:none;border-radius:6px;font-size:1.1rem;cursor:pointer;display:none;align-items:center;gap:8px;">
+                <i class="fa-solid fa-cube"></i> Builder Bewerbungsformular anzeigen
+            </button>
+        </div>
+    </div>
+    <div id="bewerbung-builder-formular" class="bewerbung-formular" style="display:none;">
+        <div style="background:#23272A;border-radius:8px;padding:24px;max-width:650px;color:#e3e6eb;font-family:'Segoe UI', 'Inter', Arial, sans-serif;box-shadow:0 2px 12px rgba(0,0,0,0.18);">
+            <h3 style="margin-top:0;">Builder Bewerbung PlanetPVP</h3>
+            <p>Bitte beantworte folgende Fragen bzw. gib die gefragten Informationen an:</p>
+            <ol style="margin-left: 1.2em;">
+                <li><strong>Warum möchtest du bei PlanetPVP als Builder mitwirken?</strong></li>
+                <li><strong>Seit wann baust du aktiv in Minecraft?</strong>
+                    <br>Einzelspieler- oder Mehrspieler-Erfahrung?
+                </li>
+                <li><strong>Screenshots oder Videos deiner bisherigen Projekte</strong></li>
+                <li><strong>Allgemeine Informationen (optional):</strong>
+                    <ul>
+                        <li>Dein Alter</li>
+                        <li>Schüler / Azubi / Student / Berufstätig?</li>
+                        <li>Hobbys oder Interessen außerhalb von Minecraft</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    </div>
+    <style>
+        .bewerbung-formular {
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(.4,0,.2,1), opacity 0.5s cubic-bezier(.4,0,.2,1);
+            max-height: 0;
+            opacity: 0;
+            margin-bottom: 0;
+        }
+        .bewerbung-formular.visible {
+            max-height: 1200px;
+            opacity: 1;
+            margin-bottom: 24px;
+        }
+        #bewerbung-buttons {
+            transition: margin-bottom 0.5s cubic-bezier(.4,0,.2,1);
+        }
+        #bewerbung-builder-button-wrapper {
+            display: flex;
+            flex-direction: row;
+            gap: 18px;
+            justify-content: flex-start;
+        }
+    </style>
+    <script>
+        // Clone the builder button
+        const builderToggle = document.getElementById('bewerbung-builder-toggle');
+        const builderToggleClone = document.getElementById('bewerbung-builder-toggle-clone');
+        
+        // Make the clone have the same text and appearance
+        builderToggleClone.innerHTML = builderToggle.innerHTML;
+        
+        // Helper for sliding animation and form display
+        function showForm(formId, buttonId, otherFormId, otherButtonId) {
+            var form = document.getElementById(formId);
+            var button = document.getElementById(buttonId);
+            var otherForm = document.getElementById(otherFormId);
+            var otherButton = document.getElementById(otherButtonId);
+            
+            // Determine if we're handling moderator or builder form
+            var isModeratorForm = formId === 'bewerbung-moderator-formular';
+            
+            if (!form.classList.contains('visible')) {
+                // Show this form
+                form.style.display = 'block';
+                setTimeout(function() {
+                    form.classList.add('visible');
+                    
+                    // Auto-scroll to show the full form after it starts expanding
+                    setTimeout(function() {
+                        form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }, 100);
+                }, 10);
+                
+                // Hide other form
+                otherForm.classList.remove('visible');
+                setTimeout(function() {
+                    otherForm.style.display = 'none';
+                }, 500);
+                
+                // Update button text for current form (showing -> hiding)
+                if (isModeratorForm) {
+                    button.innerHTML = '<i class="fa-solid fa-chevron-up"></i> Moderator Bewerbungsformular ausblenden';
+                    
+                    // Hide the original builder button
+                    builderToggle.style.display = 'none';
+                    
+                    // Show the cloned builder button below the moderator form
+                    builderToggleClone.style.display = 'flex';
+                } else {
+                    button.innerHTML = '<i class="fa-solid fa-chevron-up"></i> Builder Bewerbungsformular ausblenden';
+                }
+                
+                // Reset other button text
+                if (otherButton) {
+                    if (isModeratorForm) {
+                        otherButton.innerHTML = '<i class="fa-solid fa-cube"></i> Builder Bewerbungsformular anzeigen';
+                    } else {
+                        otherButton.innerHTML = '<i class="fa-brands fa-discord"></i> Moderator Bewerbungsformular anzeigen';
+                    }
+                }
+            } else {
+                // Hide this form
+                form.classList.remove('visible');
+                setTimeout(function() {
+                    form.style.display = 'none';
+                }, 500);
+                
+                // Reset button text
+                if (isModeratorForm) {
+                    button.innerHTML = '<i class="fa-brands fa-discord"></i> Moderator Bewerbungsformular anzeigen';
+                    
+                    // Show the original builder button again
+                    builderToggle.style.display = 'block';
+                    
+                    // Hide the cloned builder button
+                    builderToggleClone.style.display = 'none';
+                } else {
+                    button.innerHTML = '<i class="fa-solid fa-cube"></i> Builder Bewerbungsformular anzeigen';
+                }
+            }
+        }
+        
+        document.getElementById('bewerbung-moderator-toggle').onclick = function() {
+            showForm('bewerbung-moderator-formular', 'bewerbung-moderator-toggle', 'bewerbung-builder-formular', 'bewerbung-builder-toggle');
+        };
+        
+        document.getElementById('bewerbung-builder-toggle').onclick = function() {
+            showForm('bewerbung-builder-formular', 'bewerbung-builder-toggle', 'bewerbung-moderator-formular', 'bewerbung-moderator-toggle');
+        };
+        
+        // Make the cloned builder button work too
+        document.getElementById('bewerbung-builder-toggle-clone').onclick = function() {
+            showForm('bewerbung-builder-formular', 'bewerbung-builder-toggle-clone', 'bewerbung-moderator-formular', 'bewerbung-moderator-toggle');
+        };
+    </script>
+</section>
+
+<style>
+.team-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+}
+.team-member {
+    background: var(--card-bg);
+    border-radius: 8px;
+    padding: 20px;
+    width: 220px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+    position: relative;
+}
+.team-member:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+.team-member1 {
+    background: var(--card-bg);
+    border-radius: 8px;
+    padding: 10px;
+    width: 140px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+    position: relative;
+}
+.team-member1:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+.minecraft-avatar {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 15px;
+    transition: width 0.3s, height 0.3s;
+}
+.avatar-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: opacity 0.3s;
+    display: block;
+}
+.hover-skin {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 2;
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    object-fit: cover;
+    display: block;
+}
+.minecraft-avatar:hover {
+    width: 100px;
+    height: 180px;
+}
+.minecraft-avatar:hover .avatar-img {
+    opacity: 0;
+}
+.minecraft-avatar:hover .hover-skin {
+    opacity: 1;
+    width: 100px;
+    height: 180px;
+    border-radius: 15px;
+    object-fit: contain;
+    background: #232b33;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+}
+.media-avatar img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 15px;
+    display: block;
+}
+.team-member h4 {
+    margin: 10px 0 5px;
+    color: var(--text-color);
+}
+.role {
+    color: var(--accent-color);
+    font-weight: bold;
+    margin: 5px 0;
+}
+</style>
+
+</main>
+          
+    
+<footer>
+  <p>&copy; 2025 PlanetPVP. Alle Rechte vorbehalten.</p>
+  <p>
+    <a href="https://www.planetpvp.de/About.html#impressum">Impressum</a> |
+    <a href="https://www.planetpvp.de/About.html#datenschutz">Datenschutzerklärung</a>
+  </p>
+
+  <p>
+    PlanetPVP steht in keiner Verbindung zu Mojang Studios oder Microsoft.
+    <br>
+    Minecraft ist ein eingetragenes Markenzeichen von Mojang Studios.
+  </p>
+</footer>
+    <script>
+        // Scroll-Animation für Sektionen
+        const sections = document.querySelectorAll('.fade-section');
+        
+        const checkScroll = () => {
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (sectionTop < windowHeight * 1) {
+                    section.classList.add('visible');
+                }
+            });
+        };
+        
+        // Scroll-Event für die Navigation
+        const nav = document.getElementById('main-nav');
+        const scrollNav = () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        };
+        
+        window.addEventListener('scroll', () => {
+            checkScroll();
+            scrollNav();
+        });
+        
+        // Initial check
+        checkScroll();
+    </script>
+</body>
+</html>
