@@ -587,8 +587,243 @@
     <!-- Content Sections -->
         <div style="flex: 1">
             <section id="Start" class="fade-section" style="scroll-margin-top: 120px;">
-             <h2>🔰 Start</h2>
-             <iframe width="100%" height="315" src="https://www.youtube.com/embed/DEIN_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+                <h2>🔰 Start</h2>
+
+                <div class="start-wrap">
+                    <!-- Hero: Server verbinden -->
+                    <div class="start-hero">
+                        <div class="start-hero-left" style="display:flex;flex-direction:column;gap:.8rem;justify-content:flex-start;">
+                            <img
+                                src="https://status.mclive.eu/PlanetPVP/planetpvp.de/25565/banner.png"
+                                alt="PlanetPVP Serverstatus"
+                                loading="lazy"
+                                decoding="async"
+                                referrerpolicy="no-referrer"
+                                style="width:100%; max-width:420px; height:auto; border-radius:12px; border:2px solid #4caf50; box-shadow:0 6px 20px #000a;"
+                                onerror="this.onerror=null; this.src='https://api.mcstatus.io/v2/widget/java/planetpvp.de';"
+                            />
+                            <small class="start-hint">Java 1.8–1.21 | EU-Server</small>
+                        </div>
+
+                        <div class="start-hero-right" style="display:flex;flex-direction:column;justify-content:center;gap:.6rem;padding-right:8rem;">
+                            <h3 class="start-hero-title"><i class="fas fa-plug" style="margin-right:8px;"></i>Verbinde dich mit unserem Server</h3>
+                            <div class="start-ip-row" style="align-items:center;">
+                                <span class="start-ip">planetpvp.de</span>
+                                <button id="copy-ip" class="start-copy-btn" type="button" aria-label="IP kopieren">
+                                    <i class="fas fa-copy"></i> Kopieren
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="start-cards">
+                        <!-- Report -->
+                        <div class="start-card">
+                            <div class="start-card-icon" style="background: linear-gradient(135deg,#ff6a00,#ffb300);">
+                                <i class="fas fa-flag"></i>
+                            </div>
+                            <div class="start-card-body">
+                                <h4>Cheater melden</h4>
+                                <p>Ingame melden – so erreichst du Moderatoren am schnellsten:</p>
+                                <div class="start-command">/report &lt;spielername&gt;</div>
+                            </div>
+                        </div>
+                        <!-- Discord -->
+                        <div class="start-card">
+                            <div class="start-card-icon" style="background: linear-gradient(135deg,#5865F2,#7b8cff);">
+                                <i class="fab fa-discord"></i>
+                            </div>
+                            <div class="start-card-body">
+                                <h4>Unser Discord-Server</h4>
+                                <p>Tritt bei, um News, Status, Tickets, Vorschläge und mehr zu erhalten.</p>
+                            </div>
+                            <a href="https://discord.planetpvp.de" target="_blank" class="start-btn">
+                                Discord beitreten
+                            </a>
+                        </div>
+
+                        <!-- Shop -->
+                        <div class="start-card">
+                            <div class="start-card-icon" style="background: linear-gradient(135deg,#00bfae,#63ffd5);">
+                                <i class="fas fa-store"></i>
+                            </div>
+                            <div class="start-card-body">
+                                <h4>Unser Shop</h4>
+                                <p>Ränge und Extras mit exklusiven Vorteilen.</p>
+                            </div>
+                            <a href="https://planetpvp.tebex.io/" target="_blank" class="start-btn">
+                                Zum Shop
+                            </a>
+                        </div>
+
+                        <!-- Rechtliches -->
+                        <div class="start-card">
+                            <div class="start-card-icon" style="background: linear-gradient(135deg,#3a7c5c,#7bff84);">
+                                <i class="fas fa-balance-scale"></i>
+                            </div>
+                            <div class="start-card-body">
+                                <h4>Rechtliches</h4>
+                                <p>Impressum und Datenschutzerklärung findest du hier:</p>
+                                <div class="start-legal-actions">
+                                    <a class="start-btn ghost" href="About.html#impressum" target="_blank">Impressum</a>
+                                    <a class="start-btn ghost" href="About.html#datenschutz" target="_blank">Datenschutz</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <style>
+                        .start-wrap { max-width: 1100px; margin: 0 auto; }
+                        .start-hero {
+                            display: grid;
+                            grid-template-columns: 1.2fr 0.6fr;
+                            gap: 1.2rem;
+                            background: rgba(38,48,38,0.97);
+                            border: 2.5px solid #4caf50;
+                            border-radius: 16px;
+                            padding: 1.4rem 1.6rem;
+                            box-shadow: 0 10px 28px #000b;
+                        }
+                        .start-hero-title {
+                            margin: 0 0 .4rem 0;
+                            color: #7bff84;
+                            font-size: 1.4rem;
+                            letter-spacing: .5px;
+                            text-shadow: 0 2px 8px #0008;
+                        }
+                        .start-hero-sub { margin: 0 0 .8rem 0; color: #e3e6eb; }
+                        .start-ip-row { display: flex; gap: .6rem; align-items: center; flex-wrap: wrap; }
+                        .start-ip {
+                            font-weight: 800;
+                            font-size: 1.4rem;
+                            letter-spacing: .5px;
+                            background: #0f171d;
+                            color: #ffe44c;
+                            border: 2px solid #bfbf7a;
+                            padding: .45rem .8rem;
+                            border-radius: 10px;
+                            text-shadow: 0 1px 0 #000;
+                        }
+                        .start-copy-btn {
+                            background: #3a7c5c;
+                            color: #fff;
+                            border: 2px solid #7bff84;
+                            border-radius: 5px;
+                            padding: .4rem .6rem;
+                            cursor: pointer;
+                            font-weight: 700;
+                            transition: transform .15s, background .2s, box-shadow .2s;
+                            box-shadow: 0 4px 14px #0008;
+                        }
+                        .start-copy-btn:hover { background: #4e8c6d; transform: translateY(-2px) scale(1.03); }
+                        .start-hint { color: #b7c4c7; display: inline-block; margin-top: .6rem; }
+                        .start-hero-right {
+                            display: grid; place-items: center;
+                            background: radial-gradient(120px 120px at 65% 35%, #2a3b31, transparent 60%);
+                            border-radius: 5px;
+                            min-height: 120px;
+                        }
+                        .start-hero-right i {
+                            font-size: 2.1rem; color: #7bff84; text-shadow: 0 6px 22px #000a;
+                        }
+
+                        .start-cards {
+                            margin-top: 1.6rem;
+                            display: grid;
+                            gap: 1.2rem;
+                            grid-template-columns: repeat(4, 1fr);
+                        }
+                        .start-card {
+                            background: rgba(38,48,38,0.97);
+                            border: 2px solid #2f5e46;
+                            border-radius: 14px;
+                            padding: 1rem;
+                            box-shadow: 0 8px 20px #000a;
+                            display: flex;
+                            flex-direction: column;
+                            gap: .8rem;
+                            transition: transform .16s, border-color .16s, box-shadow .16s;
+                        }
+                        .start-card:hover { transform: translateY(-6px); border-color: #7bff84; box-shadow: 0 14px 28px #000c; }
+                        .start-card-icon {
+                            width: 52px; height: 52px; border-radius: 50%;
+                            display: grid; place-items: center; color: #fff;
+                            box-shadow: 0 3px 12px #0007;
+                        }
+                        .start-card-icon i { font-size: 1.25rem; }
+                        .start-card-body h4 {
+                            margin: .2rem 0 .2rem; color: #7bff84; font-size: 1.1rem; letter-spacing: .3px; text-shadow: 0 2px 8px #0008;
+                        }
+                        .start-card-body p { margin: 0; color: #e3e6eb; }
+                        .start-btn {
+                            margin-top: auto;
+                            display: inline-block;
+                            text-align: center;
+                            background: #3a7c5c;
+                            color: #fff;
+                            border: 2px solid #7bff84;
+                            border-radius: 7px;
+                            padding: .55rem .8rem;
+                            font-weight: 800;
+                            text-decoration: none;
+                            transition: transform .15s, background .2s, box-shadow .2s;
+                            box-shadow: 0 4px 14px #0008;
+                        }
+                        .start-btn:hover { background: #4e8c6d; transform: translateY(-2px) scale(1.03); }
+                        .start-btn.ghost {
+                            background: transparent;
+                            border-color: #4caf50;
+                            color: #e3e6eb;
+                        }
+                        .start-btn.ghost:hover { background: #2a3b31; }
+                        .start-legal-actions { display: flex; gap: .5rem; flex-wrap: wrap; margin-top: .3rem; }
+
+                        .start-command {
+                            display: inline-block;
+                            margin-top: .35rem;
+                            background: #0f171d;
+                            color: #ffe44c;
+                            border: 2px solid #bfbf7a;
+                            padding: .4rem .6rem;
+                            border-radius: 7px;
+                            font-family: Consolas, Monaco, 'Courier New', monospace;
+                            font-weight: 700;
+                            text-shadow: 0 1px 0 #000;
+                        }
+
+                        @media (max-width: 1100px) {
+                            .start-cards { grid-template-columns: repeat(2, 1fr); }
+                        }
+                        @media (max-width: 720px) {
+                            .start-hero { grid-template-columns: 1fr; }
+                            .start-hero-right { min-height: 80px; }
+                            .start-cards { grid-template-columns: 1fr; }
+                        }
+                    </style>
+
+                    <script>
+                        (function(){
+                            const btn = document.getElementById('copy-ip');
+                            if (!btn) return;
+                            const original = btn.innerHTML;
+                            btn.addEventListener('click', async () => {
+                                try {
+                                    await navigator.clipboard.writeText('planetpvp.de');
+                                    btn.innerHTML = '<i class="fas fa-check"></i> Kopiert!';
+                                    setTimeout(()=> btn.innerHTML = original, 1200);
+                                } catch {
+                                    btn.innerHTML = '<i class="fas fa-times"></i> Fehler';
+                                    setTimeout(()=> btn.innerHTML = original, 1200);
+                                }
+                            });
+                        })();
+                    </script>
+
+                    <br><br>
+
+                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/DEIN_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+                </div>
             </section>
 
             <section id="Lobby" class="fade-section" style="scroll-margin-top: 120px;">
@@ -636,7 +871,7 @@
                         <style>
                         .lobby-card-unique {
                             background: rgba(38, 48, 38, 0.97);
-                            border-radius: 18px;
+                            border-radius: 10px;
                             box-shadow: 0 4px 28px #000b;
                             display: flex;
                             align-items: flex-start;
@@ -702,7 +937,7 @@
                             height: 110%;
                             max-width: 99%;
                             object-fit: contain;
-                            border-radius: 12px;
+                            border-radius: 8px;
                             box-shadow: 0 2px 12px #0007;
                             margin: 0 auto;
                             display: block;
@@ -1056,7 +1291,7 @@
                     margin-bottom: 22px;
                     position: relative;
                     box-shadow: 0 6px 32px #000b, 0 0 0 4px #4caf50cc;
-                    border-radius: 18px;
+                    border-radius: 12px;
                     overflow: hidden;
                     background: linear-gradient(180deg, #232b23 80%, #2e3c2e 100%);
                     padding-bottom: 10px;
@@ -1064,7 +1299,7 @@
                 .onevsone-kit-image-top img {
                     width: 100%;
                     display: block;
-                    border-radius: 18px 18px 0 0;
+                    border-radius: 12px 12px 0 0;
                     border-bottom: 2.5px solid #7bff84;
                     filter: brightness(1.08) saturate(1.1) drop-shadow(0 2px 12px #0008);
                 }
@@ -1089,7 +1324,7 @@
                     background-color: #232b23;
                     border: 1.5px solid #4caf50;
                     padding: 22px 18px 18px 18px;
-                    border-radius: 12px;
+                    border-radius: 10px;
                     max-width: 250px;
                     text-align: center;
                     flex: 1 1 200px;
@@ -1197,7 +1432,7 @@
                 width: calc(100% / 9);
                 cursor: pointer;
                 transition: box-shadow 0.2s, background 0.2s, transform 0.2s;
-                border-radius: 12px; /* Immer runde Kanten */
+                border-radius: 10px; /* Immer runde Kanten */
             }
 
             .onevsone-hotbar-click:hover {
@@ -1206,7 +1441,7 @@
                 z-index: 2;
                 animation: onevsone-hotbar-bounce 0.25s;
                 transform: scale(0.95);
-                border-radius: 12px; /* Runde Kanten beim Hover */
+                border-radius: 10px; /* Runde Kanten beim Hover */
                 top: -3px; /* 2mm nach oben beim Hover */
             }
 
@@ -1240,7 +1475,7 @@
                 background: linear-gradient(180deg, #181818 90%, #222 100%);
                 color: #fff;
                 border: 2.5px solid #bfbf7a;
-                border-radius: 12px;
+                border-radius: 8px;
                 box-shadow: 0 4px 24px #000b;
                 padding: 12px 18px 10px 18px;
                 font-family: 'Minecraftia', 'Consolas', 'monospace';
