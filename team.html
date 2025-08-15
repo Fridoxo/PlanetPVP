@@ -486,12 +486,172 @@
     <p>
         Wenn du dich als <strong>Moderator/Builder/Famous/Media</strong> bewerben möchtest, erstelle bitte ein Ticket auf unserem Discord-Server.
     </p>
-    <h3>Voraussetzungen für Famous</h3>
-    <ul>
-        <li>Eigener YouTube- oder Twitch-Kanal mit aktiver Community</li>
-        <li>Mindestens 1 Video/Stream auf PlanetPVP pro Monat</li>
-        <li>Mindestens 2000 Abonnenten/Follower (Ausnahmen möglich)</li>
-    </ul>
+<style>
+    .creator-reqs {
+        margin-top: 12px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 22px;
+    }
+    .creator-reqs .tier-card {
+        background: var(--card-bg);
+        border-radius: 12px;
+        box-shadow: var(--shadow);
+        overflow: hidden;
+        border: 1px solid rgba(255,255,255,0.06);
+        transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .creator-reqs .tier-card:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-hover);
+    }
+    .tier-header {
+        padding: 14px 16px;
+        font-size: 1.15rem;
+        font-weight: 700;
+        letter-spacing: .3px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #fff;
+    }
+    .tier-card.famous .tier-header {
+        background: linear-gradient(135deg, #f7b733, #fc4a1a);
+    }
+    .tier-card.media .tier-header {
+        background: linear-gradient(135deg, #8e44ad, #3498db);
+    }
+    .tier-header .badge {
+        margin-left: auto;
+        background: rgba(0,0,0,.25);
+        color: #fff;
+        font-size: .75rem;
+        padding: 4px 8px;
+        border-radius: 999px;
+    }
+    .platform-list {
+        list-style: none;
+        margin: 0;
+        padding: 10px 16px 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+    .platform {
+        display: grid;
+        grid-template-columns: 38px 1fr;
+        gap: 12px;
+        align-items: center;
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .platform:last-child { border-bottom: none; }
+    .brand-icon {
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
+        display: grid;
+        place-items: center;
+        color: #fff;
+        box-shadow: 0 2px 6px rgba(0,0,0,.2);
+        font-size: 18px;
+    }
+    .brand-icon.yt { background: #FF0033; }
+    .brand-icon.tt { background: linear-gradient(135deg, #25F4EE, #FF0050); }
+    .brand-icon.tw { background: #9146FF; }
+    .title { font-weight: 700; }
+    .metrics {
+        font-size: .95rem;
+        color: #cbd3dc;
+        line-height: 1.35;
+    }
+    .hint-exception {
+        margin-top: 10px;
+        color: #cbd3dc;
+        font-size: .9rem;
+        opacity: .85;
+    }
+</style>
+
+<div class="creator-reqs">
+    <div class="tier-card famous">
+        <div class="tier-header">
+            <i class="fa-solid fa-star"></i>
+            Creator Voraussetzungen — Famous
+            <span class="badge">High Tier</span>
+        </div>
+        <ul class="platform-list">
+            <li class="platform">
+                <div class="brand-icon yt"><i class="fa-brands fa-youtube"></i></div>
+                <div>
+                    <div class="title">YouTube (Videos)</div>
+                    <div class="metrics">2000 Abonnenten • 10 000 Views/Monat • 1 Video/Monat zu PlanetPvP</div>
+                </div>
+            </li>
+            <li class="platform">
+                <div class="brand-icon yt"><i class="fa-brands fa-youtube"></i></div>
+                <div>
+                    <div class="title">YouTube (Shorts)</div>
+                    <div class="metrics">10 000 Abonnenten • 3 Shorts/Monat • 200 000 Views/Monat</div>
+                </div>
+            </li>
+            <li class="platform">
+                <div class="brand-icon tt"><i class="fa-brands fa-tiktok"></i></div>
+                <div>
+                    <div class="title">TikTok</div>
+                    <div class="metrics">250 000 Follower • 3 Videos/Monat • 500 000 Views/Monat</div>
+                </div>
+            </li>
+            <li class="platform">
+                <div class="brand-icon tw"><i class="fa-brands fa-twitch"></i></div>
+                <div>
+                    <div class="title">Twitch</div>
+                    <div class="metrics">5000 Abonnenten • mind. 1 Stream/Monat • 80 durchschnittliche Viewer</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="tier-card media">
+        <div class="tier-header">
+            <i class="fa-solid fa-bullhorn"></i>
+            Creator Voraussetzungen — Media
+            <span class="badge">Entry Tier</span>
+        </div>
+        <ul class="platform-list">
+            <li class="platform">
+                <div class="brand-icon yt"><i class="fa-brands fa-youtube"></i></div>
+                <div>
+                    <div class="title">YouTube (Videos)</div>
+                    <div class="metrics">500 Abonnenten • 3000 Views/Monat • 2 Videos/Monat zu PlanetPvP</div>
+                </div>
+            </li>
+            <li class="platform">
+                <div class="brand-icon yt"><i class="fa-brands fa-youtube"></i></div>
+                <div>
+                    <div class="title">YouTube (Shorts)</div>
+                    <div class="metrics">2500 Abonnenten • 5 Shorts/Monat • 10 000 Views/Monat</div>
+                </div>
+            </li>
+            <li class="platform">
+                <div class="brand-icon tt"><i class="fa-brands fa-tiktok"></i></div>
+                <div>
+                    <div class="title">TikTok</div>
+                    <div class="metrics">50 000 Follower • 5 Videos/Monat • 100 000 Views/Monat</div>
+                </div>
+            </li>
+            <li class="platform">
+                <div class="brand-icon tw"><i class="fa-brands fa-twitch"></i></div>
+                <div>
+                    <div class="title">Twitch</div>
+                    <div class="metrics">1000 Abonnenten • 2 Streams/Monat • 20 durchschnittliche Viewer</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<p class="hint-exception"><em>Ausnahmen möglich</em></p></li>
 
     <div id="bewerbung-buttons" style="display: flex; flex-direction: row; gap: 18px; margin-top: 24px; justify-content: flex-start; flex-wrap: wrap;"></div>
         <button id="bewerbung-moderator-toggle" style="background:#5865F2;color:white;padding:10px 22px;border:none;border-radius:6px;font-size:1.1rem;cursor:pointer;display:flex;align-items:center;gap:8px;">
