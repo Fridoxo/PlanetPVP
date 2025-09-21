@@ -545,9 +545,9 @@
     
     <nav id="main-nav" >
         <img src="minecraft-logo.png" alt="Server Logo" style="height: 60px; margin: 0px; position: absolute; top: 5px; left: 30px;">
-        <a href="index.html">Startseite</a>
+        <a href="index.html">Home</a>
         <a href="howtoplay.html">PlanetPVP Guide</a>
-        <a href="Regelwerk.html">Regelwerk</a>
+        <a href="Regelwerk.html">Rules</a>
         <a href="https://planetpvp.tebex.io/">Shop</a>
         <a href="team.html">Team</a>
         <a href="About.html">About</a>
@@ -571,8 +571,8 @@
             <nav class="sidebar-nav">
             <a href="#Start" class="sidebar-btn">🔰 Start</a>
             <a href="#Lobby" class="sidebar-btn">🏠 Lobby</a>
-            <a href="#Premium" class="sidebar-btn">🪙 Rang Premium</a>
-            <a href="#Elite" class="sidebar-btn">💎 Rang Elite</a>
+            <a href="#Premium" class="sidebar-btn">🪙 Rank Premium</a>
+            <a href="#Elite" class="sidebar-btn">💎 Rank Elite</a>
             <a href="#1vs1" class="sidebar-btn">⚔️ 1vs1</a>
             <a href="#Skywars" class="sidebar-btn">🪂 Skywars</a>
             <a href="#Practice" class="sidebar-btn">🏹 Practice</a>
@@ -587,91 +587,91 @@
     <!-- Content Sections -->
         <div style="flex: 1">
             <section id="Start" class="fade-section" style="scroll-margin-top: 120px;">
-                <h2>🔰 Start</h2>
+            <h2>🔰 Start</h2>
 
-                <div class="start-wrap">
-                    <!-- Hero: Server verbinden -->
-                    <div class="start-hero">
-                        <div class="start-hero-left" style="display:flex;flex-direction:column;gap:.8rem;justify-content:flex-start;">
-                            <img
-                                src="https://status.mclive.eu/PlanetPVP/planetpvp.de/25565/banner.png"
-                                alt="PlanetPVP Serverstatus"
-                                loading="lazy"
-                                decoding="async"
-                                referrerpolicy="no-referrer"
-                                style="width:100%; max-width:420px; height:auto; border-radius:12px; border:2px solid #4caf50; box-shadow:0 6px 20px #000a;"
-                                onerror="this.onerror=null; this.src='https://api.mcstatus.io/v2/widget/java/planetpvp.de';"
-                            />
-                            <small class="start-hint">Java 1.8–1.21 | EU-Server</small>
-                        </div>
+            <div class="start-wrap">
+                <!-- Hero: Server verbinden -->
+                <div class="start-hero">
+                <div class="start-hero-left" style="display:flex;flex-direction:column;gap:.8rem;justify-content:flex-start;">
+                    <img
+                    src="https://status.mclive.eu/PlanetPVP/planetpvp.de/25565/banner.png"
+                    alt="PlanetPVP Server Status"
+                    loading="lazy"
+                    decoding="async"
+                    referrerpolicy="no-referrer"
+                    style="width:100%; max-width:420px; height:auto; border-radius:12px; border:2px solid #4caf50; box-shadow:0 6px 20px #000a;"
+                    onerror="this.onerror=null; this.src='https://api.mcstatus.io/v2/widget/java/planetpvp.de';"
+                    />
+                    <small class="start-hint">Java 1.8–1.21 | EU-Server</small>
+                </div>
 
-                        <div class="start-hero-right" style="display:flex;flex-direction:column;justify-content:center;gap:.6rem;padding-right:8rem;">
-                            <h3 class="start-hero-title"><i class="fas fa-plug" style="margin-right:8px;"></i>Verbinde dich mit unserem Server</h3>
-                            <div class="start-ip-row" style="align-items:center;">
-                                <span class="start-ip">planetpvp.de</span>
-                                <button id="copy-ip" class="start-copy-btn" type="button" aria-label="IP kopieren">
-                                    <i class="fas fa-copy"></i> Kopieren
-                                </button>
-                            </div>
-                        </div>
+                <div class="start-hero-right" style="display:flex;flex-direction:column;justify-content:center;gap:.6rem;padding-right:8rem;">
+                    <h3 class="start-hero-title"><i class="fas fa-plug" style="margin-right:8px;"></i>Connect to our server</h3>
+                    <div class="start-ip-row" style="align-items:center;">
+                    <span class="start-ip">planetpvp.de</span>
+                    <button id="copy-ip" class="start-copy-btn" type="button" aria-label="Copy IP">
+                        <i class="fas fa-copy"></i> Copy
+                    </button>
                     </div>
+                </div>
+                </div>
 
-                    <!-- Quick Actions -->
-                    <div class="start-cards">
-                        <!-- Report -->
-                        <div class="start-card">
-                            <div class="start-card-icon" style="background: linear-gradient(135deg,#ff6a00,#ffb300);">
-                                <i class="fas fa-flag"></i>
-                            </div>
-                            <div class="start-card-body">
-                                <h4>Cheater melden</h4>
-                                <p>Ingame melden – so erreichst du Moderatoren am schnellsten:</p>
-                                <div class="start-command">/report &lt;spielername&gt;</div>
-                            </div>
-                        </div>
-                        <!-- Discord -->
-                        <div class="start-card">
-                            <div class="start-card-icon" style="background: linear-gradient(135deg,#5865F2,#7b8cff);">
-                                <i class="fab fa-discord"></i>
-                            </div>
-                            <div class="start-card-body">
-                                <h4>Unser Discord-Server</h4>
-                                <p>Tritt bei, um News, Status, Tickets, Vorschläge und mehr zu erhalten.</p>
-                            </div>
-                            <a href="https://discord.planetpvp.de" target="_blank" class="start-btn">
-                                Discord beitreten
-                            </a>
-                        </div>
-
-                        <!-- Shop -->
-                        <div class="start-card">
-                            <div class="start-card-icon" style="background: linear-gradient(135deg,#00bfae,#63ffd5);">
-                                <i class="fas fa-store"></i>
-                            </div>
-                            <div class="start-card-body">
-                                <h4>Unser Shop</h4>
-                                <p>Ränge und Extras mit exklusiven Vorteilen.</p>
-                            </div>
-                            <a href="https://planetpvp.tebex.io/" target="_blank" class="start-btn">
-                                Zum Shop
-                            </a>
-                        </div>
-
-                        <!-- Rechtliches -->
-                        <div class="start-card">
-                            <div class="start-card-icon" style="background: linear-gradient(135deg,#3a7c5c,#7bff84);">
-                                <i class="fas fa-balance-scale"></i>
-                            </div>
-                            <div class="start-card-body">
-                                <h4>Rechtliches</h4>
-                                <p>Impressum und Datenschutzerklärung findest du hier:</p>
-                                <div class="start-legal-actions">
-                                    <a class="start-btn ghost" href="About.html#impressum" target="_blank">Impressum</a>
-                                    <a class="start-btn ghost" href="About.html#datenschutz" target="_blank">Datenschutz</a>
-                                </div>
-                            </div>
-                        </div>
+                <!-- Quick Actions -->
+                <div class="start-cards">
+                <!-- Report -->
+                <div class="start-card">
+                    <div class="start-card-icon" style="background: linear-gradient(135deg,#ff6a00,#ffb300);">
+                    <i class="fas fa-flag"></i>
                     </div>
+                    <div class="start-card-body">
+                    <h4>Report cheater</h4>
+                    <p>Report ingame – this is the fastest way to reach moderators:</p>
+                    <div class="start-command">/report &lt;playername&gt;</div>
+                    </div>
+                </div>
+                <!-- Discord -->
+                <div class="start-card">
+                    <div class="start-card-icon" style="background: linear-gradient(135deg,#5865F2,#7b8cff);">
+                    <i class="fab fa-discord"></i>
+                    </div>
+                    <div class="start-card-body">
+                    <h4>Our Discord server</h4>
+                    <p>Join to get news, status, tickets, suggestions and more.</p>
+                    </div>
+                    <a href="https://discord.planetpvp.de" target="_blank" class="start-btn">
+                    Join Discord
+                    </a>
+                </div>
+
+                <!-- Shop -->
+                <div class="start-card">
+                    <div class="start-card-icon" style="background: linear-gradient(135deg,#00bfae,#63ffd5);">
+                    <i class="fas fa-store"></i>
+                    </div>
+                    <div class="start-card-body">
+                    <h4>Our shop</h4>
+                    <p>Ranks and extras with exclusive benefits.</p>
+                    </div>
+                    <a href="https://planetpvp.tebex.io/" target="_blank" class="start-btn">
+                    Go to shop
+                    </a>
+                </div>
+
+                <!-- Legal -->
+                <div class="start-card">
+                    <div class="start-card-icon" style="background: linear-gradient(135deg,#3a7c5c,#7bff84);">
+                    <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <div class="start-card-body">
+                    <h4>Legal</h4>
+                    <p>You can find imprint and privacy policy here:</p>
+                    <div class="start-legal-actions">
+                        <a class="start-btn ghost" href="About.html#impressum" target="_blank">Imprint</a>
+                        <a class="start-btn ghost" href="About.html#datenschutz" target="_blank">Privacy Policy</a>
+                    </div>
+                    </div>
+                </div>
+                </div>
 
                     <style>
                         .start-wrap { max-width: 1100px; margin: 0 auto; }
@@ -833,21 +833,21 @@
 
                     <!-- Klickbare Items (Slot 4 und 6 sind leer und nicht klickbar) -->
                     <div class="onevsone-hotbar-click" style="left: 0%;" data-index="0">
-                        <div class="onevsone-tooltip">🧭 <b>Teleporter</b><br><span>Wähle deinen bevorzugten Spielmodus aus – PvP, Bedwars, Skywars u.v.m.</span></div>
+                        <div class="onevsone-tooltip">🧭 <b>Teleporter</b><br><span>Select your preferred game mode – PvP, Bedwars, Skywars and more.</span></div>
                     </div>
                     <div class="onevsone-hotbar-click" style="left: 22.2%;" data-index="2">
-                        <div class="onevsone-tooltip">👁️ <b>Options</b><br><span>Schalte Lobby-spezifische Features wie DoubleJump <br> oder Fly ein/aus</span></div>
+                        <div class="onevsone-tooltip">👁️ <b>Options</b><br><span>Toggle lobby-specific features like DoubleJump <br> or Fly on/off</span></div>
                     </div>
                     <!-- Slot 4 (index 3) ist leer, kein Div -->
                     <div class="onevsone-hotbar-click" style="left: 44.4%;" data-index="4">
-                        <div class="onevsone-tooltip">📦 <b>Loot</b><br><span>Öffne und verwalte deine gesammelten Gadgets</span></div>
+                        <div class="onevsone-tooltip">📦 <b>Loot</b><br><span>Open and manage your collected gadgets</span></div>
                     </div>
                     <!-- Slot 6 (index 5) ist leer, kein Div -->
                     <div class="onevsone-hotbar-click" style="left: 77.7%;" data-index="7">
-                        <div class="onevsone-tooltip">🟩 <b>Player-Hider</b><br><span>Stelle ein, welche Spieler in der Lobby sichtbar sind</span></div>
+                        <div class="onevsone-tooltip">🟩 <b>Player-Hider</b><br><span>Set which players are visible in the lobby</span></div>
                     </div>
                     <div class="onevsone-hotbar-click" style="left: 88.8%;" data-index="8">
-                        <div class="onevsone-tooltip">🧑 <b>Profile</b><br><span>Öffnet das Freunde- und Clan-Menü</span></div>
+                        <div class="onevsone-tooltip">🧑 <b>Profile</b><br><span>Opens the friends and clan menu</span></div>
                     </div>
                 </div>    
                 <!-- Modern Info Cards for Lobby Section -->
@@ -859,10 +859,10 @@
                             🎁
                         </div>
                         <div class="lobby-card-content-unique">
-                            <h3>Mystery Boxen</h3>
+                            <h3>Mystery Boxes</h3>
                             <p>
-                                Spiele aktiv auf dem Server und erhalte zufällig <strong>Mystery Boxen</strong>! Öffne sie mit einem Rechtsklick auf eine der Enderchests in der Lobby-GUI.<br>
-                                <span class="lobby-highlight-unique">Ziehe coole Gadgets &amp; Extras</span> und wenn du mehr willst, schau im <a href="https://planetpvp.tebex.io/" target="_blank">Shop</a> vorbei.
+                                Play actively on the server and randomly receive <strong>Mystery Boxes</strong>! Open them by right-clicking one of the Enderchests in the lobby GUI.<br>
+                                <span class="lobby-highlight-unique">Draw cool gadgets &amp; extras</span> and if you want more, check out the <a href="https://planetpvp.tebex.io/" target="_blank">shop</a>.
                             </p>
                         </div>
                         <div class="lobby-card-image-unique mysterybox-image-unique">
@@ -972,27 +972,27 @@
                             🧑‍🚀
                         </div>
                         <div class="lobby-card-content-unique">
-                            <h3>Ränge</h3>
+                            <h3>Ranks</h3>
                             <ul class="lobby-rank-list-unique">
                                 <li>
                                     <span class="rank-unique admin">Admin</span>
-                                    <span class="rank-desc-unique">Hat die volle Kontrolle über den Server.</span>
+                                    <span class="rank-desc-unique">Has full control over the server.</span>
                                 </li>
                                 <li>
                                     <span class="rank-unique mod">Mod</span>
-                                    <span class="rank-desc-unique">Sorgt für Ordnung und hilft bei Problemen.</span>
+                                    <span class="rank-desc-unique">Keeps order and helps with problems.</span>
                                 </li>
                                 <li>
                                     <span class="rank-unique dev">Dev</span>
-                                    <span class="rank-desc-unique">Entwickelt eigene Plugins und Features.</span>
+                                    <span class="rank-desc-unique">Develops custom plugins and features.</span>
                                 </li>
                                 <li>
                                     <span class="rank-unique builder">Builder</span>
-                                    <span class="rank-desc-unique">Baut Maps und gestaltet die Welt.</span>
+                                    <span class="rank-desc-unique">Builds maps and designs the world.</span>
                                 </li>
                                 <li>
                                     <span class="rank-unique famous">Famous</span>
-                                    <span class="rank-desc-unique">Besondere Gäste.</span>
+                                    <span class="rank-desc-unique">Special guests.</span>
                                 </li>
                                 <li>
                                     <span class="rank-unique vip">Media</span>
@@ -1000,11 +1000,11 @@
                                 </li>
                                 <li>
                                     <span class="rank-unique premium">Premium &<br>Elite</span>
-                                    <span class="rank-desc-unique">Kaufbare Ränge mit exklusiven Vorteilen.</span>
+                                    <span class="rank-desc-unique">Purchasable ranks with exclusive benefits.</span>
                                 </li>
                                 <li>
                                     <span class="rank-unique legacy">Legacy</span>
-                                    <span class="rank-desc-unique">War beim Serverstart als Tester dabei.</span>
+                                    <span class="rank-desc-unique">Was there as a tester at server launch.</span>
                                 </li>
                             </ul>
                         </div>
@@ -1080,27 +1080,8 @@
                         <div class="lobby-card-content-unique">
                             <h3>PlanetGames</h3>
                             <p>
-                                Hier kannst du dir die Zeit vertreiben, wenn dein Mate mal wieder sagt, er kommt gleich online aber stattdessen noch eine kulinarische Reise durch den Toilettenspülgang macht. <br>
-                                Du kannst dich sogar im Multiplayer mit anderen duellieren.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Damager Card (Icon oben links, darunter Bild, rechts Text) -->
-                    <div class="lobby-card-unique lobby-card-row-unique lobby-card-imageleft-unique planetgames-card-custom">
-                        <div class="lobby-card-left-custom">
-                            <div class="lobby-card-icon-unique" style="background: linear-gradient(135deg, #ff9800 60%, #ffe44c 100%); margin-bottom: 0.7rem;">
-                                🥣
-                            </div>
-                            <div class="lobby-card-image-unique lobby-card-image-left-unique">
-                                <img src="Bilderhowtoplay/soup.png" alt="Damager" />
-                            </div>
-                        </div>
-                        <div class="lobby-card-content-unique">
-                            <h3>Damager</h3>
-                            <p>
-                                <strong>Soup-PvP</strong> zum Üben, Schwitzen oder Spaß haben.<br>
-                                <span class="lobby-highlight-unique">Sterben. Respawnen. Besser werden. Gewinnen!</span>
+                                Here you can pass the time if your mate once again says he'll be online soon but instead embarks on a culinary journey through the toilet flush.<br>
+                                You can even duel with others in multiplayer.
                             </p>
                         </div>
                     </div>
@@ -1204,14 +1185,12 @@
             </section>
 
             <section id="Premium" class="fade-section" style="scroll-margin-top: 120px;">
-             <h2>🪙 Rang Premium</h2>
-             <p>Der Premium Rang bietet dir kosmetische Vorteile, Zugang zu exklusiven Maps und Warteschlangen-Priorität.</p>
+             <h2>🪙 Rank Premium</h2>
              <iframe width="100%" height="315" src="https://www.youtube.com/embed/DEIN_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
             </section>
 
             <section id="Elite" class="fade-section" style="scroll-margin-top: 120px;">
-             <h2>💎 Rang Elite</h2>
-             <p>Der höchste Rang – mit allen Vorteilen von Premium + noch mehr. VIP-Status pur!</p>
+             <h2>💎 Rank Elite</h2>
              <iframe width="100%" height="315" src="https://www.youtube.com/embed/DEIN_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
             </section>
 
@@ -1223,54 +1202,54 @@
 
                     <!-- Klickbare Items (Slot 4 und 6 sind leer und nicht klickbar) -->
                     <div class="onevsone-hotbar-click" style="left: 0%;" data-index="0">
-                        <div class="onevsone-tooltip">🗡️ <b>Challenge</b><br><span>Spieler schlagen, um ein Duell zu starten oder anzunehmen.</span></div>
+                        <div class="onevsone-tooltip">🗡️ <b>Challenge</b><br><span>Hit a player to start or accept a duel.</span></div>
                     </div>
                     <div class="onevsone-hotbar-click" style="left: 11.1%;" data-index="1">
-                        <div class="onevsone-tooltip">👁️‍🗨️ <b>Spectate</b><br><span>Beobachte aktuelle Kämpfe live.</span></div>
+                        <div class="onevsone-tooltip">👁️‍🗨️ <b>Spectate</b><br><span>Watch current fights live.</span></div>
                     </div>
                     <div class="onevsone-hotbar-click" style="left: 22.2%;" data-index="2">
-                        <div class="onevsone-tooltip">📕 <b>1vs1</b><br><span>Kompakter PvP-Guide für Einsteiger.</span></div>
+                        <div class="onevsone-tooltip">📕 <b>1vs1</b><br><span>Compact PvP guide for beginners.</span></div>
                     </div>
                     <!-- Slot 4 (index 3) ist leer, kein Div -->
                     <div class="onevsone-hotbar-click" style="left: 44.4%;" data-index="4">
-                        <div class="onevsone-tooltip">⭐ <b>Tournaments</b><br><span>Turnierbeitritt via Papierplatte. Erstelle eigene Turniere mit dem Rang <b>Elite</b> (/shop)</span></div>
+                        <div class="onevsone-tooltip">⭐ <b>Tournaments</b><br><span>Join tournaments via paper. Create your own tournaments with the <b>Elite</b> rank (/shop)</span></div>
                     </div>
                     <!-- Slot 6 (index 5) ist leer, kein Div -->
                     <div class="onevsone-hotbar-click" style="left: 66.6%;" data-index="6">
-                        <div class="onevsone-tooltip">🟩 <b>Dein Rang</b><br><span>Dein aktueller 1vs1-Rang wird angezeigt.</span></div>
+                        <div class="onevsone-tooltip">🟩 <b>Your Rank</b><br><span>Your current 1vs1 rank is displayed.</span></div>
                     </div>
                     <div class="onevsone-hotbar-click" style="left: 77.7%;" data-index="7">
-                        <div class="onevsone-tooltip">🕹️ <b>Settings</b><br><span>Konfiguriere dein 1vs1:<br>🛡️ Kit-Auswahl<br>🗺️ Aktivierte Maps<br>💎 Warteschlangen<br></span></div>
+                        <div class="onevsone-tooltip">🕹️ <b>Settings</b><br><span>Configure your 1vs1:<br>🛡️ Kit selection<br>🗺️ Enabled maps<br>💎 Queues<br></span></div>
                     </div>
                     <div class="onevsone-hotbar-click" style="left: 88.8%;" data-index="8">
-                        <div class="onevsone-tooltip">⏰ <b>Uhr</b><br><span>Zurück zur Lobby.</span></div>
+                        <div class="onevsone-tooltip">⏰ <b>Clock</b><br><span>Back to the lobby.</span></div>
                     </div>
                 </div>
-                <h2>Cusom Kit Einstellungen</h2>
+                <h2>Custom Kit Settings</h2>
                 <!-- Kits: Bild oben, darunter zwei Boxen nebeneinander -->
                 <div class="onevsone-kit-section">
                     <div class="onevsone-kit-image-top">
-                        <img src="Bilderhowtoplay/kiteditzone.png" alt="KitEdit Zone Übersicht">
+                        <img src="Bilderhowtoplay/kiteditzone.png" alt="KitEdit Zone Overview">
                         <div class="onevsone-kit-image-caption">
                             <i class="fas fa-map-marked-alt" style="color:#ffe44c; margin-right:7px;"></i>
-                            <span>Die <b>KitEdit-Zone</b>: Hier kannst du deine Kits individuell anpassen und testen!</span>
+                            <span>The <b>KitEdit Zone</b>: Here you can customize and test your kits individually!</span>
                         </div>
                     </div>
                     <div class="onevsone-kit-row">
                         <div class="onevsone-kit-box">
                             <img src="Bilderhowtoplay/villager.png" alt="Villager Icon">
-                            <h3><i class="fas fa-cogs" style="color:#7bff84; margin-right:6px;"></i>Kit Konfiguration</h3>
+                            <h3><i class="fas fa-cogs" style="color:#7bff84; margin-right:6px;"></i>Kit Configuration</h3>
                             <p>
-                                <b>Alle 1vs1 Kit-Einstellungen</b> kannst du beim Villager vornehmen.<br>
-                                <span style="color:#ffe44c;">Passe Rüstung, Inventar und Spezial-Items nach deinen Wünschen an.</span>
+                                <b>All 1vs1 kit settings</b> can be made at the villager.<br>
+                                <span style="color:#ffe44c;">Adjust armor, inventory, and special items as you wish.</span>
                             </p>
                         </div>
                         <div class="onevsone-kit-box">
-                            <img src="Bilderhowtoplay/skeleton.png" alt="Skelett Icon">
-                            <h3><i class="fas fa-edit" style="color:#7bff84; margin-right:6px;"></i>Items bearbeiten</h3>
+                            <img src="Bilderhowtoplay/skeleton.png" alt="Skeleton Icon">
+                            <h3><i class="fas fa-edit" style="color:#7bff84; margin-right:6px;"></i>Edit Items</h3>
                             <p>
-                                <b>Bearbeite Items direkt</b> im Kit-Editor.<br>
-                                Wandle z.B. <span style="color:#ffe44c;">Golden Apples in Golden Heads</span> um oder passe Tools individuell an.
+                                <b>Edit items directly</b> in the kit editor.<br>
+                                For example, convert <span style="color:#ffe44c;">Golden Apples into Golden Heads</span> or customize tools individually.
                             </p>
                         </div>
                     </div>
@@ -1508,7 +1487,6 @@
 
             <section id="Practice" class="fade-section" style="scroll-margin-top: 120px;">
              <h2>🏹 Practice</h2>
-             <p>Trainiere verschiedene PvP-Modi, verbessere deine Fähigkeiten und fordere andere Spieler heraus.</p>
                 <div class="onevsone-hotbar-container">
                     <img src="Bilderhowtoplay/hotbar.png" alt="Hotbar Screenshot" class="onevsone-hotbar-image">
 
@@ -1544,7 +1522,6 @@
 
             <section id="Classic" class="fade-section" style="scroll-margin-top: 120px;">
              <h2>🧱 Classic</h2>
-             <p>Spiele klassische PvP-Modi mit Standard-Kits und zeige dein Können ohne Extras.</p>
                 <div class="onevsone-hotbar-container">
                     <img src="Bilderhowtoplay/hotbar.png" alt="Hotbar Screenshot" class="onevsone-hotbar-image">
 
@@ -1580,13 +1557,11 @@
 
             <section id="UHC" class="fade-section" style="scroll-margin-top: 120px;">
              <h2>🔥 UHC</h2>
-             <p>Ultra Hardcore: Keine automatische Heilung, spannende Kämpfe und nur die besten überleben!</p>
              <iframe width="100%" height="315" src="https://www.youtube.com/embed/DEIN_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
             </section>
 
             <section id="HG" class="fade-section" style="scroll-margin-top: 120px;">
              <h2>🥚 HG</h2>
-             <p>Hunger Games: Suche Kisten, kämpfe ums Überleben und werde der letzte Spieler!</p>
                 <div class="onevsone-hotbar-container">
                     <img src="Bilderhowtoplay/hotbar.png" alt="Hotbar Screenshot" class="onevsone-hotbar-image">
 
@@ -1622,13 +1597,11 @@
 
             <section id="FFA" class="fade-section" style="scroll-margin-top: 120px;">
              <h2>👥 FFA</h2>
-             <p>Free For All: Jeder gegen jeden – zeige, dass du der Beste bist!</p>
              <iframe width="100%" height="315" src="https://www.youtube.com/embed/DEIN_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
             </section>
 
             <section id="Bedwars" class="fade-section" style="scroll-margin-top: 120px;">
              <h2>🛏️ Bedwars</h2>
-             <p>Beschütze dein Bett, zerstöre die Betten der Gegner und dominiere das Spielfeld!</p>
                 <div class="onevsone-hotbar-container">
                     <img src="Bilderhowtoplay/hotbar.png" alt="Hotbar Screenshot" class="onevsone-hotbar-image">
 
@@ -1670,17 +1643,17 @@
           
     
 <footer>
-  <p>&copy; 2025 PlanetPVP. Alle Rechte vorbehalten.</p>
-  <p>
-    <a href="https://www.planetpvp.de/About.html#impressum">Impressum</a> |
-    <a href="https://www.planetpvp.de/About.html#datenschutz">Datenschutzerklärung</a>
-  </p>
+    <p>&copy; 2025 PlanetPVP. All rights reserved.</p>
+    <p>
+        <a href="https://www.planetpvp.de/About.html#impressum">Imprint</a> |
+        <a href="https://www.planetpvp.de/About.html#datenschutz">Privacy Policy</a>
+    </p>
 
-  <p>
-    PlanetPVP steht in keiner Verbindung zu Mojang Studios oder Microsoft.
-    <br>
-    Minecraft ist ein eingetragenes Markenzeichen von Mojang Studios.
-  </p>
+    <p>
+        PlanetPVP is not affiliated with Mojang Studios or Microsoft.
+        <br>
+        Minecraft is a registered trademark of Mojang Studios.
+    </p>
 </footer>
     <script>
 
