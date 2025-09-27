@@ -435,7 +435,7 @@
             overflow-y: auto; /* Scrollbar erscheint, wenn nötig */
             background-color: rgba(38, 48, 38, 0.95);
             padding: 1rem;
-            border-radius: 12px;
+            border-radius: 5px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
             z-index: 2;
             }
@@ -574,13 +574,8 @@
             <a href="#Premium" class="sidebar-btn">🪙 Rank Premium</a>
             <a href="#Elite" class="sidebar-btn">💎 Rank Elite</a>
             <a href="#1vs1" class="sidebar-btn">⚔️ 1vs1</a>
-            <a href="#Skywars" class="sidebar-btn">🪂 Skywars</a>
-            <a href="#Practice" class="sidebar-btn">🏹 Practice</a>
-            <a href="#Classic" class="sidebar-btn">🧱 Classic</a>
             <a href="#UHC" class="sidebar-btn">🔥 UHC</a>
             <a href="#HG" class="sidebar-btn">🥚 HG</a>
-            <a href="#FFA" class="sidebar-btn">👥 FFA</a>
-            <a href="#Bedwars" class="sidebar-btn">🛏️ Bedwars</a>
             </nav>
         </aside>
 
@@ -1352,41 +1347,7 @@
                 <iframe width="100%" height="315" src="https://www.youtube.com/embed/DEIN_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
             </section>
 
-
-            <section id="Skywars" class="fade-section" style="scroll-margin-top: 120px;">
-             <h2>🪂 Skywars</h2>
-                <div class="onevsone-hotbar-container">
-                    <img src="Bilderhowtoplay/hotbar.png" alt="Hotbar Screenshot" class="onevsone-hotbar-image">
-
-                    <!-- Klickbare Items (Slot 4 und 6 sind leer und nicht klickbar) -->
-                    <div class="onevsone-hotbar-click" style="left: 0%;" data-index="0">
-                        <div class="onevsone-tooltip">🗡️ <b>Challenge</b><br><span>Spieler schlagen, um ein Duell zu starten oder anzunehmen.</span></div>
-                    </div>
-                    <div class="onevsone-hotbar-click" style="left: 11.1%;" data-index="1">
-                        <div class="onevsone-tooltip">👁️‍🗨️ <b>Spectate</b><br><span>Beobachte aktuelle Kämpfe live.</span></div>
-                    </div>
-                    <div class="onevsone-hotbar-click" style="left: 22.2%;" data-index="2">
-                        <div class="onevsone-tooltip">📕 <b>1vs1</b><br><span>Kompakter PvP-Guide für Einsteiger.</span></div>
-                    </div>
-                    <!-- Slot 4 (index 3) ist leer, kein Div -->
-                    <div class="onevsone-hotbar-click" style="left: 44.4%;" data-index="4">
-                        <div class="onevsone-tooltip">⭐ <b>Tournaments</b><br><span>Turnierbeitritt via Papierplatte. Erstelle eigene Turniere mit dem Rang <b>Elite</b> (/shop)</span></div>
-                    </div>
-                    <!-- Slot 6 (index 5) ist leer, kein Div -->
-                    <div class="onevsone-hotbar-click" style="left: 66.6%;" data-index="6">
-                        <div class="onevsone-tooltip">🟩 <b>Dein Rang</b><br><span>Dein aktueller 1vs1-Rang wird angezeigt.</span></div>
-                    </div>
-                    <div class="onevsone-hotbar-click" style="left: 77.7%;" data-index="7">
-                        <div class="onevsone-tooltip">🕹️ <b>Settings</b><br><span>Konfiguriere dein 1vs1:<br>🛡️ Kit-Auswahl<br>🗺️ Aktivierte Maps<br>💎 Warteschlangen<br></span></div>
-                    </div>
-                    <div class="onevsone-hotbar-click" style="left: 88.8%;" data-index="8">
-                        <div class="onevsone-tooltip">⏰ <b>Uhr</b><br><span>Zurück zur Lobby.</span></div>
-                    </div>
-                </div>
-                <br>
-                <br>
-                <iframe width="100%" height="315" src="https://www.youtube.com/embed/DEIN_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
-                    <style>
+            <style>
             /* 1vs1 Namespace Styles */
               .onevsone-hotbar-container {
                 position: relative;
@@ -1483,81 +1444,225 @@
                 font-size: 0.97em;
             }
             </style>
-            </section>
-
-            <section id="Practice" class="fade-section" style="scroll-margin-top: 120px;">
-             <h2>🏹 Practice</h2>
-                <div class="onevsone-hotbar-container">
-                    <img src="Bilderhowtoplay/hotbar.png" alt="Hotbar Screenshot" class="onevsone-hotbar-image">
-
-                    <!-- Klickbare Items (Slot 4 und 6 sind leer und nicht klickbar) -->
-                    <div class="onevsone-hotbar-click" style="left: 0%;" data-index="0">
-                        <div class="onevsone-tooltip">🗡️ <b>Challenge</b><br><span>Spieler schlagen, um ein Duell zu starten oder anzunehmen.</span></div>
-                    </div>
-                    <div class="onevsone-hotbar-click" style="left: 11.1%;" data-index="1">
-                        <div class="onevsone-tooltip">👁️‍🗨️ <b>Spectate</b><br><span>Beobachte aktuelle Kämpfe live.</span></div>
-                    </div>
-                    <div class="onevsone-hotbar-click" style="left: 22.2%;" data-index="2">
-                        <div class="onevsone-tooltip">📕 <b>1vs1</b><br><span>Kompakter PvP-Guide für Einsteiger.</span></div>
-                    </div>
-                    <!-- Slot 4 (index 3) ist leer, kein Div -->
-                    <div class="onevsone-hotbar-click" style="left: 44.4%;" data-index="4">
-                        <div class="onevsone-tooltip">⭐ <b>Tournaments</b><br><span>Turnierbeitritt via Papierplatte. Erstelle eigene Turniere mit dem Rang <b>Elite</b> (/shop)</span></div>
-                    </div>
-                    <!-- Slot 6 (index 5) ist leer, kein Div -->
-                    <div class="onevsone-hotbar-click" style="left: 66.6%;" data-index="6">
-                        <div class="onevsone-tooltip">🟩 <b>Dein Rang</b><br><span>Dein aktueller 1vs1-Rang wird angezeigt.</span></div>
-                    </div>
-                    <div class="onevsone-hotbar-click" style="left: 77.7%;" data-index="7">
-                        <div class="onevsone-tooltip">🕹️ <b>Settings</b><br><span>Konfiguriere dein 1vs1:<br>🛡️ Kit-Auswahl<br>🗺️ Aktivierte Maps<br>💎 Warteschlangen<br></span></div>
-                    </div>
-                    <div class="onevsone-hotbar-click" style="left: 88.8%;" data-index="8">
-                        <div class="onevsone-tooltip">⏰ <b>Uhr</b><br><span>Zurück zur Lobby.</span></div>
-                    </div>
-                </div>
-                <br>
-                <br>
-                <iframe width="100%" height="315" src="https://www.youtube.com/embed/DEIN_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
-            </section>
-
-            <section id="Classic" class="fade-section" style="scroll-margin-top: 120px;">
-             <h2>🧱 Classic</h2>
-                <div class="onevsone-hotbar-container">
-                    <img src="Bilderhowtoplay/hotbar.png" alt="Hotbar Screenshot" class="onevsone-hotbar-image">
-
-                    <!-- Klickbare Items (Slot 4 und 6 sind leer und nicht klickbar) -->
-                    <div class="onevsone-hotbar-click" style="left: 0%;" data-index="0">
-                        <div class="onevsone-tooltip">🗡️ <b>Challenge</b><br><span>Spieler schlagen, um ein Duell zu starten oder anzunehmen.</span></div>
-                    </div>
-                    <div class="onevsone-hotbar-click" style="left: 11.1%;" data-index="1">
-                        <div class="onevsone-tooltip">👁️‍🗨️ <b>Spectate</b><br><span>Beobachte aktuelle Kämpfe live.</span></div>
-                    </div>
-                    <div class="onevsone-hotbar-click" style="left: 22.2%;" data-index="2">
-                        <div class="onevsone-tooltip">📕 <b>1vs1</b><br><span>Kompakter PvP-Guide für Einsteiger.</span></div>
-                    </div>
-                    <!-- Slot 4 (index 3) ist leer, kein Div -->
-                    <div class="onevsone-hotbar-click" style="left: 44.4%;" data-index="4">
-                        <div class="onevsone-tooltip">⭐ <b>Tournaments</b><br><span>Turnierbeitritt via Papierplatte. Erstelle eigene Turniere mit dem Rang <b>Elite</b> (/shop)</span></div>
-                    </div>
-                    <!-- Slot 6 (index 5) ist leer, kein Div -->
-                    <div class="onevsone-hotbar-click" style="left: 66.6%;" data-index="6">
-                        <div class="onevsone-tooltip">🟩 <b>Dein Rang</b><br><span>Dein aktueller 1vs1-Rang wird angezeigt.</span></div>
-                    </div>
-                    <div class="onevsone-hotbar-click" style="left: 77.7%;" data-index="7">
-                        <div class="onevsone-tooltip">🕹️ <b>Settings</b><br><span>Konfiguriere dein 1vs1:<br>🛡️ Kit-Auswahl<br>🗺️ Aktivierte Maps<br>💎 Warteschlangen<br></span></div>
-                    </div>
-                    <div class="onevsone-hotbar-click" style="left: 88.8%;" data-index="8">
-                        <div class="onevsone-tooltip">⏰ <b>Uhr</b><br><span>Zurück zur Lobby.</span></div>
-                    </div>
-                </div>
-                <br>
-                <br>
-                <iframe width="100%" height="315" src="https://www.youtube.com/embed/DEIN_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
-            </section>
 
             <section id="UHC" class="fade-section" style="scroll-margin-top: 120px;">
-             <h2>🔥 UHC</h2>
-             <iframe width="100%" height="315" src="https://www.youtube.com/embed/DEIN_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+                <h2>🔥 UHC</h2>
+
+                <div class="uhc-intro-card">
+                    <div class="uhc-icon">
+                        <img src="Bilderhowtoplay/uhc-logo.png" alt="UHC Logo" />
+                    </div>
+                    <div class="uhc-intro-content">
+                        <h3>Ultra Hardcore (UHC)</h3>
+                        <p>
+                            In UHC there is <b>no automatic healing</b>, only golden apples and potions help!<br>
+                            Host your own events, play in teams or solo, and use many comfort features.<br>
+                            <span class="uhc-highlight">Host your own UHC (with the rank Elite, Famous, or Partner) or join community events!</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="uhc-cards-row">
+                    <!-- Hoster Commands Card -->
+                    <div class="uhc-card">
+                        <div class="uhc-card-header host">
+                            <i class="fas fa-crown"></i> Hoster Commands
+                        </div>
+                        <table class="uhc-table">
+                            <tr><th>Command</th><th>Description</th></tr>
+                            <tr><td><span class="command">/sethost</span></td><td>Set the host.</td></tr>
+                            <tr><td><span class="command">/scenarios admin</span></td><td>Configure scenarios.</td></tr>
+                            <tr><td><span class="command">/mapmanagement</span></td><td>Manage the map.</td></tr>
+                            <tr><td><span class="command">/discordannounce</span></td><td>Discord announcement GUI.</td></tr>
+                            <tr><td><span class="command">/announce</span></td><td>Announce the UHC globally.</td></tr>
+                            <tr><td><span class="command">/autostart</span></td><td>Set autostart countdown.</td></tr>
+                            <tr><td><span class="command">/team enable/disable</span></td><td>Enable/disable teams.</td></tr>
+                            <tr><td><span class="command">/team size &lt;amount&gt;</span></td><td>Set maximum team size.</td></tr>
+                            <tr><td><span class="command">/prac on/off</span></td><td>Enable/disable practice.</td></tr>
+                        </table>
+                    </div>
+                    <!-- Player Commands Card -->
+                    <div class="uhc-card">
+                        <div class="uhc-card-header player">
+                            <i class="fas fa-users"></i> Player Commands
+                        </div>
+                        <table class="uhc-table">
+                            <tr><th>Command</th><th>Description</th></tr>
+                            <tr><td><span class="command">/practice</span></td><td>Join practice arena.</td></tr>
+                            <tr><td><span class="command">/config</span></td><td>View current settings.</td></tr>
+                            <tr><td><span class="command">/scenarios</span></td><td>Show active scenarios.</td></tr>
+                            <tr><td><span class="command">/helpop</span></td><td>Request help from staff members.</td></tr>
+                            <tr><td><span class="command">/backpack</span></td><td>Open team backpack.</td></tr>
+                            <tr><td><span class="command">/extrainv</span></td><td>Open extra inventory.</td></tr>
+                            <tr><td><span class="command">/sendcoords</span></td><td>Send coordinates to team.</td></tr>
+                            <tr><td><span class="command">/cosmetics</span></td><td>Open cosmetics menu.</td></tr>
+                            <tr><td><span class="command">/rules</span></td><td>Show rules.</td></tr>
+                            <tr><td><span class="command">/health</span></td><td>Check a player's health.</td></tr>
+                            <tr><td><span class="command">/kills</span></td><td>Check a player's kills.</td></tr>
+                            <tr><td><span class="command">/leaderboards</span></td><td>View leaderboards.</td></tr>
+                            <tr><td><span class="command">/stats</span></td><td>View player statistics.</td></tr>
+                            <tr><td><span class="command">/topkills</span></td><td>See top kills of the round.</td></tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="uhc-tips-box">
+                    <i class="fas fa-lightbulb"></i>
+                    <b>Tip:</b> Use <span class="command" style="color:#fff;">/prac</span> to warm up before the start!
+                </div>
+
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/DEIN_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+
+                <style>
+                    .uhc-intro-card {
+                        display: flex;
+                        align-items: center;
+                        gap: 1.5rem;
+                        background: linear-gradient(90deg, #232b33 80%, #3a7c5c 100%);
+                        border-radius: 14px;
+                        box-shadow: 0 8px 28px #000a;
+                        padding: 1.3rem 2rem;
+                        margin-bottom: 2.2rem;
+                        border: 2.5px solid #4caf50;
+                    }
+                    .uhc-icon img {
+                        width: 80px;
+                        height: 80px;
+                        border-radius: 12px;
+                        box-shadow: 0 2px 12px #0007;
+                        background: #181f1a;
+                        object-fit: contain;
+                        display: block;
+                    }
+                    .uhc-intro-content h3 {
+                        margin: 0 0 0.4rem 0;
+                        color: #ffe44c;
+                        font-size: 1.5rem;
+                        font-weight: 800;
+                        letter-spacing: 1px;
+                        text-shadow: 0 2px 8px #0008;
+                    }
+                    .uhc-intro-content p {
+                        margin: 0;
+                        color: #e3e6eb;
+                        font-size: 1.09rem;
+                        line-height: 1.5;
+                    }
+                    .uhc-highlight {
+                        color: #7bff84;
+                        font-weight: bold;
+                    }
+                    .uhc-cards-row {
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 2rem;
+                        justify-content: center;
+                        margin-bottom: 2.2rem;
+                    }
+                    .uhc-card {
+                        background: rgba(38, 48, 38, 0.97);
+                        border-radius: 12px;
+                        box-shadow: 0 4px 18px #000b;
+                        border: 2.5px solid #4caf50;
+                        min-width: 320px;
+                        max-width: 420px;
+                        flex: 1 1 340px;
+                        padding: 1.2rem 1.2rem 1.2rem 1.2rem;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: stretch;
+                        transition: transform 0.18s, box-shadow 0.18s, border-color 0.18s;
+                    }
+                    .uhc-card-header {
+                        font-size: 1.18rem;
+                        font-weight: 800;
+                        letter-spacing: 1px;
+                        margin-bottom: 1rem;
+                        padding: 0.5rem 0.7rem;
+                        border-radius: 7px;
+                        display: flex;
+                        align-items: center;
+                        gap: 0.7em;
+                        color: #fff;
+                        text-shadow: 0 2px 8px #0008;
+                    }
+                    .uhc-card-header.host {
+                        background: linear-gradient(90deg, #ffb300 60%, #ff6a00 100%);
+                        color: #232b33;
+                    }
+                    .uhc-card-header.player {
+                        background: linear-gradient(90deg, #7bff84 60%, #3a7c5c 100%);
+                        color: #232b33;
+                    }
+                    .uhc-table {
+                        width: 100%;
+                        border-collapse: collapse;
+                        font-size: 1.01rem;
+                        margin-bottom: 0;
+                    }
+                    .uhc-table th, .uhc-table td {
+                        padding: 0.45em 0.7em;
+                        text-align: left;
+                        border-bottom: 1px solid #2a3b31;
+                    }
+                    .uhc-table th {
+                        background: #232b33;
+                        color: #7bff84;
+                        font-weight: 700;
+                        font-size: 1.04em;
+                        border-radius: 5px 5px 0 0;
+                    }
+                    .uhc-table tr:last-child td {
+                        border-bottom: none;
+                    }
+                    .uhc-table .command {
+                        background: #0f171d;
+                        color: #ffe44c;
+                        border: 2px solid #bfbf7a;
+                        padding: 0.18em 0.5em;
+                        border-radius: 7px;
+                        font-family: Consolas, Monaco, 'Courier New', monospace;
+                        font-weight: 700;
+                        font-size: 0.98em;
+                        text-shadow: 0 1px 0 #000;
+                        display: inline-block;
+                    }
+                    .uhc-tips-box {
+                        margin: 1.5rem 0 2.2rem 0;
+                        background: linear-gradient(90deg, #ffe44c 30%, #fffbe6 100%);
+                        color: #232b33;
+                        border-radius: 9px;
+                        padding: 0.9rem 1.3rem;
+                        font-size: 1.09rem;
+                        font-weight: 600;
+                        box-shadow: 0 2px 12px #0003;
+                        display: flex;
+                        align-items: center;
+                        gap: 0.7em;
+                        border: 2px solid #ffe44c;
+                    }
+                    .uhc-tips-box i {
+                        color: #ffb300;
+                        font-size: 1.3em;
+                        margin-right: 0.3em;
+                    }
+                    @media (max-width: 900px) {
+                        .uhc-intro-card {
+                            flex-direction: column;
+                            align-items: flex-start;
+                            padding: 1.1rem 1rem;
+                        }
+                        .uhc-cards-row {
+                            flex-direction: column;
+                            gap: 1.3rem;
+                            align-items: stretch;
+                        }
+                        .uhc-card {
+                            max-width: 100%;
+                            min-width: 0;
+                        }
+                    }
+                </style>
             </section>
 
             <section id="HG" class="fade-section" style="scroll-margin-top: 120px;">
@@ -1595,45 +1700,6 @@
                 <iframe width="100%" height="315" src="https://www.youtube.com/embed/DEIN_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
             </section>
 
-            <section id="FFA" class="fade-section" style="scroll-margin-top: 120px;">
-             <h2>👥 FFA</h2>
-             <iframe width="100%" height="315" src="https://www.youtube.com/embed/DEIN_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
-            </section>
-
-            <section id="Bedwars" class="fade-section" style="scroll-margin-top: 120px;">
-             <h2>🛏️ Bedwars</h2>
-                <div class="onevsone-hotbar-container">
-                    <img src="Bilderhowtoplay/hotbar.png" alt="Hotbar Screenshot" class="onevsone-hotbar-image">
-
-                    <!-- Klickbare Items (Slot 4 und 6 sind leer und nicht klickbar) -->
-                    <div class="onevsone-hotbar-click" style="left: 0%;" data-index="0">
-                        <div class="onevsone-tooltip">🗡️ <b>Challenge</b><br><span>Spieler schlagen, um ein Duell zu starten oder anzunehmen.</span></div>
-                    </div>
-                    <div class="onevsone-hotbar-click" style="left: 11.1%;" data-index="1">
-                        <div class="onevsone-tooltip">👁️‍🗨️ <b>Spectate</b><br><span>Beobachte aktuelle Kämpfe live.</span></div>
-                    </div>
-                    <div class="onevsone-hotbar-click" style="left: 22.2%;" data-index="2">
-                        <div class="onevsone-tooltip">📕 <b>1vs1</b><br><span>Kompakter PvP-Guide für Einsteiger.</span></div>
-                    </div>
-                    <!-- Slot 4 (index 3) ist leer, kein Div -->
-                    <div class="onevsone-hotbar-click" style="left: 44.4%;" data-index="4">
-                        <div class="onevsone-tooltip">⭐ <b>Tournaments</b><br><span>Turnierbeitritt via Papierplatte. Erstelle eigene Turniere mit dem Rang <b>Elite</b> (/shop)</span></div>
-                    </div>
-                    <!-- Slot 6 (index 5) ist leer, kein Div -->
-                    <div class="onevsone-hotbar-click" style="left: 66.6%;" data-index="6">
-                        <div class="onevsone-tooltip">🟩 <b>Dein Rang</b><br><span>Dein aktueller 1vs1-Rang wird angezeigt.</span></div>
-                    </div>
-                    <div class="onevsone-hotbar-click" style="left: 77.7%;" data-index="7">
-                        <div class="onevsone-tooltip">🕹️ <b>Settings</b><br><span>Konfiguriere dein 1vs1:<br>🛡️ Kit-Auswahl<br>🗺️ Aktivierte Maps<br>💎 Warteschlangen<br></span></div>
-                    </div>
-                    <div class="onevsone-hotbar-click" style="left: 88.8%;" data-index="8">
-                        <div class="onevsone-tooltip">⏰ <b>Uhr</b><br><span>Zurück zur Lobby.</span></div>
-                    </div>
-                </div>
-                <br>
-                <br>
-                <iframe width="100%" height="315" src="https://www.youtube.com/embed/DEIN_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
-            </section>
          </div>
 </div>
 
