@@ -789,271 +789,390 @@ document.head.insertAdjacentHTML('beforeend', playerStyles);
         const SERVER_IP = "PlanetPVP.de";
         const SERVER_PORT = "25565";
 
-async function fetchServerInfo() {
-    try {
-        // Anzeigen des Ladevorgangs
-        const serverInfoElement = document.getElementById('api-info');
-        const serverStatusContainer = document.getElementById('server-status-container');
-        
-        serverInfoElement.innerHTML = '<div class="loading"></div> Lade Server-Informationen...';
-        serverStatusContainer.innerHTML = '<div class="loading"></div> Lade Serverstatus...';
-        
-        // API-Aufruf zur Minecraft-Server-Status-API
-        // Dies kann über einen CORS-Proxy oder Ihre eigene Backend-Implementierung erfolgen
-        const response = await fetch(`https://api.mcsrvstat.us/2/${SERVER_IP}:${SERVER_PORT}`);
-        const data = await response.json();
-        
-        // Überprüfen, ob der Server online ist
-        if (data.online) {
-            // Server-Informationen anzeigen
-            serverInfoElement.innerHTML = `
-                        <div class="info-grid">
-            <div class="info-card1 fade-in-up">
-                <div class="info-icon"><i class="fas fa-network-wired"></i></div>
-                <h3>Server-IP</h3>
-                <p>${SERVER_IP}</p>
-            </div>
-            <div class="info-card1 fade-in-up" style="animation-delay: 0.2s">
-                <div class="info-icon"><i class="fas fa-code-branch"></i></div>
-                <h3>Version</h3>
-                <p>${data.version || 'Nicht verfügbar'}</p>
-            </div>
-            <div class="info-card1 fade-in-up" style="animation-delay: 0.6s">
-                <div class="info-icon"><i class="fas fa-clock"></i></div>
+        async function fetchServerInfo() {
+            try {
+                const serverInfoElement = document.getElementById('api-info');
+                const serverStatusContainer = document.getElementById('server-status-container');
+
+                serverInfoElement.innerHTML = '<div class="loading"></div> Lade Server-Informationen...';
+                serverStatusContainer.innerHTML = '<div class="loading"></div> Lade Serverstatus...';
+
+                const response = await fetch(`https://api.mcsrvstat.us/2/${SERVER_IP}:${SERVER_PORT}`);
+                const data = await response.json();
+
+                if (data.online) {
+                    serverInfoElement.innerHTML = `
+                    <div class="info-grid">
+                    <div class="info-card1 fade-in-up">
+                    <div class="info-icon"><i class="fas fa-network-wired"></i></div>
+                    <h3>Server-IP</h3>
+                    <p>${SERVER_IP}</p>
+                    </div>
+                    <div class="info-card1 fade-in-up" style="animation-delay: 0.2s">
+                    <div class="info-icon"><i class="fas fa-code-branch"></i></div>
+                    <h3>Version</h3>
+                    <p>${data.version || 'Nicht verfügbar'}</p>
+                    </div>
+                    <div class="info-card1 fade-in-up" style="animation-delay: 0.6s">
+                    <div class="info-icon"><i class="fas fa-clock"></i></div>
                     <h3>MOTD</h3>
                     <p>${data.motd ? data.motd.clean.join('<br>') : 'Keine Nachricht'}</p>
-                </div>
-            </div>
-            `;
+                    </div>
+                    </div>
+                    `;
 
-            // Server-Status aktualisieren
-            serverStatusContainer.innerHTML = `
-                <div class="status-card fade-in-left">
+                    serverStatusContainer.innerHTML = `
+                    <div class="status-card fade-in-left">
                     <h3>Main server <span class="status-indicator online"></span></h3>
                     <p><i class="fas fa-users"></i> Player online: ${data.players.online}/${data.players.max}</p>
                     <p><i class="fas fa-tachometer-alt"></i> Ping: ${Math.floor(Math.random() * 20) + 15} ms</p>
-                </div>
-            `;
-            
-            // Wenn Spielerliste verfügbar ist
-            if (data.players && data.players.list && data.players.list.length > 0) {
-              displayPlayerList(data.players.list);
-            }
-            } else {
-            
-            // Server offline Status anzeigen
-            serverInfoElement.innerHTML = `
-                <div class="error-message">
+                    </div>
+                    `;
+                    if (data.players && data.players.list && data.players.list.length > 0) {
+                        displayPlayerList(data.players.list);
+                    }
+                } else {
+                    serverInfoElement.innerHTML = `
+                    <div class="error-message">
                     <i class="fas fa-exclamation-triangle"></i> 
                     Der Server ist derzeit offline. Bitte versuche es später erneut.
-                </div>
-            `;
-            
-            serverStatusContainer.innerHTML = `
-                <div class="status-card fade-in-left">
+                    </div>
+                    `;
+                    serverStatusContainer.innerHTML = `
+                    <div class="status-card fade-in-left">
                     <h3>Main server <span class="status-indicator offline"></span></h3>
                     <p><i class="fas fa-power-off"></i> Status: Offline</p>
                     <p><i class="fas fa-clock"></i> Last checked: ${new Date().toLocaleTimeString()}</p>
-                </div>
-            `;
+                    </div>
+                    `;
+                }
+            } catch (error) {
+                console.error("Fehler beim Abrufen der Server-Informationen:", error);
+                document.getElementById('api-info').innerHTML = `
+                    <div class="error-message">
+                    <i class="fas fa-exclamation-triangle"></i> 
+                    Fehler beim Laden der Server-Informationen. Bitte versuche es später erneut.
+                    </div>
+                `;
+                document.getElementById('server-status-container').innerHTML = `
+                    <div class="error-message">
+                    <i class="fas fa-exclamation-triangle"></i> 
+                    Fehler beim Laden des Server-Status. Bitte versuche es später erneut.
+                    </div>
+                `;
+            }
         }
-    } catch (error) {
-        console.error("Fehler beim Abrufen der Server-Informationen:", error);
-        document.getElementById('api-info').innerHTML = `
-            <div class="error-message">
-                <i class="fas fa-exclamation-triangle"></i> 
-                Fehler beim Laden der Server-Informationen. Bitte versuche es später erneut.
-            </div>
-        `;
-        document.getElementById('server-status-container').innerHTML = `
-            <div class="error-message">
-                <i class="fas fa-exclamation-triangle"></i> 
-                Fehler beim Laden des Server-Status. Bitte versuche es später erneut.
-            </div>
-        `;
-    }
-}
 
-// API-Informationen abrufen, sobald die Seite geladen ist
-document.addEventListener('DOMContentLoaded', () => {
-    fetchServerInfo();
-    
-    // Aktualisiere die Informationen alle 5 Minuten
-    setInterval(fetchServerInfo, 5 * 60 * 1000);
-});
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchServerInfo();
+            setInterval(fetchServerInfo, 5 * 60 * 1000);
+        });
 
-/* Subserver Status Styles */
-const subserverStyles = `
-.subserver-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.2rem;
-    margin-top: 1.2rem;
-    justify-content: flex-start;
-}
-.subserver-status-card {
-    flex: 0 1 210px;
-    min-width: 160px;
-    max-width: 220px;
-    background: linear-gradient(135deg, rgba(34,49,34,0.98) 80%, rgba(76,175,80,0.10) 100%);
-    border-radius: 6px;
-    box-shadow: 0 4px 16px rgba(76,175,80,0.13), 0 1.5px 6px rgba(0,0,0,0.13);
-    border: 2px solid rgba(123,255,132,0.23);
-    padding: 0.8rem 0.7rem 0.7rem 0.7rem;
-    text-align: left;
-    font-size: 0.99rem;
-    margin-bottom: 0.3rem;
-    transition: box-shadow 0.22s,transform 0.22s,border-color 0.22s;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-    align-items: flex-start;
-    justify-content: center;
-}
-.subserver-status-card:hover {
-    transform: translateY(-4px) scale(1.02);
-    box-shadow: 0 10px 28px rgba(76,175,80,0.17), 0 2px 10px rgba(0,0,0,0.17);
-    border-color: var(--hover-color);
-}
-.subserver-status-card h3 {
-    font-size: 1.01rem;
-    margin: 0 0 0.1rem 0;
-    color: #b2e5c7;
-    font-weight: bold;
-    letter-spacing: 0.2px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-.subserver-status-card .status-indicator {
-    margin-left: 0;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    box-shadow: 0 0 10px rgba(0,0,0,0.3);
-    display: inline-block;
-    border: none;
-}
-.subserver-status-card .online {
-    background-color: #2ab811;
-    animation: pulse 2s infinite;
-}
-.subserver-status-card .offline {
-    background-color: #f44336;
-}
-.subserver-status-card p {
-    margin: 0.05rem 0 0.05rem 0;
-    color: #e3e6eb;
-    font-size: 0.97rem;
-    line-height: 1.4;
-}
-.subserver-status-card .subserver-details {
-    color: #b2e5c7;
-    font-size: 0.93rem;
-    margin-top: 0.1rem;
-    font-style: italic;
-    opacity: 0.85;
-}
-.subserver-last-check {
-    margin-top: 0.7rem;
-    color: #b2e5c7;
-    font-size: 0.97rem;
-    text-align: left;
-    font-style: italic;
-    opacity: 0.85;
-    transform: translateY(20px);
-    animation: fadeInUp 0.8s ease forwards;
-    letter-spacing: 0.15px;
-}
-@media (max-width: 900px) {
-    .subserver-container {
+        /* Subserver Status Styles */
+        const subserverStyles = `
+        .subserver-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.2rem;
+        margin-top: 1.2rem;
+        justify-content: flex-start;
+        }
+        .subserver-status-card {
+        flex: 0 1 210px;
+        min-width: 160px;
+        max-width: 220px;
+        background: linear-gradient(135deg, rgba(34,49,34,0.98) 80%, rgba(76,175,80,0.10) 100%);
+        border-radius: 6px;
+        box-shadow: 0 4px 16px rgba(76,175,80,0.13), 0 1.5px 6px rgba(0,0,0,0.13);
+        border: 2px solid rgba(123,255,132,0.23);
+        padding: 0.8rem 0.7rem 0.7rem 0.7rem;
+        text-align: left;
+        font-size: 0.99rem;
+        margin-bottom: 0.3rem;
+        transition: box-shadow 0.22s,transform 0.22s,border-color 0.22s;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+        align-items: flex-start;
+        justify-content: center;
+        }
+        .subserver-status-card:hover {
+        transform: translateY(-4px) scale(1.02);
+        box-shadow: 0 10px 28px rgba(76,175,80,0.17), 0 2px 10px rgba(0,0,0,0.17);
+        border-color: var(--hover-color);
+        }
+        .subserver-status-card h3 {
+        font-size: 1.01rem;
+        margin: 0 0 0.1rem 0;
+        color: #b2e5c7;
+        font-weight: bold;
+        letter-spacing: 0.2px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        }
+        .subserver-status-card .status-indicator {
+        margin-left: 0;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        display: inline-block;
+        border: none;
+        }
+        .subserver-status-card .online {
+        background-color: #2ab811;
+        animation: pulse 2s infinite;
+        }
+        .subserver-status-card .offline {
+        background-color: #f44336;
+        }
+        .subserver-status-card p {
+        margin: 0.05rem 0 0.05rem 0;
+        color: #e3e6eb;
+        font-size: 0.97rem;
+        line-height: 1.4;
+        }
+        .subserver-status-card .subserver-details {
+        color: #b2e5c7;
+        font-size: 0.93rem;
+        margin-top: 0.1rem;
+        font-style: italic;
+        opacity: 0.85;
+        }
+        .subserver-last-check {
+        margin-top: 0.7rem;
+        color: #b2e5c7;
+        font-size: 0.97rem;
+        text-align: left;
+        font-style: italic;
+        opacity: 0.85;
+        transform: translateY(20px);
+        animation: fadeInUp 0.8s ease forwards;
+        letter-spacing: 0.15px;
+        }
+        .subserver-group-title {
+        font-size: 1.08rem;
+        font-weight: bold;
+        color: #b2e5c7;
+        margin-bottom: 0.3rem;
+        margin-top: 0.1rem;
+        letter-spacing: 0.2px;
+        text-shadow: 0 2px 7px rgb(0, 0, 0, 0.12);
+        }
+        .subserver-group-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+        margin-top: 0.2rem;
+        margin-bottom: 0.2rem;
+        }
+        .subserver-group-list .subserver-group-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 0.18rem 0;
+        }
+        .subserver-group-list .subserver-group-item .status-indicator {
+        margin-left: 0;
+        }
+        .subserver-group-list .subserver-group-item .subserver-name {
+        font-weight: bold;
+        color: #e3e6eb;
+        font-size: 0.98rem;
+        margin-right: 6px;
+        }
+        .subserver-group-list .subserver-group-item .subserver-players {
+        color: #b2e5c7;
+        font-size: 0.97rem;
+        margin-left: 2px;
+        }
+        @media (max-width: 900px) {
+        .subserver-container {
         flex-direction: column;
         gap: 0.8rem;
-    }
-    .subserver-status-card {
+        }
+        .subserver-status-card {
         max-width: 100%;
         min-width: 0;
-    }
-}
-`;
+        }
+        }
+        `;
 
-document.head.insertAdjacentHTML('beforeend', `<style>${subserverStyles}</style>`);
+        document.head.insertAdjacentHTML('beforeend', `<style>${subserverStyles}</style>`);
 
-const subservers = [
-    { ip: "PlanetPVP.de", port: "25568", name: "1vs1" },
-    { ip: "PlanetPVP.de", port: "25567", name: "Bedwars" },
-    { ip: "PlanetPVP.de", port: "25569", name: "Skywars" },
-    { ip: "PlanetPVP.de", port: "25570", name: "Practice" },
-    { ip: "PlanetPVP.de", port: "25571", name: "Classic" },
-    { ip: "PlanetPVP.de", port: "25572", name: "UHC" },
-    { ip: "PlanetPVP.de", port: "25573", name: "HG" },
-    { ip: "PlanetPVP.de", port: "25574", name: "FFA" },
-    { ip: "PlanetPVP.de", port: "25576", name: "Meetup" },
-    { ip: "PlanetPVP.de", port: "25577", name: "Build Battle" },
-];
+        // Subserver-Konfiguration (sortiert: Practice | HG | UHC | Meetup | Rest)
+        const subservers = [
+            // Practice zuerst
+            { ip: "PlanetPVP.de", port: "25570", name: "Practice" },
+            // HG Gruppe
+            { ip: "PlanetPVP.de", port: "25573", name: "HG-1", group: "HG" },
+            { ip: "PlanetPVP.de", port: "2557899999", name: "HG-2", group: "HG" },
+            // UHC Gruppe
+            { ip: "PlanetPVP.de", port: "25572", name: "UHC-Event", group: "UHC" },
+            { ip: "PlanetPVP.de", port: "2557599999", name: "UHC-open-1", group: "UHC" },
+            // Meetup Gruppe
+            { ip: "PlanetPVP.de", port: "25576", name: "Meetup-1", group: "Meetup" },
+            { ip: "PlanetPVP.de", port: "25578", name: "Meetup-2", group: "Meetup" },
+            // Restliche Server
+            { ip: "PlanetPVP.de", port: "25568", name: "1vs1" },
+            { ip: "PlanetPVP.de", port: "25567", name: "Bedwars" },
+            { ip: "PlanetPVP.de", port: "25569", name: "Skywars" },
+            { ip: "PlanetPVP.de", port: "25571", name: "Classic" },
+            { ip: "PlanetPVP.de", port: "25574", name: "FFA" },
+            { ip: "PlanetPVP.de", port: "25577", name: "Build Battle" },
+        ];
 
-// Speichert die letzte echte Prüfung (nicht beim ersten Laden)
-let lastSubserverCheckTime = null;
+        // Gruppen für spezielle Anzeige
+        const groupedServers = ["HG", "UHC", "Meetup"];
 
-// Holt Status aller Subserver und zeigt sie gesammelt an
-async function fetchAllSubserverStatus() {
-    const container = document.getElementById('subservers-status');
-    container.innerHTML = '';
-    let cards = '';
+        // Speichert die letzte echte Prüfung (nicht beim ersten Laden)
+        let lastSubserverCheckTime = null;
 
-    // Alle Status abfragen (parallel)
-    const statusPromises = subservers.map(async (srv) => {
-        try {
-            const response = await fetch(`https://api.mcsrvstat.us/2/${srv.ip}:${srv.port}`);
-            const data = await response.json();
-            let statusText = data.online ? 'Online' : 'Offline';
-            let details = '';
-            if (data.online) {
-                details = `
-                    <span class="subserver-details">
+        // Holt Status aller Subserver und zeigt sie gesammelt an
+        async function fetchAllSubserverStatus() {
+            const container = document.getElementById('subservers-status');
+            container.innerHTML = '';
+
+            // Practice separat
+            const practice = subservers.filter(srv => srv.name === "Practice");
+            // Gruppen
+            const groups = {};
+            subservers.forEach(srv => {
+                if (srv.group && groupedServers.includes(srv.group)) {
+                    if (!groups[srv.group]) groups[srv.group] = [];
+                    groups[srv.group].push(srv);
+                }
+            });
+            // Restliche Server (ohne Practice und Gruppen)
+            const rest = subservers.filter(srv =>
+                !practice.includes(srv) &&
+                !(srv.group && groupedServers.includes(srv.group))
+            );
+
+            // Practice abfragen
+            const practicePromises = practice.map(async (srv) => {
+                try {
+                    const response = await fetch(`https://api.mcsrvstat.us/2/${srv.ip}:${srv.port}`);
+                    const data = await response.json();
+                    let statusText = data.online ? 'Online' : 'Offline';
+                    let details = '';
+                    if (data.online) {
+                        details = `
+                        <span class="subserver-details">
                         <i class="fas fa-users"></i> ${data.players?.online ?? 0} Players
-                    </span>
-                `;
-            } else {
-                details = `<span class="subserver-details">Not reachable</span>`;
-            }
-            return `
-                <div class="subserver-status-card fade-in-left">
+                        </span>
+                        `;
+                    } else {
+                        details = `<span class="subserver-details">Not reachable</span>`;
+                    }
+                    return `
+                    <div class="subserver-status-card fade-in-left">
                     <h3>${srv.name} <span class="status-indicator ${data.online ? 'online' : 'offline'}"></span></h3>
                     <p>Status: <strong style="color:${data.online ? '#2ab811' : '#f44336'}">${statusText}</strong></p>
                     ${details}
-                </div>
-            `;
-        } catch (err) {
-            return `
-                <div class="subserver-status-card fade-in-left">
+                    </div>
+                    `;
+                } catch (err) {
+                    return `
+                    <div class="subserver-status-card fade-in-left">
                     <h3>${srv.name} <span class="status-indicator offline"></span></h3>
                     <p style="color:#f44336">Fehler beim Abrufen der Daten</p>
-                </div>
-            `;
+                    </div>
+                    `;
+                }
+            });
+
+            // Gruppen abfragen (HG, UHC, Meetup)
+            const groupPromises = Object.entries(groups).map(async ([groupName, groupList]) => {
+                const groupStatus = await Promise.all(groupList.map(async (srv) => {
+                    try {
+                        const response = await fetch(`https://api.mcsrvstat.us/2/${srv.ip}:${srv.port}`);
+                        const data = await response.json();
+                        return `
+                        <div class="subserver-group-item">
+                        <span class="subserver-name">${srv.name}</span>
+                        <span class="status-indicator ${data.online ? 'online' : 'offline'}"></span>
+                        <span class="subserver-players">${data.online ? `${data.players?.online ?? 0} / ${data.players?.max ?? 0}` : ''}</span>
+                        </div>
+                        `;
+                    } catch (err) {
+                        return `
+                        <div class="subserver-group-item">
+                        <span class="subserver-name">${srv.name}</span>
+                        <span class="status-indicator offline"></span>
+                        <span class="subserver-players"></span>
+                        </div>
+                        `;
+                    }
+                }));
+                return `
+                    <div class="subserver-status-card fade-in-left">
+                    <div class="subserver-group-title">${groupName}</div>
+                    <div class="subserver-group-list">
+                    ${groupStatus.join('')}
+                    </div>
+                    </div>
+                `;
+            });
+
+            // Restliche Server abfragen
+            const restPromises = rest.map(async (srv) => {
+                try {
+                    const response = await fetch(`https://api.mcsrvstat.us/2/${srv.ip}:${srv.port}`);
+                    const data = await response.json();
+                    let statusText = data.online ? 'Online' : 'Offline';
+                    let details = '';
+                    if (data.online) {
+                        details = `
+                        <span class="subserver-details">
+                        <i class="fas fa-users"></i> ${data.players?.online ?? 0} Players
+                        </span>
+                        `;
+                    } else {
+                        details = `<span class="subserver-details">Not reachable</span>`;
+                    }
+                    return `
+                    <div class="subserver-status-card fade-in-left">
+                    <h3>${srv.name} <span class="status-indicator ${data.online ? 'online' : 'offline'}"></span></h3>
+                    <p>Status: <strong style="color:${data.online ? '#2ab811' : '#f44336'}">${statusText}</strong></p>
+                    ${details}
+                    </div>
+                    `;
+                } catch (err) {
+                    return `
+                    <div class="subserver-status-card fade-in-left">
+                    <h3>${srv.name} <span class="status-indicator offline"></span></h3>
+                    <p style="color:#f44336">Fehler beim Abrufen der Daten</p>
+                    </div>
+                    `;
+                }
+            });
+
+            // Reihenfolge: Practice | HG | UHC | Meetup | Rest
+            const results = [
+                ...(await Promise.all(practicePromises)),
+                ...(await Promise.all(groupPromises)),
+                ...(await Promise.all(restPromises))
+            ];
+
+            if (lastSubserverCheckTime) {
+                container.innerHTML = results.join('') + `<div class="subserver-last-check">Last check: ${lastSubserverCheckTime}</div>`;
+            } else {
+                container.innerHTML = results.join('');
+            }
         }
-    });
 
-    const results = await Promise.all(statusPromises);
-    cards = results.join('');
-    // Nur die Zeit anzeigen, wenn es NICHT der initiale Aufruf ist
-    if (lastSubserverCheckTime) {
-        container.innerHTML = cards + `<div class="subserver-last-check">Last check: ${lastSubserverCheckTime}</div>`;
-    } else {
-        container.innerHTML = cards;
-    }
-}
-
-// Initiales Laden: KEINE Zeit anzeigen, erst ab dem ersten Intervall
-document.addEventListener('DOMContentLoaded', () => {
-    fetchAllSubserverStatus();
-    setInterval(() => {
-        lastSubserverCheckTime = new Date().toLocaleTimeString();
-        fetchAllSubserverStatus();
-    }, 60 * 1000);
-});
+        // Initiales Laden: KEINE Zeit anzeigen, erst ab dem ersten Intervall
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchAllSubserverStatus();
+            setInterval(() => {
+                lastSubserverCheckTime = new Date().toLocaleTimeString();
+                fetchAllSubserverStatus();
+            }, 60 * 1000);
+        });
 
 </script>
 </body>
