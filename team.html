@@ -814,7 +814,7 @@
                 
                 // Update button text for current form (showing -> hiding)
                 if (isModeratorForm) {
-                    button.innerHTML = '<i class="fa-solid fa-chevron-up"></i> Moderator Bewerbungsformular ausblenden';
+                    button.innerHTML = '<i class="fa-solid fa-chevron-up"></i> Hide moderator application form';
                     
                     // Hide the original builder button
                     builderToggle.style.display = 'none';
@@ -822,15 +822,15 @@
                     // Show the cloned builder button below the moderator form
                     builderToggleClone.style.display = 'flex';
                 } else {
-                    button.innerHTML = '<i class="fa-solid fa-chevron-up"></i> Builder Bewerbungsformular ausblenden';
+                    button.innerHTML = '<i class="fa-solid fa-chevron-up"></i> Hide builder application form';
                 }
                 
                 // Reset other button text
                 if (otherButton) {
                     if (isModeratorForm) {
-                        otherButton.innerHTML = '<i class="fa-solid fa-cube"></i> Builder Bewerbungsformular anzeigen';
+                        otherButton.innerHTML = '<i class="fa-solid fa-cube"></i> Show builder application form';
                     } else {
-                        otherButton.innerHTML = '<i class="fa-brands fa-discord"></i> Moderator Bewerbungsformular anzeigen';
+                        otherButton.innerHTML = '<i class="fa-brands fa-discord"></i> Show moderator application form';
                     }
                 }
             } else {
@@ -842,7 +842,7 @@
                 
                 // Reset button text
                 if (isModeratorForm) {
-                    button.innerHTML = '<i class="fa-brands fa-discord"></i> Moderator Bewerbungsformular anzeigen';
+                    button.innerHTML = '<i class="fa-brands fa-discord"></i> Show moderator application form';
                     
                     // Show the original builder button again
                     builderToggle.style.display = 'block';
@@ -850,7 +850,7 @@
                     // Hide the cloned builder button
                     builderToggleClone.style.display = 'none';
                 } else {
-                    button.innerHTML = '<i class="fa-solid fa-cube"></i> Builder Bewerbungsformular anzeigen';
+                    button.innerHTML = '<i class="fa-solid fa-cube"></i> Show builder application form';
                 }
             }
         }
