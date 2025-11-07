@@ -45,7 +45,6 @@
             box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
             position: relative;
             overflow: hidden;
-            /* Schräg gestreiftes Muster: dünne, hellgraue Streifen von rechts oben nach links unten */
             background-image: repeating-linear-gradient(
             -45deg,
             rgba(70,70,70,0.19) 1.2px,
@@ -409,7 +408,6 @@
             to { transform: rotate(360deg); }
         }
         
-        /* Animation classes */
         .fade-in-up {
             animation: fadeInUp 0.8s ease forwards;
         }
@@ -480,29 +478,29 @@
 }
 
 #ueber-uns {
-    background-image: url('minecraft-bild1.png'); /* Bild-URL ersetzen */
+    background-image: url('minecraft-bild1.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-blend-mode: overlay; /* Optional: um das Bild mit der Farbe zu überblenden */
+    background-blend-mode: overlay;
     background-color: rgba(0, 0, 0, 0.7);
 }
 
 #server-status {
-    background-image: url('minecraft-bild3.png'); /* Bild-URL ersetzen */
+    background-image: url('minecraft-bild3.png'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-blend-mode: overlay; /* Optional: um das Bild mit der Farbe zu überblenden */
+    background-blend-mode: overlay; 
     background-color: rgba(0, 0, 0, 0.7);
 }
 
 #news {
-    background-image: url('minecraft-bild2.png'); /* Bild-URL ersetzen */
+    background-image: url('minecraft-bild2.png'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-blend-mode: overlay; /* Optional: um das Bild mit der Farbe zu überblenden */
+    background-blend-mode: overlay; 
     background-color: rgba(0, 0, 0, 0.7);
 }
 
@@ -748,7 +746,6 @@
 <script>
 
 
-// Append styles to the document
 document.head.insertAdjacentHTML('beforeend', playerStyles);
     </script>
     <script>
@@ -767,7 +764,7 @@ document.head.insertAdjacentHTML('beforeend', playerStyles);
             });
         };
         
-        // Scroll-Event für die Navigation
+        // Scroll-Event für Navigation
         const nav = document.getElementById('main-nav');
         const scrollNav = () => {
             if (window.scrollY > 50) {
@@ -781,11 +778,9 @@ document.head.insertAdjacentHTML('beforeend', playerStyles);
             checkScroll();
             scrollNav();
         });
-        
-        // Initial check
+
         checkScroll();
         
-        // API-Verbindung für Minecraft Server-Informationen
         const SERVER_IP = "PlanetPVP.de";
         const SERVER_PORT = "25565";
 
@@ -1003,40 +998,33 @@ document.head.insertAdjacentHTML('beforeend', playerStyles);
 
         document.head.insertAdjacentHTML('beforeend', `<style>${subserverStyles}</style>`);
 
-        // Subserver-Konfiguration (sortiert: Practice | HG | UHC | Meetup | Rest)
         const subservers = [
-            // Practice zuerst
             { ip: "PlanetPVP.de", port: "25570", name: "Practice" },
-            // HG Gruppe
             { ip: "PlanetPVP.de", port: "25573", name: "HG-1", group: "HG" },
             { ip: "PlanetPVP.de", port: "2557899999", name: "HG-2", group: "HG" },
-            // UHC Gruppe
+            // UHC
             { ip: "PlanetPVP.de", port: "25572", name: "UHC-Event", group: "UHC" },
             { ip: "PlanetPVP.de", port: "2557599999", name: "UHC-open-1", group: "UHC" },
-            // Meetup Gruppe
+            // Meetup
             { ip: "PlanetPVP.de", port: "25576", name: "Meetup-1", group: "Meetup" },
             { ip: "PlanetPVP.de", port: "25578", name: "Meetup-2", group: "Meetup" },
-            // Restliche Server
+            // Restliche
             { ip: "PlanetPVP.de", port: "25567", name: "Bedwars" },
             { ip: "PlanetPVP.de", port: "25569", name: "Skywars" },
-            { ip: "PlanetPVP.de", port: "25571", name: "Classic" },
+            { ip: "PlanetPVP.de", port: "99999", name: "Murder Mystery" },
             { ip: "PlanetPVP.de", port: "25577", name: "Build Battle" },
         ];
 
         // Gruppen für spezielle Anzeige
         const groupedServers = ["HG", "UHC", "Meetup"];
 
-        // Speichert die letzte echte Prüfung (nicht beim ersten Laden)
         let lastSubserverCheckTime = null;
 
-        // Holt Status aller Subserver und zeigt sie gesammelt an
         async function fetchAllSubserverStatus() {
             const container = document.getElementById('subservers-status');
             container.innerHTML = '';
 
-            // Practice separat
             const practice = subservers.filter(srv => srv.name === "Practice");
-            // Gruppen
             const groups = {};
             subservers.forEach(srv => {
                 if (srv.group && groupedServers.includes(srv.group)) {
@@ -1044,13 +1032,12 @@ document.head.insertAdjacentHTML('beforeend', playerStyles);
                     groups[srv.group].push(srv);
                 }
             });
-            // Restliche Server (ohne Practice und Gruppen)
+
             const rest = subservers.filter(srv =>
                 !practice.includes(srv) &&
                 !(srv.group && groupedServers.includes(srv.group))
             );
 
-            // Practice abfragen
             const practicePromises = practice.map(async (srv) => {
                 try {
                     const response = await fetch(`https://api.mcsrvstat.us/2/${srv.ip}:${srv.port}`);
@@ -1083,7 +1070,6 @@ document.head.insertAdjacentHTML('beforeend', playerStyles);
                 }
             });
 
-            // Gruppen abfragen (HG, UHC, Meetup)
             const groupPromises = Object.entries(groups).map(async ([groupName, groupList]) => {
                 const groupStatus = await Promise.all(groupList.map(async (srv) => {
                     try {
@@ -1116,7 +1102,7 @@ document.head.insertAdjacentHTML('beforeend', playerStyles);
                 `;
             });
 
-            // Restliche Server abfragen
+
             const restPromises = rest.map(async (srv) => {
                 try {
                     const response = await fetch(`https://api.mcsrvstat.us/2/${srv.ip}:${srv.port}`);
@@ -1149,7 +1135,6 @@ document.head.insertAdjacentHTML('beforeend', playerStyles);
                 }
             });
 
-            // Reihenfolge: Practice | HG | UHC | Meetup | Rest
             const results = [
                 ...(await Promise.all(practicePromises)),
                 ...(await Promise.all(groupPromises)),
@@ -1163,7 +1148,6 @@ document.head.insertAdjacentHTML('beforeend', playerStyles);
             }
         }
 
-        // Initiales Laden: KEINE Zeit anzeigen, erst ab dem ersten Intervall
         document.addEventListener('DOMContentLoaded', () => {
             fetchAllSubserverStatus();
             setInterval(() => {
