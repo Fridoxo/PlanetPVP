@@ -44,7 +44,6 @@
             box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
             position: relative;
             overflow: hidden;
-            /* Schräg gestreiftes Muster: dünne, hellgraue Streifen von rechts oben nach links unten */
             background-image: repeating-linear-gradient(
             -45deg,
             rgba(70,70,70,0.19) 1.2px,
@@ -294,7 +293,6 @@
 <section id="moderatoren" class="fade-section">
     <h2>Moderation team</h2>
     <div class="team-grid">
-        <!-- Minecraft Name reicht, Skin wird automatisch geladen -->
         <div class="team-member">
             <div class="minecraft-avatar">
                 <img src="https://mc-heads.net/avatar/FriediTV" alt="FriediTV" class="avatar-img">
@@ -526,7 +524,7 @@
     </div>
 </section>
 
-<!-- Bewerbung Sektion -->
+<!-- Application Section -->
 <section id="bewerbung" class="fade-section">
     <h2>Apply to join us</h2>
     <p>
@@ -793,55 +791,44 @@
         }
     </style>
     <script>
-        // Clone the builder button
         const builderToggle = document.getElementById('bewerbung-builder-toggle');
         const builderToggleClone = document.getElementById('bewerbung-builder-toggle-clone');
         
-        // Make the clone have the same text and appearance
         builderToggleClone.innerHTML = builderToggle.innerHTML;
         
-        // Helper for sliding animation and form display
         function showForm(formId, buttonId, otherFormId, otherButtonId) {
             var form = document.getElementById(formId);
             var button = document.getElementById(buttonId);
             var otherForm = document.getElementById(otherFormId);
             var otherButton = document.getElementById(otherButtonId);
             
-            // Determine if we're handling moderator or builder form
             var isModeratorForm = formId === 'bewerbung-moderator-formular';
             
             if (!form.classList.contains('visible')) {
-                // Show this form
                 form.style.display = 'block';
                 setTimeout(function() {
                     form.classList.add('visible');
                     
-                    // Auto-scroll to show the full form after it starts expanding
                     setTimeout(function() {
                         form.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }, 100);
                 }, 10);
                 
-                // Hide other form
                 otherForm.classList.remove('visible');
                 setTimeout(function() {
                     otherForm.style.display = 'none';
                 }, 500);
                 
-                // Update button text for current form (showing -> hiding)
                 if (isModeratorForm) {
                     button.innerHTML = '<i class="fa-solid fa-chevron-up"></i> Hide moderator application form';
-                    
-                    // Hide the original builder button
+
                     builderToggle.style.display = 'none';
-                    
-                    // Show the cloned builder button below the moderator form
+
                     builderToggleClone.style.display = 'flex';
                 } else {
                     button.innerHTML = '<i class="fa-solid fa-chevron-up"></i> Hide builder application form';
                 }
-                
-                // Reset other button text
+
                 if (otherButton) {
                     if (isModeratorForm) {
                         otherButton.innerHTML = '<i class="fa-solid fa-cube"></i> Show builder application form';
@@ -850,20 +837,16 @@
                     }
                 }
             } else {
-                // Hide this form
                 form.classList.remove('visible');
                 setTimeout(function() {
                     form.style.display = 'none';
                 }, 500);
-                
-                // Reset button text
+
                 if (isModeratorForm) {
                     button.innerHTML = '<i class="fa-brands fa-discord"></i> Show moderator application form';
-                    
-                    // Show the original builder button again
+
                     builderToggle.style.display = 'block';
-                    
-                    // Hide the cloned builder button
+
                     builderToggleClone.style.display = 'none';
                 } else {
                     button.innerHTML = '<i class="fa-solid fa-cube"></i> Show builder application form';
@@ -878,8 +861,7 @@
         document.getElementById('bewerbung-builder-toggle').onclick = function() {
             showForm('bewerbung-builder-formular', 'bewerbung-builder-toggle', 'bewerbung-moderator-formular', 'bewerbung-moderator-toggle');
         };
-        
-        // Make the cloned builder button work too
+
         document.getElementById('bewerbung-builder-toggle-clone').onclick = function() {
             showForm('bewerbung-builder-formular', 'bewerbung-builder-toggle-clone', 'bewerbung-moderator-formular', 'bewerbung-moderator-toggle');
         };
@@ -1031,7 +1013,6 @@
             scrollNav();
         });
         
-        // Initial check
         checkScroll();
     </script>
 </body>

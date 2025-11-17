@@ -45,7 +45,6 @@
             box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
             position: relative;
             overflow: hidden;
-            /* Schräg gestreiftes Muster: dünne, hellgraue Streifen von rechts oben nach links unten */
             background-image: repeating-linear-gradient(
             -45deg,
             rgba(70,70,70,0.19) 1.2px,
@@ -340,7 +339,6 @@
             to { transform: rotate(360deg); }
         }
         
-        /* Animation classes */
         .fade-in-up {
             animation: fadeInUp 0.8s ease forwards;
         }
@@ -516,7 +514,7 @@
                 </div>
             </div>
 
-            <!-- Kontakt -->
+            <!-- Contact -->
             <section class="fade-in-left" style="background:rgba(38,48,38,0.92);margin-bottom:2rem;">
                 <h3><i class="fas fa-envelope"></i> Contact</h3>
                 <ul class="contact-list" style="list-style:none;padding:0;">
@@ -551,9 +549,9 @@
                 </ul>
             </section>
 
-            <!-- Impressum -->
+            <!-- Imprint -->
             <section class="fade-in-right" style="background:rgba(38,48,38,0.92);">
-                <h3 id="impressum"><i class="fas fa-id-card"></i> Imprint</h3>
+                <h3 id="imprint"><i class="fas fa-id-card"></i> Imprint</h3>
                 <p>PlanetPvP - Friedemann Straube</p>
                 <p>
                   c/o Online-Impressum.de #3772<br>
@@ -577,12 +575,15 @@
                 </p>
                 <p>Contributor: Luca Brüning</p>
                 <style>
-                    #impressum {
-                     scroll-margin-top: 160px; /* Passe die Höhe an deine Nav an */
+                    #imprint {
+                     scroll-margin-top: 160px; /* Adjust the height to nav */
+                    }
+                    #privacy-policy {
+                     scroll-margin-top: 660px; /* Adjust the height to nav */
                     }
                 </style>
             </section>
-            <!-- Datenschutzerklärung -->
+            <!-- Privacy Policy -->
             <h3 style="margin-top:2.5rem;color:var(--accent-color);"><i class="fas fa-globe"></i> Privacy Policy</h3>
             <section class="fade-in-right" style="background:rgba(38,48,38,0.92);">
                 <h4>The protection of your personal data is very important to us. Below we inform you about which data is collected on this website and our Minecraft server and how it is used.</h4>
@@ -608,7 +609,7 @@
 
                 <hr style="border:0;border-top:1px solid #3a7c5c;margin:2rem 0;">
 
-                <h3 id="datenschutz"><i class="fas fa-user-shield"></i> Privacy Policy for the Website</h3>
+                <h3 id="privacy-policy"><i class="fas fa-user-shield"></i> Privacy Policy for the Website</h3>
                 <div class="privacy-section">
                     <h4 style="margin-top:1.2rem;">General Information</h4>
                     <p>This privacy policy provides detailed information about what happens to your personal data when you visit our website https://www.planetpvp.de. Personal data means all data by which you can be personally identified. We strictly comply with the legal provisions, in particular the Datenschutz-Grundverordnung (DSGVO), and place great importance on ensuring that your visit to our website is absolutely secure.</p>
@@ -777,7 +778,6 @@
             </section>
 
             <style>
-            /* Responsive Anpassungen */
         @media (max-width: 900px) {
             .info-grid {
                 grid-template-columns: 1fr;
@@ -826,7 +826,6 @@
             }
             </style>
             <script>
-            // IP-Kopieren Button
             const copyBtn = document.getElementById('copy-ip-btn');
             const ipSpan = document.getElementById('server-ip');
             const feedback = document.getElementById('copy-feedback');
@@ -854,8 +853,8 @@
 <footer>
     <p>&copy; 2025 PlanetPVP. All rights reserved.</p>
     <p>
-        <a href="https://www.planetpvp.de/About.html#impressum">Imprint</a> |
-        <a href="https://www.planetpvp.de/About.html#datenschutz">Privacy Policy</a>
+        <a href="https://www.planetpvp.de/About.html#imprint">Imprint</a> |
+        <a href="https://www.planetpvp.de/About.html#privacy-policy">Privacy Policy</a>
     </p>
 
     <p>
@@ -866,7 +865,6 @@
 </footer>
     <script>
 
-// Append styles to the document
 document.head.insertAdjacentHTML('beforeend', playerStyles);
     </script>
     <script>
@@ -899,7 +897,6 @@ document.head.insertAdjacentHTML('beforeend', playerStyles);
             scrollNav();
         });
         
-        // Initial check
         checkScroll();
         
     </script>

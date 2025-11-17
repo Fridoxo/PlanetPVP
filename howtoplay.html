@@ -49,7 +49,6 @@
             box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
             position: relative;
             overflow: hidden;
-            /* Schräg gestreiftes Muster: dünne, hellgraue Streifen von rechts oben nach links unten */
             background-image: repeating-linear-gradient(
             -45deg,
             rgba(70,70,70,0.19) 1.2px,
@@ -179,11 +178,11 @@
           font-weight: 800;
           letter-spacing: 1px;
           background: none;
-          background-clip: initial; /* Standard property */
+          background-clip: initial;
           -webkit-background-clip: initial;
           -webkit-text-fill-color: initial;
-          justify-content: center; /* Zentriert den Text horizontal */
-          text-align: center;      /* Fallback für reinen Text */
+          justify-content: center;
+          text-align: center;
         }
 
         h2 > .icon,
@@ -192,7 +191,7 @@
            margin-right: 0.6em;
            font-size: 1.2em;
            background: none !important;
-           background-clip: initial !important; /* Standard property */
+           background-clip: initial !important;
            -webkit-background-clip: initial !important;
            -webkit-text-fill-color: initial !important;
             color: inherit;
@@ -431,8 +430,8 @@
             position: sticky;
             top: 80px;
             width: 250px;
-             max-height: calc(100vh - 100px); /* passt sich an die Bildschirmhöhe an */
-            overflow-y: auto; /* Scrollbar erscheint, wenn nötig */
+             max-height: calc(100vh - 100px);
+            overflow-y: auto;
             background-color: rgba(38, 48, 38, 0.95);
             padding: 1rem;
             border-radius: 5px;
@@ -440,7 +439,6 @@
             z-index: 2;
             }
 
-            /* 1vs1 Namespace Styles */
               .onevsone-hotbar-container {
                 position: relative;
                 max-width: 900px;
@@ -462,7 +460,7 @@
                 width: calc(100% / 9);
                 cursor: pointer;
                 transition: box-shadow 0.2s, background 0.2s, transform 0.2s;
-                border-radius: 12px; /* Immer runde Kanten */
+                border-radius: 12px;
             }
 
             .onevsone-hotbar-click:hover {
@@ -471,8 +469,8 @@
                 z-index: 2;
                 animation: onevsone-hotbar-bounce 0.25s;
                 transform: scale(0.95);
-                border-radius: 12px; /* Runde Kanten beim Hover */
-                top: -3px; /* 2mm nach oben beim Hover */
+                border-radius: 12px;
+                top: -3px;
             }
 
             @keyframes onevsone-hotbar-bounce {
@@ -493,12 +491,11 @@
                 }
             }
 
-            /* Minecraft-Style Tooltip: jetzt UNTER dem Item, mit runden Ecken und 2mm nach oben */
             .onevsone-tooltip {
                 display: none;
                 position: absolute;
                 left: 50%;
-                top: calc(110% - 7px); /* 2mm ≈ 7px nach oben */
+                top: calc(110% - 7px);
                 transform: translateX(-50%);
                 min-width: 220px;
                 max-width: 320px;
@@ -584,7 +581,6 @@
             <h2>🔰 Start</h2>
 
             <div class="start-wrap">
-                <!-- Hero: Server verbinden -->
                 <div class="start-hero">
                 <div class="start-hero-left" style="display:flex;flex-direction:column;gap:.8rem;justify-content:flex-start;">
                     <img
@@ -612,7 +608,6 @@
 
                 <!-- Quick Actions -->
                 <div class="start-cards">
-                <!-- Report -->
                 <div class="start-card">
                     <div class="start-card-icon" style="background: linear-gradient(135deg,#ff6a00,#ffb300);">
                     <i class="fas fa-flag"></i>
@@ -623,7 +618,6 @@
                     <div class="start-command">/report &lt;playername&gt;</div>
                     </div>
                 </div>
-                <!-- Discord -->
                 <div class="start-card">
                     <div class="start-card-icon" style="background: linear-gradient(135deg,#5865F2,#7b8cff);">
                     <i class="fab fa-discord"></i>
@@ -825,18 +819,16 @@
                 <div class="onevsone-hotbar-container">
                     <img src="Bilderhowtoplay/hotbar1.png" alt="Hotbar Screenshot" class="onevsone-hotbar-image">
 
-                    <!-- Klickbare Items (Slot 4 und 6 sind leer und nicht klickbar) -->
+                    <!-- Clicable Items -->
                     <div class="onevsone-hotbar-click" style="left: 0%;" data-index="0">
                         <div class="onevsone-tooltip">🧭 <b>Teleporter</b><br><span>Select your preferred game mode – PvP, Bedwars, Skywars and more.</span></div>
                     </div>
                     <div class="onevsone-hotbar-click" style="left: 22.2%;" data-index="2">
                         <div class="onevsone-tooltip">👁️ <b>Options</b><br><span>Toggle lobby-specific features like DoubleJump <br> or Fly on/off</span></div>
                     </div>
-                    <!-- Slot 4 (index 3) ist leer, kein Div -->
                     <div class="onevsone-hotbar-click" style="left: 44.4%;" data-index="4">
                         <div class="onevsone-tooltip">📦 <b>Loot</b><br><span>Open and manage your collected gadgets</span></div>
                     </div>
-                    <!-- Slot 6 (index 5) ist leer, kein Div -->
                     <div class="onevsone-hotbar-click" style="left: 77.7%;" data-index="7">
                         <div class="onevsone-tooltip">🟩 <b>Player-Hider</b><br><span>Set which players are visible in the lobby</span></div>
                     </div>
@@ -844,10 +836,9 @@
                         <div class="onevsone-tooltip">🧑 <b>Profile</b><br><span>Opens the friends and clan menu</span></div>
                     </div>
                 </div>    
-                <!-- Modern Info Cards for Lobby Section -->
                 <div class="lobby-info-cards-unique">
 
-                    <!-- Mystery Boxen Card -->
+                    <!-- Mystery Boxes Card -->
                     <div class="lobby-card-unique">
                         <div class="lobby-card-icon-unique" style="background: linear-gradient(135deg, #4caf50 60%, #b2e5c7 100%);">
                             <img src="Bilderhowtoplay/mystreyboxen.png" alt="PlanetGames" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
@@ -919,7 +910,7 @@
                         .lobby-card-unique .mysterybox-image-unique {
                             width: 100%;
                             height: 200px;
-                            margin: 2.5rem 0 0 0; /* Bild weiter runter */
+                            margin: 2.5rem 0 0 0;
                             justify-content: center;
                             align-items: flex-end;
                             order: 3;
@@ -947,7 +938,7 @@
                             .lobby-card-unique .mysterybox-image-unique {
                                 width: 100%;
                                 height: 180px;
-                                margin: 2rem 0 0 0; /* Bild weiter runter auch mobil */
+                                margin: 2rem 0 0 0;
                                 justify-content: center;
                                 align-items: flex-end;
                             }
@@ -960,7 +951,7 @@
                         </style>
                     </div>
 
-                    <!-- Ränge Card -->
+                    <!-- Ranks Card -->
                     <div class="lobby-card-unique lobby-card-equal">
                         <div class="lobby-card-icon-unique" style="background: linear-gradient(135deg, #3a7c5c 60%, #7bff84 100%);">
                             <img src="Bilderhowtoplay/ranks-icon.png" alt="PlanetGames" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
@@ -1021,7 +1012,7 @@
                             align-items: flex-start;
                             gap: 0.7em;
                             font-size: 1.07em;
-                            margin-bottom: 1.4em; /* Gleichmäßiger Abstand */
+                            margin-bottom: 1.4em;
                         }
                         .lobby-rank-list-unique li:last-child {
                             margin-bottom: 0;
@@ -1059,7 +1050,7 @@
                         </style>
                     </div>
 
-                    <!-- PlanetGames Card (Icon oben links, darunter Bild, rechts Text) -->
+                    <!-- PlanetGames Card -->
                     <div class="lobby-card-unique lobby-card-row-unique lobby-card-imageleft-unique planetgames-card-custom">
                         <div class="lobby-card-left-custom">
                             <div class="lobby-card-icon-unique" style="background: linear-gradient(135deg, #0088ff 60%, #b2e5c7 100%); margin-bottom: 0.7rem;">
@@ -1124,7 +1115,7 @@
                         display: flex;
                         align-items: flex-start;
                         justify-content: center;
-                        margin-top: 0.5rem; /* Bild weiter runter */
+                        margin-top: 0.5rem;
                     }
                     .lobby-card-left-custom .lobby-card-image-unique img {
                         width: 100%;
@@ -1167,7 +1158,7 @@
                         .lobby-card-left-custom .lobby-card-image-unique {
                             width: 80px;
                             height: 80px;
-                            margin-top: 1.5rem; /* Bild weiter runter auch mobil */
+                            margin-top: 1.5rem;
                         }
                     }
                     </style>
@@ -1187,7 +1178,6 @@
             </section>
 
             <style>
-            /* 1vs1 Namespace Styles */
               .onevsone-hotbar-container {
                 position: relative;
                 max-width: 900px;
@@ -1218,8 +1208,8 @@
                 z-index: 2;
                 animation: onevsone-hotbar-bounce 0.25s;
                 transform: scale(0.95);
-                border-radius: 10px; /* Runde Kanten beim Hover */
-                top: -3px; /* 2mm nach oben beim Hover */
+                border-radius: 10px;
+                top: -3px;
             }
 
             @keyframes onevsone-hotbar-bounce {
@@ -1240,12 +1230,11 @@
                 }
             }
 
-            /* Minecraft-Style Tooltip: jetzt UNTER dem Item, mit runden Ecken und 2mm nach oben */
             .onevsone-tooltip {
                 display: none;
                 position: absolute;
                 left: 50%;
-                top: calc(110% - 7px); /* 2mm ≈ 7px nach oben */
+                top: calc(110% - 7px);
                 transform: translateX(-50%);
                 min-width: 220px;
                 max-width: 320px;
@@ -1508,7 +1497,6 @@
                 <div class="onevsone-hotbar-container">
                     <img src="Bilderhowtoplay/hotbar.png" alt="Hotbar Screenshot" class="onevsone-hotbar-image">
 
-                    <!-- Klickbare Items (Slot 4 und 6 sind leer und nicht klickbar) -->
                     <div class="onevsone-hotbar-click" style="left: 0%;" data-index="0">
                         <div class="onevsone-tooltip">🗡️ <b>Challenge</b><br><span>Spieler schlagen, um ein Duell zu starten oder anzunehmen.</span></div>
                     </div>
@@ -1518,11 +1506,9 @@
                     <div class="onevsone-hotbar-click" style="left: 22.2%;" data-index="2">
                         <div class="onevsone-tooltip">📕 <b>1vs1</b><br><span>Kompakter PvP-Guide für Einsteiger.</span></div>
                     </div>
-                    <!-- Slot 4 (index 3) ist leer, kein Div -->
                     <div class="onevsone-hotbar-click" style="left: 44.4%;" data-index="4">
                         <div class="onevsone-tooltip">⭐ <b>Tournaments</b><br><span>Turnierbeitritt via Papierplatte. Erstelle eigene Turniere mit dem Rang <b>Elite</b> (/shop)</span></div>
                     </div>
-                    <!-- Slot 6 (index 5) ist leer, kein Div -->
                     <div class="onevsone-hotbar-click" style="left: 66.6%;" data-index="6">
                         <div class="onevsone-tooltip">🟩 <b>Dein Rang</b><br><span>Dein aktueller 1vs1-Rang wird angezeigt.</span></div>
                     </div>
@@ -1594,7 +1580,6 @@
             scrollNav();
         });
         
-        // Initial check
         checkScroll();
     </script>
 </body>
